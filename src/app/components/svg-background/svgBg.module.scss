@@ -1,0 +1,15 @@
+.svgBg {
+    transform-origin: center;
+    overflow: visible;
+
+    &_lines {
+        will-change: transform;
+        transform-box: fill-box;
+        transform-origin: center;
+        scale: 2;
+
+        path {
+            stroke: var(--primary-blue-200);
+        }
+    }
+}
