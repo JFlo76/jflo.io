@@ -34,23 +34,27 @@ export default function Home() {
   const z = useTransform(heroScroll, [0, 0.75], [0, -1000]);
   const rotateX = useTransform(heroScroll, [0, 0.75], [0, 40]);
 
+  // Scrolling logic for header visibility
+  const { scrollYProgress: headerScroll } = useScroll({
+    container: mainRef,
+    offset: ['5% start', '15% start'],
+  });
+
+  // Header opacity based on scroll position
+  const headerOpacity = useTransform(headerScroll, [0, 1], [0, 1]);
+
   // Scrolling logic for about section
   const { scrollYProgress: aboutScroll } = useScroll({
     container: mainRef,
     target: aboutRef,
     offset: ['start end', 'end end'],
-    // 'start end': First point where the start of the target element (aboutRef) meets the end of the container (<main> element)
-    // 'end end': Second point where the end of the target element meets the end of the container
   });
+
   const { scrollYProgress: workScroll } = useScroll({
     container: mainRef,
     target: workRef,
     offset: ['start end', 'end end'],
-    // 'start end': First point where the start of the target element (aboutRef) meets the end of the container (<main> element)
-    // 'end end': Second point where the end of the target element meets the end of the container
   });
-
-
 
   const [isModalOpen, setModalOpen] = useState<string | null>(null);
   const handleModalOpen = (item: string, event: React.MouseEvent<HTMLElement>) => {
@@ -64,15 +68,10 @@ export default function Home() {
     <div className={`fixed flex justify-center`}>
       <motion.header
         className={`fixed z-10 ${styles.header}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 6,
-          duration: 1
-        }}>
+        style={{ opacity: headerOpacity }}
+      >
         <h1
           className={`${styles.name} ${robotoCondensed.className} `}
-
         >
           <span className={`${styles.name_first}`}><span>J</span>ASON</span>
           <span className={`${styles.name_last}`}><span>FLO</span>RENCE</span>

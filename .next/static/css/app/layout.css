@@ -626,20 +626,11 @@ video {
 .mr-8 {
   margin-right: 2rem;
 }
-.mt-16 {
-  margin-top: 4rem;
-}
-.ms-4 {
-  margin-inline-start: 1rem;
-}
-.ms-6 {
-  margin-inline-start: 1.5rem;
-}
 .ms-8 {
   margin-inline-start: 2rem;
 }
-.me-8 {
-  margin-inline-end: 2rem;
+.mt-16 {
+  margin-top: 4rem;
 }
 .block {
   display: block;
@@ -711,11 +702,11 @@ video {
 .list-inside {
   list-style-position: inside;
 }
-.list-disc {
-  list-style-type: disc;
-}
 .list-decimal {
   list-style-type: decimal;
+}
+.list-disc {
+  list-style-type: disc;
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -740,9 +731,6 @@ video {
 }
 .items-start {
   align-items: flex-start;
-}
-.items-end {
-  align-items: flex-end;
 }
 .items-center {
   align-items: center;
@@ -1139,11 +1127,6 @@ p {
   .md\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
   }
 
   .md\:leading-relaxed {
