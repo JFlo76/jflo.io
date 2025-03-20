@@ -1,6 +1,6 @@
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/fonts.ts","import":"Roboto_Condensed","arguments":[{"subsets":["latin"],"weight":["700"],"display":"swap"}],"variableName":"robotoCondensed"} ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/fonts.tsx","import":"Roboto_Condensed","arguments":[{"subsets":["latin"],"weight":["700"],"display":"swap"}],"variableName":"robotoCondensed"} ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto Condensed';
@@ -67,9 +67,9 @@
 }.__className_0bb174 {font-family: 'Roboto Condensed', 'Roboto Condensed Fallback';font-weight: 700;font-style: normal
 }
 
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/fonts.ts","import":"Noto_Sans","arguments":[{"subsets":["latin"],"weight":["400","700"],"display":"swap"}],"variableName":"notoSans"} ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src/app/fonts.tsx","import":"Noto_Sans","arguments":[{"subsets":["latin"],"weight":["400","700"],"display":"swap"}],"variableName":"notoSans"} ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: 'Noto Sans';
@@ -244,7 +244,6 @@
   will-change: transform;
   transform-box: fill-box;
   transform-origin: center;
-  scale: 2;
 }
 .svgBg_svgBg_lines__MJ9Oo path {
   stroke: var(--primary-blue-200);
@@ -252,19 +251,16 @@
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/page.module.scss ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.page_container__LLik5 {
-  display: flex;
-  z-index: 1;
-  position: relative;
-}
-
 .page_content__szHtB {
-  background-color: #000;
+  background-image: radial-gradient(ellipse at center, #000000 0%, #1D1D1D 80%);
   border: 1px solid var(--primary-blue-200);
+  border-radius: 13px;
   height: calc(100vh - 80px);
   width: calc(100vw - 80px);
   z-index: 1;
   position: relative;
+  perspective: 150px;
+  scroll-behavior: smooth;
   scrollbar-width: none;
 }
 .page_content__szHtB::-webkit-scrollbar {
@@ -272,75 +268,131 @@
 }
 
 .page_header__Tcoou {
-  top: 30px;
-  left: 25px;
+  top: 60px;
+  left: 55px;
+  mix-blend-mode: difference;
 }
 .page_header__Tcoou .page_name__Z4hyh {
   font-size: var(--header-font-size);
   line-height: 0.8;
   letter-spacing: -0.2rem;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 5px black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  color: #a7a7a7;
 }
 .page_header__Tcoou .page_name_first__paoGE span, .page_header__Tcoou .page_name_last__tjPXg span {
   color: var(--primary-blue-200);
 }
 
 .page_hero__TR3fT {
-  font-size: 11vw;
   display: flex;
+}
+.page_hero_greeting__9IpaQ {
+  font-size: 1.5rem;
+  margin-inline-start: 0.4vw;
+}
+.page_hero_greeting_name__qxtL_ {
+  display: inline-block;
+}
+.page_hero_greeting_name__qxtL_:hover {
+  color: var(--primary-blue-200);
+}
+.page_hero_skills__pzBSV {
+  font-size: 11vw;
+  color: #fff;
   letter-spacing: -0.3rem;
   line-height: 0.9;
-  position: relative;
+}
+.page_hero_design__psI_f {
+  color: var(--complementary-orange-200);
+}
+.page_hero_development__TJQYn {
   color: var(--primary-blue-200);
 }
-.page_hero_UX__Aacwu {
-  color: #fff;
-  margin-inline-start: 4vw;
+
+.page_linkTo_work__UjIOY {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--complementary-orange-200);
+  border-radius: 8px;
+  color: white;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
 }
-.page_hero_DE__qJCX2 {
-  color: var(--primary-blue-200);
+.page_linkTo_work__UjIOY:hover {
+  transform: translate(8px, -8px);
+  box-shadow: -2px 2px 0 var(--complementary-orange-400), -4px 4px 0 var(--complementary-orange-400), -6px 6px 0 var(--complementary-orange-400);
 }
 
 .page_about__p_sC8 {
-  padding-inline: 20%;
-  font-size: 1vw;
+  margin-block-end: 15rem;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: radial-gradient(circle at 100% 100%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
+  color: #000;
+}
+.page_about__p_sC8 .page_about_content__HFgfK {
+  max-width: 1600px;
+}
+.page_about__p_sC8 article {
+  font-size: 1.2rem;
+  margin-inline-end: 2rem;
+}
+.page_about__p_sC8 article h2 {
+  font-size: 5rem;
+  letter-spacing: -0.2rem;
+  color: #1D1D1D;
+}
+.page_about__p_sC8 article p {
+  margin-block-end: 1.5rem;
+}
+.page_about__p_sC8 ul {
+  width: 50%;
+  margin-block-end: 1.5rem;
+}
+.page_about__p_sC8 ul li {
+  margin-inline-start: 1rem;
+  list-style: disc;
+  font-size: 1.2rem;
+}
+.page_about__p_sC8 h3 {
+  line-height: 1;
+}
+
+.page_svgUnicorn__M7tgz {
+  transform-origin: center;
+  overflow: visible;
+  width: 30vw;
+}
+.page_svgUnicorn_paths__WHF3g {
+  transform-origin: center;
 }
 
 .page_work__s6RSe {
-  width: 100%;
-  overflow: hidden;
+  max-width: 1600px;
+  margin: 0 auto;
 }
-.page_work_list___YGa0 {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  max-height: 90%;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+.page_work__s6RSe .page_caseStudy__cTOD_ {
+  text-shadow: 0px 4px 0px var(--background-dark);
 }
-.page_work_list___YGa0::-webkit-scrollbar {
-  display: none;
+.page_work__s6RSe h2 {
+  font-size: 5rem;
+  letter-spacing: -0.2rem;
 }
-.page_work_list___YGa0 li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 100%;
-  scroll-snap-align: center;
-  min-width: 0;
-  overflow-y: hidden;
-  width: 100%;
-  height: 100%;
-  position: relative;
+.page_work__s6RSe .page_projectsRowLeft__yLCXR {
+  transform: perspective(50px) rotate3d(0, 1, 0, 1.5deg) translateX(50px);
+  transform-origin: center;
 }
-.page_work_list___YGa0 li img {
-  max-width: 100%;
-  max-height: 100%;
+.page_work__s6RSe .page_projectsRowCenter___vsOB {
+  z-index: 1;
+}
+.page_work__s6RSe .page_projectsRowCenter___vsOB a {
+  box-shadow: 0 0 20px 0 rgb(0, 0, 0);
+}
+.page_work__s6RSe .page_projectsRowRight__9iYpP {
+  transform: perspective(50px) rotate3d(0, 1, 0, -1.5deg) translateX(-50px);
+  transform-origin: center;
 }
 
 .page_contact__EaIGU {
@@ -351,15 +403,40 @@
   font-size: var(--header-font-size);
   line-height: 0.8;
   letter-spacing: -0.2rem;
-  paint-order: stroke fill;
-  -webkit-text-stroke: 5px black;
-  bottom: 25px;
-  right: 30px;
-}
-.page_footer__wa9SD a {
-  paint-order: stroke fill;
-  -webkit-text-stroke: 5px black;
+  bottom: 15px;
+  right: 50px;
+  mix-blend-mode: difference;
 }
 .page_footer__wa9SD a.page_active__tAjuN, .page_footer__wa9SD a:hover {
   color: var(--primary-blue-200);
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/modal.module.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.modal_modal__QI_7P {
+  scrollbar-width: none;
+}
+.modal_modal__QI_7P::-webkit-scrollbar {
+  display: none;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/components/ScrollingBanner.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.ScrollingBanner_bannerContainer__E2vFd {
+  position: absolute;
+  left: 0;
+  padding: 1rem 0;
+}
+
+.ScrollingBanner_banner__xUxi7 {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.ScrollingBanner_bannerItem__30Hu5 {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: -2px 2px rgba(0, 0, 0, 0.5);
 }

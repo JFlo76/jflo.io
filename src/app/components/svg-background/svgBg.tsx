@@ -9,22 +9,22 @@ const SvgBackground = () => {
     const [scope, animate] = useAnimate();
 
     useEffect(() => {
-        animate(scope.current,
+        const animation = animate(scope.current,
             {
                 rotate: 360,
                 // x: [0, 100, 0],
                 // y: [0, -200, 0],
-                // scale: [1, 2, 1],
-                skewX: [0, -10, 2, 10, 0],
-                skewY: [0, 6, 1, 4, 0],
+                scale: [1.5, 2, 1.5],
+                skewX: [0, -5, 2, -4, 0],
+                // skewY: [0, 3, 1, 4, 0],
                 opacity: 1,
             },
             {
-                rotate: {
-                    duration: 150,
-                    ease: "easeInOut",
-                    delay: 4,
-                },
+                // rotate: {
+                //     duration: 150,
+                //     ease: "easeInOut",
+                //     delay: 4,
+                // },
                 // x: {
                 //     repeat: Infinity,
                 //     duration: 10,
@@ -37,30 +37,33 @@ const SvgBackground = () => {
                 //     ease: "easeInOut",
                 //     delay: 5,
                 // },
-                // scale: {
-                //     repeat: Infinity,
-                //     duration: 18,
-                //     ease: "easeInOut",
-                //     delay: 3,
-                // },
+                scale: {
+                    repeat: Infinity,
+                    duration: 18,
+                    ease: "easeInOut",
+                    delay: 5,
+                },
                 skewX: {
                     repeat: Infinity,
                     duration: 22,
                     ease: "easeInOut",
                     delay: 5,
                 },
-                skewY: {
-                    repeat: Infinity,
-                    duration: 18,
-                    ease: "easeInOut",
-                    delay: 7,
-                },
+                // skewY: {
+                //     repeat: Infinity,
+                //     duration: 18,
+                //     ease: "easeInOut",
+                //     delay: 7,
+                // },
                 opacity: {
                     duration: 1.5,
                     ease: "easeInOut",
                     delay: 3,
                 }
             });
+        return () => {
+            animation.stop();
+        };
     }, []);
 
     return (

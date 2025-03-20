@@ -1,4 +1,4 @@
-// File: /Users/jflo/WebProjects/JFlo.io/jflo.io 2025/src/app/layout.tsx
+// File: /Users/jflo/WebProjects/JFlo.io/jflo.io/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

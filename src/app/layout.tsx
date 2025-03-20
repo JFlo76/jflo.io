@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSans.className} flex flex-col place-content-center h-screen w-screen overflow-hidden`}>
+      <body className={`${notoSans.className} flex flex-col place-content-center items-center h-screen w-screen bg-black`}>
         {children}
       </body>
     </html>

@@ -1,93 +1,147 @@
 'use client'
 // @refresh reset
-import { AnimatePresence, motion, useInView, useScroll } from 'motion/react';
+import { useRef, useState } from 'react';
+import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react';
 import dynamic from 'next/dynamic'
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 import MouseScrollAnimation from './assets/MouseScrollAnimation.json';
 import { robotoCondensed } from './fonts'
 import SvgBackground from './components/svg-background/svgBg'
 import styles from './page.module.scss'
-import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+
+import Unicorn from './components/Unicorn';
+import Indeed from './components/Indeed/Indeed'
+import HitachiStudio from './components/HitachiStudio'
+import Modal from './components/modal';
+import ScrollingBanner from './components/ScrollingBanner';
+import HitachiSolutionsManager from './components/HitachiSolutionsManager';
 
 export default function Home() {
   const mainRef = useRef(null);
+  const heroRef = useRef(null);
   const aboutRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
-  const { scrollYProgress } = useScroll({
+
+  // Scrolling logic for hero section
+  const { scrollYProgress: heroScroll } = useScroll({
+    container: mainRef,
+    target: heroRef,
+    offset: ['end end', 'end start'],
+  });
+  const scale = useTransform(heroScroll, [0, 0.75], [1, 0]);
+  const opacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
+  const z = useTransform(heroScroll, [0, 0.75], [0, -1000]);
+  const rotateX = useTransform(heroScroll, [0, 0.75], [0, 40]);
+
+  // Scrolling logic for about section
+  const { scrollYProgress: aboutScroll } = useScroll({
     container: mainRef,
     target: aboutRef,
-    offset: ['start end', 'end end']
+    offset: ['start end', 'end end'],
+    // 'start end': First point where the start of the target element (aboutRef) meets the end of the container (<main> element)
+    // 'end end': Second point where the end of the target element meets the end of the container
   });
-  const isAboutInView = useInView(aboutRef);
-  const isWorkInView = useInView(workRef);
-  const isContactInView = useInView(contactRef);
+  const { scrollYProgress: workScroll } = useScroll({
+    container: mainRef,
+    target: workRef,
+    offset: ['start end', 'end end'],
+    // 'start end': First point where the start of the target element (aboutRef) meets the end of the container (<main> element)
+    // 'end end': Second point where the end of the target element meets the end of the container
+  });
 
-  const [isIndeedVisible, setIsIndeedVisible] = useState(false);
-  const variants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0 },
-  }
 
-  useEffect(() => {
-    // console.log('isAboutInView ', isAboutInView); 
-    // console.log('isWorkInView ', isWorkInView);
-    // console.log('isContactInView ', isContactInView);
-  }, [isAboutInView, isWorkInView, isContactInView]);
+
+  const [isModalOpen, setModalOpen] = useState<string | null>(null);
+  const handleModalOpen = (item: string, event: React.MouseEvent<HTMLElement>) => {
+    event.preventDefault();
+    setModalOpen(item);
+  };
+
+  const bannerItems = ['User Testing', 'Wireframes', 'Prototypes', 'Hi-Rez Comps', 'Web Animation', 'Greensock', 'Framer Motion', 'Design Systems', 'Software Development', 'Creative Development', 'Shopify Development', 'Wordpress Development', 'React JS', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'SCSS', 'SASS', 'Tailwind', 'Bootstrap', 'Material UI', 'Git', 'GitHub', 'GitLab', 'Storybook', 'Chromatic', 'Figma', 'Sketch', 'WCAG Accessibility']
 
   return (
-    <div className={`relative justify-center ${styles.container} `}>
-      <header className={`fixed z-10 ${styles.header} `}>
-        <motion.h1
+    <div className={`fixed flex justify-center`}>
+      <motion.header
+        className={`fixed z-10 ${styles.header}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          delay: 6,
+          duration: 1
+        }}>
+        <h1
           className={`${styles.name} ${robotoCondensed.className} `}
-          initial={{ x: '-120%' }}
-          animate={{ x: 0 }}
-          transition={{
-            delay: 1,
-          }}
+
         >
-          <span className={`${styles.name_first}`}><span>J</span>ASON</span> <span className={`${styles.name_last}`}><span>F</span><span>L</span><span>O</span>RENCE</span>
-        </motion.h1>
-      </header>
-      <motion.main className={`${styles.content} overflow-auto snap-y snap-mandatory scroll-smooth`}
-        initial={{ scaleX: 0, scaleY: 0 }}
-        animate={{ scaleX: 1, scaleY: 1 }}
+          <span className={`${styles.name_first}`}><span>J</span>ASON</span>
+          <span className={`${styles.name_last}`}><span>FLO</span>RENCE</span>
+        </h1>
+      </motion.header>
+      {/* Start Main Section */}
+      <motion.main className={`${styles.content} ${isModalOpen ? 'overflow-y-hidden' : 'overflow-y-scroll'} overflow-x-hidden bg-stone-900`}
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
         transition={{
           delay: 0.5,
           duration: 0.3,
         }}
         ref={mainRef}
       >
-        <motion.section className='flex flex-wrap justify-center content-center flex-col h-full snap-center'>
+        {/* Start Hero Section */}
+        <motion.section
+          ref={heroRef}
+          className={`flex flex-wrap justify-center content-center flex-col h-full ${styles.hero}`}
+          style={
+            {
+              scale,
+              opacity,
+              translateZ: z,
+              rotateX: rotateX,
+              transformOrigin: "center bottom",
+              transformStyle: "preserve-3d",
+            }
+          }
+        >
+          <motion.p
+            className={`font-bold mb-2 ${styles.hero_greeting}`}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 1.5,
+              ease: 'easeInOut',
+            }}
+          >Hello! My name is Jason Florence (aka JFlo), and I specialize in</motion.p>
           <motion.h2
             className={`
               ${robotoCondensed.className} 
-              ${styles.hero} 
+              ${styles.hero_skills} 
               
             `}
-            initial={{ x: '-120%' }}
-            animate={{ x: 0 }}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
-              delay: 1.5,
+              delay: 2,
+              ease: 'easeInOut',
             }}
           >
 
-            UX<span className={`${styles.hero_UX}`}>DESIGN /</span>
+            UX <span className={`${styles.hero_design}`}>DESIGN</span> <span className={`${styles.hero_orange}`}>&</span>
           </motion.h2>
           <motion.h2
             className={`
               ${robotoCondensed.className}
-              ${styles.hero}
-              ${styles.hero_DE}
+              ${styles.hero_skills}
+              
             `}
-            initial={{ x: '-130%' }}
-            animate={{ x: 0 }}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
-              delay: 2,
+              delay: 2.5,
+              ease: 'easeInOut',
             }}
           >
-            DEVELOPMENT
+            UX <span className={`${styles.hero_development}`}>DEVELOPMENT</span>
           </motion.h2>
           <motion.div
             style={{
@@ -97,7 +151,7 @@ export default function Home() {
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 100, opacity: 1 }}
             transition={{
-              delay: 4,
+              delay: 3.5,
               duration: 1,
               ease: 'easeInOut',
             }}
@@ -106,84 +160,189 @@ export default function Home() {
           </motion.div>
 
         </motion.section>
-        <motion.section id='about' className={`${styles.about} flex justify-center flex-col w-full h-full px-12 mb-1 snap-center background`} style={{ opacity: scrollYProgress }} ref={aboutRef}>
-          <h2 className="font-semibold mb-5">
-            I specialize in <span className="text-primary-blue">UX Design</span> and <span className="text-primary-blue">UI Development</span> for the web.
-          </h2>
-          <p className="mb-4">
-            I design with many different tools... favorites include Figma, Sketch and Adobe CS.
-            I build websites using content management systems like Wordpress and Webflow,
-            E-commerce sites using Shopify and Square Space, and enterprise applications
-            using tools like ReactJS, Storybook, Chromatic and GitLab CI/CD.
-          </p>
-          <p className="mb-4">
-            I utilize AI in my design and development workflows in order to increase my
-            productivity. That means quicker turnaround times for everyone!
-          </p>
-          <p className="mb-4">
-            With multiple years of experience in the tech industry, I can provide a wide range
-            of services to bridge the gap between design and development. Some have called
-            me a "unicorn" because the combination of these skills is somewhat unique and
-            highly sought after. Even though this may be true, please don't call me that.
-          </p>
-          <p className="font-bold">
-            I'm currently available to hire!
-          </p>
+        {/* Start About Section */}
+        <motion.section
+          className={`${styles.about} flex flex-col w-full items-center p-20 al relative`} ref={aboutRef}
+          style={{
+            y: useTransform(aboutScroll, [0, 1], [100, 0]),
+            skewY: useTransform(aboutScroll, [0, 1], [-15, -5]),
+            opacity: useTransform(aboutScroll, [0, 0.5], [0, 1]),
+          }}
+        >
+          <div className={`${styles.about_content} flex flex-row items-center`}>
+            <motion.article
+              style={{
+                y: useTransform(aboutScroll, [0.25, 0.75], [500, 0]),
+                opacity: useTransform(aboutScroll, [0.5, 1], [0, 1]),
+              }}
+            >
+              <motion.h2
+                className={`${robotoCondensed.className} uppercase`}
+                style={{
+                  x: useTransform(aboutScroll, [0.6, 0.75], [-500, 0])
+                }}
+              >
+                A little about me...
+              </motion.h2>
+
+              <p className={`${styles.about_text}`}
+
+              >
+                With over a decade of experience in the tech industry, I offer a comprehensive skill set that bridges the gap between design and development. My expertise allows me to seamlessly translate design concepts into functional and user-friendly interfaces.
+              </p>
+              <p className={`${styles.about_text}`}
+
+              >
+                Aside from my technical skills, I have a passion for learning and staying up-to-date with the latest trends and technologies in the industry. I believe in the power of continuous learning and growth, and I am always eager to take on new challenges and expand my knowledge.
+              </p>
+              <p className={`${styles.about_text}`}
+
+              >
+                In my spare time, I enjoy exploring new places, playing music (drums), snowboarding, a bit of rallycross racing, spending time with my family and friends, and wearing hats!
+              </p>
+              <a href='#work' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>See my work</a>
+
+            </motion.article>
+            <Unicorn scrollRef={aboutScroll} />
+          </div>
+
+          <ScrollingBanner items={bannerItems} />
 
         </motion.section>
-        <motion.section id='work' className={`${styles.work} flex justify-center flex-col w-full h-full mb-1 snap-center`} ref={workRef}>
-          <ul className={`${styles.work_list} overflow-x-auto`}>
-            <li>
-              {/* <Link href='/work/indeed'> */}
+        {/* Start Work Section */}
+        <motion.section id='work' className={`${styles.work} flex justify-center flex-col w-full h-full px-4`} ref={workRef}>
+          <motion.h2
+            className={`${robotoCondensed.className} text-center uppercase`}
+            style={{
+              y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
+              opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
+            }}
+          >Recent projects</motion.h2>
+          <motion.div
+            className={`${styles.projectsRow} flex flex-row justify-center`}
+            style={{
+              y: useTransform(workScroll, [0.5, 0.75], [40, 0]),
+              opacity: useTransform(workScroll, [0.5, 0.75], [0, 1]),
+            }}
+          >
+            {/* Row 1 */}
+            <div className={`${styles.projectsRowLeft} flex flex-col items-center`}>
+              <a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
+                className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
+                <img
+                  srcSet="/images/hitachi/lumada-studio-thumb.webp, /images/hitachi/lumada-studio-thumb@2x.webp 2x"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Hitachi Lumada Studio dashboard"
+                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200] [text-shadow:_0_1px_3px_rgba(0,0,0,0.8)]`}>View case study</h3>
+                </div>
+              </a>
+              <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
+            </div>
 
-              <img src='https://picsum.photos/2400/1500' />
-              <button onClick={() => setIsIndeedVisible(true)}>Open</button>
-              <AnimatePresence>
-                {isIndeedVisible && (
-                  <motion.div
-                    key='modal'
-                    initial='hidden'
-                    animate='visible'
-                    exit='hidden'
-                    variants={variants}
-                    className={`absolute top-0 left-0 w-full h-full bg-black bg-opacity-90 flex items-center justify-center`}
-                  >
-                    This is a modal or something
-                    <button onClick={() => setIsIndeedVisible(false)}>Close</button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              {/* </Link> */}
-            </li>
-            <li>
-              <Link href='/work/hitachi-studio'>
-                <img src='https://picsum.photos/2400/1500' />
-              </Link>
-            </li>
-            <li>
-              <Link href='/work/hitachi-vantara'>
-                <img src='https://picsum.photos/2400/1500' />
-              </Link>
-            </li>
-          </ul>
+            <div className={`${styles.projectsRowCenter} flex flex-col items-center z-10`}>
+              <a href="" onClick={(event) => handleModalOpen('Indeed', event)}
+                className={` border border-gray-400 rounded-lg overflow-hidden block relative group mb-4`}>
+                <img
+                  srcSet="/images/indeed/interview-scheduling-modal-thumb.webp, /images/indeed/interview-scheduling-modal-thumb@2x.webp 2x"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                  alt="Indeed.com interface with the interview scheduling modal open"
+                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
+                </div>
+              </a>
+              <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Indeed - UX Developer</p>
+            </div>
+
+            <div className={`${styles.projectsRowRight} flex flex-col items-center`}>
+              <a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
+                className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
+                <img
+                  srcSet="/images/hitachi/lumada-solutions-manager-thumb.webp, /images/hitachi/lumada-solutions-manager-thumb@2x.webp 2x"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Hitachi Solutions Manager dashboard"
+                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200] [text-shadow:_0_1px_3px_rgba(0,0,0,0.8)]`}>View case study</h3>
+                </div>
+              </a>
+              <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
+            </div>
+          </motion.div>
+
+          {/* <motion.h2
+            className={`${robotoCondensed.className} text-center uppercase`}
+            style={{
+              y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
+              opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
+            }}
+          >Past projects</motion.h2>
+          <motion.div
+            className="grid grid-cols-3 gap-4"
+            style={{
+              y: useTransform(workScroll, [0.5, 0.75], [40, 0]),
+              opacity: useTransform(workScroll, [0.5, 0.75], [0, 1]),
+            }}
+          >
+            <div className={`rounded-lg overflow-hidden relative group border border-gray-400`}>
+              <a href="" onClick={(event) => handleModalOpen('Product of the North', event)}>
+                <img
+                  srcSet="/images/potn/potn-thumb.webp, /images/potn/potn-thumb@2x.webp 2x"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Indeed.com interface with the interview scheduling modal open"
+                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase`}>Product of the North</h3>
+                  <p className={`${robotoCondensed.className} text-white text-lg`}>Shopify Developer</p>
+                </div>
+              </a>
+            </div><div className={`rounded-lg overflow-hidden relative group border border-gray-400`}>
+              <a href="" onClick={(event) => handleModalOpen('Skull Shoppe', event)}>
+                <img
+                  srcSet="/images/skullshoppe/skullshoppe-thumb.webp, /images/skullshoppe/skullshoppe-thumb@2x.webp 2x"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="SkullShoppe.com logo with a skull and ornate frame"
+                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase`}>The Skull Shoppe</h3>
+                  <p className={`${robotoCondensed.className} text-white text-lg`}>Shopify Developer</p>
+                </div>
+              </a>
+            </div><div className={`rounded-lg overflow-hidden relative group border border-gray-400`}>
+              <a href="" onClick={(event) => handleModalOpen('Imprnt', event)}>
+                <img
+                  srcSet="/images/imprnt/imprnt-home-thumb.webp, /images/imprnt/imprnt-home-thumb@2x.webp 2x"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Imprnt.com homepage with images of printed shirts"
+                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase`}>Imprnt</h3>
+                  <p className={`${robotoCondensed.className} text-white text-lg`}>UI Designer</p>
+                </div>
+              </a>
+            </div>
+          </motion.div> */}
         </motion.section>
-        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 snap-center`} ref={contactRef}>
+        {/* Start Contact Section */}
+        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 `} ref={contactRef}>
           <h2 className="font-semibold mb-5">Contact Stuff Here</h2>
         </motion.section>
       </motion.main>
-      <motion.footer
-        className={`${styles.footer} fixed flex flex-col items-end text-align-end z-10`}
-        initial={{ x: '120%' }}
-        animate={{ x: 0 }}
-        transition={{
-          delay: 3,
-        }}
-      >
-        <a href="#about" className={`${robotoCondensed.className} ${isAboutInView ? styles.active : ''}`}>ABOUT</a>
-        <a href="#work" className={`${robotoCondensed.className} ${isWorkInView ? styles.active : ''}`}>WORK</a>
-        <a href="#contact" className={`${robotoCondensed.className} ${isContactInView ? styles.active : ''}`}>CONTACT</a>
-      </motion.footer>
       <SvgBackground />
-    </div>
+      {/* Start Modals */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <Modal isVisible={!!isModalOpen} onClose={() => setModalOpen(null)}>
+            {isModalOpen === 'Indeed' && <Indeed />}
+            {isModalOpen === 'HitachiStudio' && <HitachiStudio />}
+            {isModalOpen === 'HitachiSolutionsManager' && <HitachiSolutionsManager />}
+            {/* Add more project components as needed */}
+          </Modal>
+        )}
+      </AnimatePresence>
+    </div >
   );
 }
