@@ -810,6 +810,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
+.bg-\[--complementary-orange-200\] {
+  background-color: var(--complementary-orange-200);
+}
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
@@ -1011,6 +1014,7 @@ body {
 }
 
 body {
+  background-color: #1D1D1D;
   font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

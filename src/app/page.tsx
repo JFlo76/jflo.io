@@ -79,28 +79,28 @@ export default function Home() {
       </motion.header>
       {/* Start Main Section */}
       <motion.main className={`${styles.content} ${isModalOpen ? 'overflow-y-hidden' : 'overflow-y-scroll'} overflow-x-hidden bg-stone-900`}
-        initial={{ y: -40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{
-          delay: 0.5,
-          duration: 0.3,
-        }}
+        // initial={{ y: -40, opacity: 0 }}
+        // animate={{ y: 0, opacity: 1 }}
+        // transition={{
+        //   delay: 0.5,
+        //   duration: 0.3,
+        // }}
         ref={mainRef}
       >
         {/* Start Hero Section */}
         <motion.section
           ref={heroRef}
-          className={`flex flex-wrap justify-center content-center flex-col h-full ${styles.hero}`}
-          style={
-            {
-              scale,
-              opacity,
-              translateZ: z,
-              rotateX: rotateX,
-              transformOrigin: "center bottom",
-              transformStyle: "preserve-3d",
-            }
-          }
+          className={`flex flex-wrap justify-center content-center flex-col h-full w-full ${styles.hero}`}
+        // style={
+        //   {
+        //     scale,
+        //     opacity,
+        //     translateZ: z,
+        //     rotateX: rotateX,
+        //     transformOrigin: "center bottom",
+        //     transformStyle: "preserve-3d",
+        //   }
+        // }
         >
           <motion.p
             className={`font-bold mb-2 ${styles.hero_greeting}`}
@@ -161,10 +161,10 @@ export default function Home() {
         </motion.section>
         {/* Start About Section */}
         <motion.section
-          className={`${styles.about} flex flex-col w-full items-center p-20 al relative`} ref={aboutRef}
+          className={`${styles.about} flex flex-col w-full h-full justify-center items-center p-20 relative`} ref={aboutRef}
           style={{
             y: useTransform(aboutScroll, [0, 1], [100, 0]),
-            skewY: useTransform(aboutScroll, [0, 1], [-15, -5]),
+            // skewY: useTransform(aboutScroll, [0, 1], [-15, -5]),
             opacity: useTransform(aboutScroll, [0, 0.5], [0, 1]),
           }}
         >
@@ -208,7 +208,7 @@ export default function Home() {
             <Unicorn scrollRef={aboutScroll} />
           </div>
 
-          <ScrollingBanner items={bannerItems} />
+          {/* <ScrollingBanner items={bannerItems} /> */}
 
         </motion.section>
         {/* Start Work Section */}
@@ -329,7 +329,7 @@ export default function Home() {
           </motion.div> */}
         </motion.section>
         {/* Start Contact Section */}
-        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 `} ref={contactRef}>
+        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 bg-[--complementary-orange-200]`} ref={contactRef}>
           <h2 className="font-semibold mb-5">Contact Stuff Here</h2>
         </motion.section>
       </motion.main>
