@@ -192,7 +192,10 @@ export default function Home() {
               <p className={`${styles.about_text}`}
 
               >
-                Aside from my technical skills, I have a passion for learning and staying up-to-date with the latest trends and technologies in the industry. I believe in the power of continuous learning and growth, and I am always eager to take on new challenges and expand my knowledge.
+                With multiple years of experience in the tech industry, I can provide a wide range
+                of services to bridge the gap between design and development. Some have called
+                me a "unicorn" because the combination of these skills is somewhat unique and
+                highly sought after. Even though this may be true, please don't call me that.
               </p>
               <p className={`${styles.about_text}`}
 
