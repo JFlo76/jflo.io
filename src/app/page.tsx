@@ -330,8 +330,66 @@ export default function Home() {
         </motion.section>
         {/* Start Contact Section */}
         <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 bg-[--complementary-orange-200]`} ref={contactRef}>
-          <h2 className="font-semibold mb-5">Contact Stuff Here</h2>
+          <h2 className={`${robotoCondensed.className} text-center uppercase text-4xl mb-8`}>Get In Touch</h2>
+
+          <div className="max-w-2xl mx-auto w-full">
+            <form
+              className="flex flex-col gap-4"
+              action="https://formsubmit.co/909a540dac9f9c0b75b3cd265f33ea1f"
+              method="POST"
+            >
+              {/* Honeypot to prevent spam */}
+              <input type="text" name="_honey" style={{ display: 'none' }} />
+
+              {/* Disable captcha */}
+              <input type="hidden" name="_captcha" value="false" />
+
+              {/* Success page - you can customize this later */}
+              <input type="hidden" name="_next" value="https://jflo-portfolio-2025-s9pm5.ondigitalocean.app/" />
+
+              <div className="flex flex-col">
+                <label htmlFor="Name" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>Name</label>
+                <input
+                  type="text"
+                  id="Name"
+                  name="Name"
+                  required
+                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--primary-blue-200]"
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label htmlFor="Email" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>Email</label>
+                <input
+                  type="Email"
+                  id="Email"
+                  name="Email"
+                  required
+                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--primary-blue-200]"
+                />
+              </div>
+
+              <div className="flex flex-col">
+                <label htmlFor="Message" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>Message</label>
+                <textarea
+                  id="Message"
+                  name="Message"
+                  rows={5}
+                  required
+                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--primary-blue-200]"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                className={`${robotoCondensed.className} uppercase bg-[--primary-blue-200] hover:bg-[--primary-blue-400] text-white py-3 px-6 rounded-md mt-2 transition-colors duration-300 self-start`}
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </motion.section>
+
       </motion.main>
       <SvgBackground />
       {/* Start Modals */}
