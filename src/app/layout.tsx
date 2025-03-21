@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import { notoSans } from './fonts'
 import Script from "next/script";
+import MobileCheck from "./components/MobileCheck";
 
 export const metadata: Metadata = {
   title: "Jason Florence | UX/UI Creative Developer",
@@ -30,7 +31,9 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`${notoSans.className} flex flex-col place-content-center items-center h-screen w-screen bg-black`}>
-        {children}
+        <MobileCheck>
+          {children}
+        </MobileCheck>
       </body>
     </html>
   );
