@@ -168,12 +168,13 @@ export default function Home() {
             opacity: useTransform(aboutScroll, [0, 0.5], [0, 1]),
           }}
         >
-          <div className={`${styles.about_content} flex flex-row items-center`}>
+          <div className={`${styles.about_content} flex flex-row items-center w-full justify-between`}>
             <motion.article
               style={{
                 y: useTransform(aboutScroll, [0.25, 0.75], [500, 0]),
                 opacity: useTransform(aboutScroll, [0.5, 1], [0, 1]),
               }}
+              className={`w-full md:w-2/3`}
             >
               <motion.h2
                 className={`${robotoCondensed.className} uppercase`}
@@ -214,12 +215,12 @@ export default function Home() {
         {/* Start Work Section */}
         <motion.section id='work' className={`${styles.work} flex justify-center flex-col w-full h-full px-4`} ref={workRef}>
           <motion.h2
-            className={`${robotoCondensed.className} text-center uppercase`}
+            className={`${robotoCondensed.className} text-center uppercase text-5xl mb-2`}
             style={{
               y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
               opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
             }}
-          >Recent projects</motion.h2>
+          >Featured projects</motion.h2>
           <motion.div
             className={`${styles.projectsRow} flex flex-row justify-center`}
             style={{
@@ -329,7 +330,7 @@ export default function Home() {
           </motion.div> */}
         </motion.section>
         {/* Start Contact Section */}
-        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 bg-[--complementary-orange-200]`} ref={contactRef}>
+        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1`} ref={contactRef}>
           <h2 className={`${robotoCondensed.className} text-center uppercase text-4xl mb-8`}>Get In Touch</h2>
 
           <div className="max-w-2xl mx-auto w-full">
@@ -348,7 +349,9 @@ export default function Home() {
               <input type="hidden" name="_next" value="https://jflo-portfolio-2025-s9pm5.ondigitalocean.app/" />
 
               <div className="flex flex-col">
-                <label htmlFor="Name" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>Name</label>
+                <label htmlFor="Name" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>
+                  Name <span>*</span>
+                </label>
                 <input
                   type="text"
                   id="Name"
@@ -359,18 +362,24 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Email" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>Email</label>
+                <label htmlFor="Email" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>
+                  Email <span>*</span>
+                </label>
                 <input
-                  type="Email"
+                  type="email"
                   id="Email"
                   name="Email"
                   required
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  title="Please enter a valid email address"
                   className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--primary-blue-200]"
                 />
               </div>
 
               <div className="flex flex-col">
-                <label htmlFor="Message" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>Message</label>
+                <label htmlFor="Message" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>
+                  Message <span>*</span>
+                </label>
                 <textarea
                   id="Message"
                   name="Message"

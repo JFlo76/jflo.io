@@ -30,7 +30,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`${notoSans.className} flex flex-col place-content-center items-center h-screen w-screen bg-stone-900`}>
+      <body className={`${notoSans.className} flex flex-col place-content-center items-center h-screen w-screen`}>
         <MobileCheck>
           {children}
         </MobileCheck>

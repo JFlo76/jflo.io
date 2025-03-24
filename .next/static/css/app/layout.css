@@ -636,6 +636,9 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
+.me-1 {
+  margin-inline-end: 0.25rem;
+}
 .block {
   display: block;
 }
@@ -745,6 +748,9 @@ video {
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .gap-1\.5 {
   gap: 0.375rem;
 }
@@ -795,9 +801,6 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
 }
-.bg-\[--complementary-orange-200\] {
-  background-color: var(--complementary-orange-200);
-}
 .bg-\[--primary-blue-200\] {
   background-color: var(--primary-blue-200);
 }
@@ -825,9 +828,6 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-.bg-white\/90 {
-  background-color: rgb(255 255 255 / 0.9);
 }
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
@@ -936,6 +936,10 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -1075,17 +1079,14 @@ p {
 @supports (animation-timeline: scroll()) and (animation-range: 0% 100%) {
   /* Scroll-Driven Animations related styles go here */
 }
-.hover\:bg-\[--primary-blue-300\]:hover {
-  background-color: var(--primary-blue-300);
+.hover\:bg-\[--primary-blue-400\]:hover {
+  background-color: var(--primary-blue-400);
 }
 .hover\:bg-\[var\(--primary-blue-200\)\]:hover {
   background-color: var(--primary-blue-200);
 }
 .hover\:bg-gray-950\/50:hover {
   background-color: rgb(3 7 18 / 0.5);
-}
-.hover\:bg-\[--primary-blue-400\]:hover {
-  background-color: var(--primary-blue-400);
 }
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
@@ -1138,6 +1139,14 @@ p {
 
   .md\:mr-8 {
     margin-right: 2rem;
+  }
+
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:w-2\/3 {
+    width: 66.666667%;
   }
 
   .md\:max-w-\[50\%\] {

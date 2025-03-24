@@ -252,6 +252,7 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/page.module.scss ***!
   \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 .page_content__szHtB {
+  background-image: radial-gradient(ellipse at center, #000000 0%, #1D1D1D 80%);
   width: 100vw;
   height: 100vh;
   z-index: 1;
@@ -380,7 +381,6 @@
   text-shadow: 0px 4px 0px var(--background-dark);
 }
 .page_work__s6RSe h2 {
-  font-size: 5rem;
   letter-spacing: -0.2rem;
 }
 .page_work__s6RSe .page_projectsRowLeft__yLCXR {
@@ -399,6 +399,7 @@
 }
 
 .page_contact__EaIGU {
+  background-image: radial-gradient(circle at 100% 100%, var(--complementary-orange-400) 0%, var(--complementary-orange-200) 100%);
   padding-inline: 20%;
 }
 

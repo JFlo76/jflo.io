@@ -9,7 +9,7 @@
 .content {
   // background-color: #1D1D1D;
   // background-color: --tw-stone-900;
-  // background-image: radial-gradient(ellipse at center, #000000 0%, #1D1D1D 80%);
+  background-image: radial-gradient(ellipse at center, #000000 0%, #1D1D1D 80%);
   // border: 1px solid var(--primary-blue-200);
   // border-radius: 13px;
   // height: calc(100vh - 80px);
@@ -225,7 +225,7 @@
   }
 
   h2 {
-    font-size: 5rem;
+    // font-size: 5rem;
     letter-spacing: -0.2rem;
   }
 
@@ -254,6 +254,7 @@
 
 
 .contact {
+  background-image: radial-gradient(circle at 100% 100%, var(--complementary-orange-400) 0%, var(--complementary-orange-200) 100%);
   padding-inline: 20%;
   // background-color: orangered;
 }
