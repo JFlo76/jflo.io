@@ -258,7 +258,7 @@
   z-index: 1;
   position: relative;
   scroll-behavior: smooth;
-  scrollbar-color: var(--primary-blue-200) transparent;
+  scrollbar-color: var(--background-light) transparent;
 }
 .page_content__szHtB::-webkit-scrollbar {
   width: 8px;
@@ -267,7 +267,7 @@
   background: transparent;
 }
 .page_content__szHtB::-webkit-scrollbar-thumb {
-  background: var(--primary-blue-200);
+  background: var(--background-light);
   border-radius: 4px;
 }
 
@@ -329,8 +329,6 @@
 }
 
 .page_about__p_sC8 {
-  margin-block-end: 15rem;
-  position: relative;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: radial-gradient(circle at 100% 100%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
@@ -381,7 +379,7 @@
   text-shadow: 0px 4px 0px var(--background-dark);
 }
 .page_work__s6RSe h2 {
-  letter-spacing: -0.2rem;
+  letter-spacing: -0.1rem;
 }
 .page_work__s6RSe .page_projectsRowLeft__yLCXR {
   transform: perspective(50px) rotate3d(0, 1, 0, 1.5deg) translateX(50px);
@@ -399,20 +397,11 @@
 }
 
 .page_contact__EaIGU {
-  background-image: radial-gradient(circle at 100% 100%, var(--complementary-orange-400) 0%, var(--complementary-orange-200) 100%);
+  background-image: radial-gradient(circle at 50% 50%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
   padding-inline: 20%;
 }
-
-.page_footer__wa9SD {
-  font-size: var(--header-font-size);
-  line-height: 0.8;
-  letter-spacing: -0.2rem;
-  bottom: 15px;
-  right: 50px;
-  mix-blend-mode: difference;
-}
-.page_footer__wa9SD a.page_active__tAjuN, .page_footer__wa9SD a:hover {
-  color: var(--primary-blue-200);
+.page_contact__EaIGU h2 {
+  letter-spacing: -0.1rem;
 }
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/modal.module.scss ***!
@@ -422,4 +411,26 @@
 }
 .modal_modal__QI_7P::-webkit-scrollbar {
   display: none;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[7].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[7].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[7].use[5]!./src/app/components/ScrollingBanner.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.ScrollingBanner_bannerContainer__E2vFd {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem 0;
+}
+
+.ScrollingBanner_banner__xUxi7 {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.ScrollingBanner_bannerItem__30Hu5 {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 2vw;
+  color: #fff;
+  text-shadow: -2px 2px rgba(0, 0, 0, 0.5);
 }

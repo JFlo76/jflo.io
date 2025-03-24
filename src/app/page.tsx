@@ -107,7 +107,7 @@ export default function Home() {
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-              delay: 1.5,
+              delay: 0.5,
               ease: 'easeInOut',
             }}
           >Hello! My name is Jason Florence (aka JFlo), and I specialize in</motion.p>
@@ -120,7 +120,7 @@ export default function Home() {
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-              delay: 2,
+              delay: 1,
               ease: 'easeInOut',
             }}
           >
@@ -136,7 +136,7 @@ export default function Home() {
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
-              delay: 2.5,
+              delay: 1.5,
               ease: 'easeInOut',
             }}
           >
@@ -209,7 +209,7 @@ export default function Home() {
             <Unicorn scrollRef={aboutScroll} />
           </div>
 
-          {/* <ScrollingBanner items={bannerItems} /> */}
+
 
         </motion.section>
         {/* Start Work Section */}
@@ -330,8 +330,10 @@ export default function Home() {
           </motion.div> */}
         </motion.section>
         {/* Start Contact Section */}
-        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1`} ref={contactRef}>
-          <h2 className={`${robotoCondensed.className} text-center uppercase text-4xl mb-8`}>Get In Touch</h2>
+        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 relative`} ref={contactRef}>
+          <ScrollingBanner items={bannerItems} />
+          <h2 className={`${robotoCondensed.className} text-center uppercase text-5xl mb-2 text-stone-900`}>Get In Touch</h2>
+          <p className='text-stone-900 text-center'>Got a project in mind? Let's connect!</p>
 
           <div className="max-w-2xl mx-auto w-full">
             <form
@@ -357,7 +359,7 @@ export default function Home() {
                   id="Name"
                   name="Name"
                   required
-                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--primary-blue-200]"
+                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--complementary-orange-100]"
                 />
               </div>
 
@@ -372,7 +374,7 @@ export default function Home() {
                   required
                   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                   title="Please enter a valid email address"
-                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--primary-blue-200]"
+                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--complementary-orange-100]"
                 />
               </div>
 
@@ -385,13 +387,13 @@ export default function Home() {
                   name="Message"
                   rows={5}
                   required
-                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--primary-blue-200]"
+                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--complementary-orange-100]"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className={`${robotoCondensed.className} uppercase bg-[--primary-blue-200] hover:bg-[--primary-blue-400] text-white py-3 px-6 rounded-md mt-2 transition-colors duration-300 self-start`}
+                className={`${robotoCondensed.className} ${styles.linkTo_work} uppercase self-start`}
               >
                 Send Message
               </button>

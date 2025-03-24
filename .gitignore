@@ -1,7 +1,8 @@
 # Node modules
 node_modules
 # Next.js build output
-.next
+.next/
+.next/*
 # Environment variables
 .env
 .env.local

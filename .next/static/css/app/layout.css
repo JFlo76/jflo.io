@@ -636,9 +636,6 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
-.me-1 {
-  margin-inline-end: 0.25rem;
-}
 .block {
   display: block;
 }
@@ -921,6 +918,10 @@ video {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
@@ -936,10 +937,6 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -1046,7 +1043,7 @@ body {
 }
 
 body {
-  background-color: #1D1D1D;
+  background-color: var(--background-med);
   font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1100,6 +1097,12 @@ p {
 .focus\:ring-\[--primary-blue-200\]:focus {
   --tw-ring-color: var(--primary-blue-200);
 }
+.focus\:ring-\[complementary-orange-100\]:focus {
+  --tw-ring-color: complementary-orange-100;
+}
+.focus\:ring-\[--complementary-orange-100\]:focus {
+  --tw-ring-color: var(--complementary-orange-100);
+}
 .group:hover .group-hover\:-rotate-45 {
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1139,10 +1142,6 @@ p {
 
   .md\:mr-8 {
     margin-right: 2rem;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:w-2\/3 {

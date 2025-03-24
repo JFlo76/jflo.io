@@ -2,36 +2,20 @@
   font-size: var(--header-font-size);
   line-height: 0.8;
   letter-spacing: -0.2rem;
-  // paint-order: stroke fill;
-  // -webkit-text-stroke: 5px black;
 }
 
 .content {
-  // background-color: #1D1D1D;
-  // background-color: --tw-stone-900;
   background-image: radial-gradient(ellipse at center, #000000 0%, #1D1D1D 80%);
-  // border: 1px solid var(--primary-blue-200);
-  // border-radius: 13px;
-  // height: calc(100vh - 80px);
-  // width: calc(100vw - 80px);
   width: 100vw;
   height: 100vh;
   z-index: 1;
   position: relative;
-  // perspective: 150px;
 
-  // scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-
-  // & section {
-  //   scroll-snap-stop: always;
-  //   scroll-snap-align: center;
-  // }
 
   // Custom scrollbar styles
   &::-webkit-scrollbar {
     width: 8px;
-    // display: none;
   }
 
   &::-webkit-scrollbar-track {
@@ -39,12 +23,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--primary-blue-200);
+    background: var(--background-light);
     border-radius: 4px;
   }
 
   // Firefox scrollbar styles
-  scrollbar-color: var(--primary-blue-200) transparent;
+  scrollbar-color: var(--background-light) transparent;
 }
 
 .header {
@@ -72,8 +56,6 @@
 
 .hero {
   display: flex;
-  // position: relative;
-  // z-index: 1;
 
   &_greeting {
     font-size: 1.5rem;
@@ -86,13 +68,10 @@
         color: var(--primary-blue-200);
       }
     }
-
-    // &_face-popover {}
   }
 
   &_skills {
     font-size: 11vw;
-    // color: var(--primary-blue-200);
     color: #fff;
     letter-spacing: -0.3rem;
     line-height: 0.9;
@@ -118,7 +97,6 @@
     color: white;
     font-size: 1.3rem;
     transition: all 0.3s ease;
-    // box-shadow: 0 0 0 var(--complementary-orange-200);
 
     &:hover {
       transform: translate(8px, -8px);
@@ -128,40 +106,26 @@
 }
 
 .about {
-  // padding-inline: 10%;
-  // padding-inline-end: 40%;
-  // font-size: 3vw;
-  margin-block-end: 15rem;
-  position: relative;
   background-repeat: no-repeat;
   background-size: contain;
-
   background-image: radial-gradient(circle at 100% 100%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
-  // background-color: var(--primary-blue-200);
   color: #000;
-  // border-top: solid 1px var(--primary-blue-200);
-  // justify-content: space-between;
 
   .about_content {
     max-width: 1600px;
   }
 
   article {
-    // background-color: aqua;
     font-size: 1.2rem;
     margin-inline-end: 2rem;
 
     h2 {
       font-size: 5rem;
       letter-spacing: -0.2rem;
-      // text-transform: uppercase;
-      // text-shadow: -2px 4px rgba(255, 255, 255, 1);
       color: #1D1D1D;
-      // color: var(--primary-blue-600);
     }
 
     p {
-      // width: 50%;
       margin-block-end: 1.5rem;
     }
 
@@ -181,27 +145,9 @@
 
 
 
-  // background: linear-gradient(20deg, var(--complementary-orange-400), var(--complementary-orange-100));
-  // background-image: url('../../public/images/unicorn.svg');
-  // background-repeat: no-repeat;
-  // background-size: contain;
-  // color: #9DE1EB;
-
-
-
   h3 {
-    // font-size: 4vw;
-    // margin-block-end: 1rem;
     line-height: 1;
   }
-
-
-  // &_bg {
-  //   height: 100%;
-
-  //   background: linear-gradient(20deg, var(--complementary-orange-400), var(--complementary-orange-100));
-  // }
-
 }
 
 
@@ -225,8 +171,7 @@
   }
 
   h2 {
-    // font-size: 5rem;
-    letter-spacing: -0.2rem;
+    letter-spacing: -0.1rem;
   }
 
   .projectsRow {
@@ -254,36 +199,11 @@
 
 
 .contact {
-  background-image: radial-gradient(circle at 100% 100%, var(--complementary-orange-400) 0%, var(--complementary-orange-200) 100%);
+  // background-image: radial-gradient(circle at 100% 100%, var(--complementary-orange-400) 0%, var(--complementary-orange-200) 100%);
+  background-image: radial-gradient(circle at 50% 50%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
   padding-inline: 20%;
-  // background-color: orangered;
-}
 
-.footer {
-  @include display-text;
-  bottom: 15px;
-  right: 50px;
-  // bottom: 25px;
-  // right: 30px;
-  mix-blend-mode: difference;
-
-  a {
-    // paint-order: stroke fill;
-    // -webkit-text-stroke: 5px black;
-
-    &.active,
-    &:hover {
-      color: var(--primary-blue-200);
-    }
-  }
-
-}
-
-
-
-// Desktop media query
-@media screen and (min-width: 1024px) {
-  .content {
-    // aspect-ratio: 1.85 / 1;
+  h2 {
+    letter-spacing: -0.1rem;
   }
 }
