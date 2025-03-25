@@ -184,23 +184,13 @@ export default function Home() {
               >
                 A little about me...
               </motion.h2>
-
-              <p className={`${styles.about_text}`}
-
-              >
-                With over a decade of experience in the tech industry, I offer a comprehensive skill set that bridges the gap between design and development. My expertise allows me to seamlessly translate design concepts into functional and user-friendly interfaces.
-              </p>
-              <p className={`${styles.about_text}`}
-
-              >
+              <p className={`${styles.about_text}`}>
                 With multiple years of experience in the tech industry, I can provide a wide range
-                of services to bridge the gap between design and development. Some have called
+                of services to bridge the gap between design and development. My expertise allows me to seamlessly translate design concepts into functional and user-friendly interfaces. Some have called
                 me a "unicorn" because the combination of these skills is somewhat unique and
                 highly sought after. Even though this may be true, please don't call me that.
               </p>
-              <p className={`${styles.about_text}`}
-
-              >
+              <p className={`${styles.about_text}`}>
                 In my spare time, I enjoy exploring new places, playing music (drums), snowboarding, a bit of rallycross racing, spending time with my family and friends, and wearing hats!
               </p>
               <a href='#work' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>See my work</a>
