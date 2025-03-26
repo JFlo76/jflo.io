@@ -190,9 +190,9 @@ export default function Home() {
                 me a "unicorn" because the combination of these skills is somewhat unique and
                 highly sought after. Even though this may be true, please don't call me that.
               </p>
-              <p className={`${styles.about_text}`}>
+              {/* <p className={`${styles.about_text}`}>
                 In my spare time, I enjoy exploring new places, playing music (drums), snowboarding, a bit of rallycross racing, spending time with my family and friends, and wearing hats!
-              </p>
+              </p> */}
               <a href='#work' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>See my work</a>
 
             </motion.article>

@@ -1,6 +1,7 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
 import { useState } from 'react'
+import styles from '../page.module.scss'
 
 export default function HitachiStudio() {
     // Function to generate a random number between 1 and 100
@@ -234,6 +235,7 @@ export default function HitachiStudio() {
                             loading="lazy"
                         />
                         <p className='text-center mb-16'>Asset Level View</p>
+                        <a href='/lumada-studio-prototype/index.html#/screens' target='blank' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>View Prototype</a>
                     </div>
                     <div className='w-full mb-16'>
                         <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Data Visualization Designs</h2>
