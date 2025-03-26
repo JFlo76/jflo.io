@@ -219,7 +219,7 @@ export default function Home() {
             }}
           >
             {/* Row 1 */}
-            <div className={`${styles.projectsRowLeft} flex flex-col items-center`}>
+            <div className={`flex flex-col items-center mr-4`}>
               <a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
                 className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
                 <img
@@ -234,7 +234,7 @@ export default function Home() {
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
             </div>
 
-            <div className={`${styles.projectsRowCenter} flex flex-col items-center z-10`}>
+            <div className={`flex flex-col items-center ml-4 z-10`}>
               <a href="" onClick={(event) => handleModalOpen('Indeed', event)}
                 className={` border border-gray-400 rounded-lg overflow-hidden block relative group mb-4`}>
                 <img
@@ -250,7 +250,7 @@ export default function Home() {
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Indeed - UX Developer</p>
             </div>
 
-            <div className={`${styles.projectsRowRight} flex flex-col items-center`}>
+            {/* <div className={`${styles.projectsRowRight} flex flex-col items-center`}>
               <a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
                 className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
                 <img
@@ -263,7 +263,7 @@ export default function Home() {
                 </div>
               </a>
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* <motion.h2

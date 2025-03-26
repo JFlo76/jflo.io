@@ -99,7 +99,7 @@ export default function HitachiSolutionsManager() {
                                 </p>
                             </article>
                         </div>
-                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
+                        {/* <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className='mr-8 w-full md:max-w-[50%] text-center'>
                                 <img
                                     className='w-full rounded-lg object-contain aspect-auto'
@@ -130,10 +130,10 @@ export default function HitachiSolutionsManager() {
                                 <p className="md:text-base lg:text-xl">At the asset level, this is as far down as a user can drill. This view is created for the OT Operator role, who needs more granular details about specific machines, and alerts for predictive maintenance.
                                 </p>
                             </article>
-                        </div>
+                        </div> */}
 
                     </div>
-                    <div className='w-full mb-16'>
+                    {/* <div className='w-full mb-16'>
                         <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>A Flexible Navigation System</h2>
                         <p className="md:text-base lg:text-xl mb-10">
                             Since the Studio could potentially be used by any industry that wants to collect and visualize data coming from machine sensors, the dashboards needed to be customizable for each client. Our team of engineers chose the open-source project Superset, by Airbnb, to enable a Hitachi consultant (Admin Adam) to configure any arrangement of business intelligence widgets, scoped to an individual user if needed. This level of customization meant that the navigation would be dead simple.
@@ -242,7 +242,7 @@ export default function HitachiSolutionsManager() {
                             loading="lazy"
                         />
                         <p className='text-center mb-16'>Timestrip Chart</p>
-                    </div>
+                    </div> */}
 
                 </section>
             </div>
