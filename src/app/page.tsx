@@ -205,7 +205,7 @@ export default function Home() {
         {/* Start Work Section */}
         <motion.section id='work' className={`${styles.work} flex justify-center flex-col w-full h-full px-4`} ref={workRef}>
           <motion.h2
-            className={`${robotoCondensed.className} text-center uppercase text-5xl mb-2`}
+            className={`${robotoCondensed.className} text-center uppercase text-5xl mb-8`}
             style={{
               y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
               opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
