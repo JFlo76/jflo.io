@@ -205,7 +205,7 @@ export default function Home() {
         {/* Start Work Section */}
         <motion.section id='work' className={`${styles.work} flex justify-center flex-col w-full h-full px-4`} ref={workRef}>
           <motion.h2
-            className={`${robotoCondensed.className} text-center uppercase text-5xl mb-8`}
+            className={`${robotoCondensed.className} text-center uppercase text-5xl mb-2`}
             style={{
               y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
               opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
@@ -219,7 +219,7 @@ export default function Home() {
             }}
           >
             {/* Row 1 */}
-            <div className={`flex flex-col items-center mr-4`}>
+            <div className={`${styles.projectsRowLeft} flex flex-col items-center`}>
               <a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
                 className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
                 <img
@@ -234,7 +234,7 @@ export default function Home() {
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
             </div>
 
-            <div className={`flex flex-col items-center ml-4 z-10`}>
+            <div className={`${styles.projectsRowCenter} flex flex-col items-center z-10`}>
               <a href="" onClick={(event) => handleModalOpen('Indeed', event)}
                 className={` border border-gray-400 rounded-lg overflow-hidden block relative group mb-4`}>
                 <img
@@ -250,7 +250,7 @@ export default function Home() {
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Indeed - UX Developer</p>
             </div>
 
-            {/* <div className={`${styles.projectsRowRight} flex flex-col items-center`}>
+            <div className={`${styles.projectsRowRight} flex flex-col items-center`}>
               <a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
                 className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
                 <img
@@ -263,7 +263,7 @@ export default function Home() {
                 </div>
               </a>
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
-            </div> */}
+            </div>
           </motion.div>
 
           {/* <motion.h2

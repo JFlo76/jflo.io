@@ -50,13 +50,13 @@ export default function HitachiSolutionsManager() {
                         <div className='mb-4 md:mb-0 md:mr-8 w-full md:max-w-[50%] background-orange'>
                             <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Some Background</h2>
                             <p className="font-bold md:text-base lg:text-xl mb-4">There are 3 types of components in the application:</p>
-                            <ol className="list-decimal list-inside mb-6 ms-8">
+                            <ol className="list-decimal mb-6 ms-6">
                                 <li>Template, which can be thought of as a recipe for a configurable dashboard widget</li>
                                 <li>Instance, which is the configured widget created from the Template</li>
                                 <li>Dashboard, which is, well... a dashboard that contains a number of Instances</li>
                             </ol>
                             <p className="font-bold md:text-base lg:text-xl mb-4">The basic workflow:</p>
-                            <ol className="list-decimal list-inside ms-8">
+                            <ol className="list-decimal ms-6">
                                 <li>User logs in</li>
                                 <li>User uploads a Template</li>
                                 <li>User deploys an Instance from a Template to a new or existing Dashboard</li>
@@ -67,7 +67,7 @@ export default function HitachiSolutionsManager() {
                         <div className='w-full mb-16'>
                             <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Test Summary</h2>
                             <p className="font-bold md:text-base lg:text-xl mb-4">The test objectives were as follows:</p>
-                            <ol className="list-decimal list-inside mb-6 ms-8">
+                            <ol className="list-decimal mb-6 ms-6">
                                 <li>Improve user's mental mappings between the components</li>
                                 <li>Improve ease of use for navigating between the associated components</li>
                             </ol>
@@ -84,166 +84,140 @@ export default function HitachiSolutionsManager() {
                     <div className='w-full mb-16'>
                         <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Objective 1: Mental Mappings</h2>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 w-full md:max-w-[50%] text-center'>
+                            <div className='mr-8 w-full md:max-w-[60%] text-center'>
                                 <img
                                     className='w-full rounded-lg object-contain aspect-auto'
                                     srcSet='/images/hitachi/solutions-manager-original-templates.webp, /images/hitachi/solutions-manager-original-templates@2x.webp 2x'
                                     src='/images/hitachi/solutions-manager-original-templates.webp'
-                                    alt='Sketch art of UI for region view'
+                                    alt='UI of the original templates page'
                                     loading="lazy"
                                 />
                             </div>
-                            <article className='w-full md:max-w-[50%]'>
-                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Existing problem:</h3>
+                            <article className='w-full md:max-w-[40%]'>
+                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Existing problem</h3>
                                 <p className="md:text-base lg:text-xl">In the GA release UI, there was no clear connection between a Template and the Instances that were created from it. The UI had them separated on different pages, with no indication of which Instances were deployed from a certain Template. Likewise, there was no indication to show which Dashboard an Instance was deployed to, and which & how many Instances a Dashboard contains.
                                 </p>
                             </article>
                         </div>
-                        {/* <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 w-full md:max-w-[50%] text-center'>
-                                <img
-                                    className='w-full rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/studio-sketch-plant.png, /images/hitachi/studio-sketch-plant-2x.png 2x'
-                                    src='/images/hitachi/studio-sketch-plant.png'
-                                    alt='Sketch art of UI for plant view'
-                                    loading="lazy"
-                                />
-                            </div>
-                            <article className='w-full md:max-w-[50%]'>
-                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Factory View</h3>
-                                <p className="md:text-base lg:text-xl">This view provides a factory level overview, which is optimized for a plant manager. It has factory stats plus groups of assets listed in a table or card view.
-                                </p>
-                            </article>
-                        </div>
-                        <div className="flex flex-col md:flex-row items-start w-full">
-                            <div className='mr-8 w-full md:max-w-[50%] text-center'>
-                                <img
-                                    className='w-full rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/studio-sketch-asset.png, /images/hitachi/studio-sketch-asset-2x.png 2x'
-                                    src='/images/hitachi/studio-sketch-asset.png'
-                                    alt='Sketch art of UI for asset view'
-                                    loading="lazy"
-                                />
-                            </div>
-                            <article className='w-full md:max-w-[50%]'>
-                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Asset View</h3>
-                                <p className="md:text-base lg:text-xl">At the asset level, this is as far down as a user can drill. This view is created for the OT Operator role, who needs more granular details about specific machines, and alerts for predictive maintenance.
-                                </p>
-                            </article>
-                        </div> */}
-
-                    </div>
-                    {/* <div className='w-full mb-16'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>A Flexible Navigation System</h2>
-                        <p className="md:text-base lg:text-xl mb-10">
-                            Since the Studio could potentially be used by any industry that wants to collect and visualize data coming from machine sensors, the dashboards needed to be customizable for each client. Our team of engineers chose the open-source project Superset, by Airbnb, to enable a Hitachi consultant (Admin Adam) to configure any arrangement of business intelligence widgets, scoped to an individual user if needed. This level of customization meant that the navigation would be dead simple.
-                        </p>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 w-full md:max-w-[50%] text-center'>
+                            <div className='mr-8 w-full md:max-w-[60%] text-center'>
                                 <img
-                                    className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                                    srcSet='/images/hitachi/nav-level-1.webp, /images/hitachi/nav-level-1@2x.webp 2x'
-                                    src='/images/hitachi/nav-level-1.webp'
-                                    alt='Low fidelity wireframe of navigation'
-                                    loading="lazy"
-                                />
-                                <img
-                                    className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                                    srcSet='/images/hitachi/nav-level-2.webp, /images/hitachi/nav-level-2@2x.webp 2x'
-                                    src='/images/hitachi/nav-level-2.webp'
-                                    alt='Low fidelity wireframe of navigation'
-                                    loading="lazy"
-                                />
-                                <img
-                                    className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                                    srcSet='/images/hitachi/nav-level-3.webp, /images/hitachi/nav-level-3@2x.webp 2x'
-                                    src='/images/hitachi/nav-level-3.webp'
-                                    alt='Low fidelity wireframe of navigation'
+                                    className='w-full rounded-lg object-contain aspect-auto'
+                                    srcSet='/images/hitachi/solutions-manager-new-templates-card.webp, /images/hitachi/solutions-manager-new-templates-card@2x.webp 2x'
+                                    src='/images/hitachi/solutions-manager-new-templates-card.webp'
+                                    alt='UI of the new templates page'
                                     loading="lazy"
                                 />
                             </div>
-                            <p className='w-full md:max-w-[50%]'>
-                                The navigation pattern I envisioned for this application followed a mobile-first approach, where the user simply drills down by interacting with elements in the dashboard. To move back, the user can click/tap the “back arrow”, which takes the user back up one level, or the “home” icon which jumps them back to the top level. When the user is drilled to a child level that has siblings, the level name would also be a dropdown that allows the user to move laterally between siblings.
-                            </p>
+                            <article className='w-full md:max-w-[40%]'>
+                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Proposed Solutions</h3>
+                                <p className="md:text-base lg:text-xl">For visualizing the associations between Template and Instance(s), I decided to alter the card view
+                                    so that each card showed a nested list of Instances that were spawned from that particular Template.
+                                    I also added some search inputs for Templates and Instances scoped to a Template, as well as more
+                                    text for the sorting so users would immediately know the sorting status.
+                                </p>
+                                <p className="md:text-base lg:text-xl">Participants were asked to look at the Templates page and describe what they saw. Qualitative results
+                                    were a little mixed about this new layout, as 2/5 participants were still a little unsure what the
+                                    nested list within each card was for at first. After a bit of exploration, they were able to
+                                    understand the relationships better, but some more exploration around the visual layout or possibly
+                                    adding a title to the nested list is needed.</p>
+                                <p className="md:text-base lg:text-xl">For showing the associations between Dashboards and Instances, the solution was addressed in the next
+                                    objective.</p>
+                            </article>
                         </div>
-                        <div className="flex flex-col md:flex-row items-start w-full">
-                            <div className='mb-4 md:mb-0 md:mr-8 w-full md:max-w-[50%]'>
-                                <img
-                                    className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                                    srcSet='/images/hitachi/nav-breadcrumbs-1.webp, /images/hitachi/nav-breadcrumbs-1@2x.webp 2x'
-                                    src='/images/hitachi/nav-breadcrumbs-1.webp'
-                                    alt='Low fidelity wireframe of navigation'
-                                    loading="lazy"
-                                />
-                                <img
-                                    className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                                    srcSet='/images/hitachi/nav-breadcrumbs-2.webp, /images/hitachi/nav-breadcrumbs-2@2x.webp 2x'
-                                    src='/images/hitachi/nav-breadcrumbs-2.webp'
-                                    alt='Low fidelity wireframe of navigation'
-                                    loading="lazy"
-                                />
-                            </div>
-                            <p className='w-full md:max-w-[50%]'>
-                                Based on feedback from design reviews and a usability test, I brought in a little more navigation redundancy in the form of multiple breadcrumbs, instead of a single parent breadcrumb.
-                            </p>
-                        </div>
-                    </div>
-                    <div className='w-full mb-16'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Finalized Dashboard Designs</h2>
-                        <img
-                            className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                            srcSet='/images/hitachi/LumadaStudio-RegionMapActive.webp, /images/hitachi/LumadaStudio-RegionMapActive@2x.webp 2x'
-                            src='/images/hitachi/LumadaStudio-RegionMapActive.webp'
-                            alt='Low fidelity wireframe of navigation'
-                            loading="lazy"
-                        />
-                        <p className='text-center mb-16'>Regional Level View</p>
-                        <img
-                            className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                            srcSet='/images/hitachi/LumadaStudio-LineLevel.webp, /images/hitachi/LumadaStudio-LineLevel@2x.webp 2x'
-                            src='/images/hitachi/LumadaStudio-LineLevel.webp'
-                            alt='Low fidelity wireframe of navigation'
-                            loading="lazy"
-                        />
-                        <p className='text-center mb-16'>Line Level View</p>
-                        <img
-                            className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                            srcSet='/images/hitachi/LumadaStudio-AssetLevel.webp, /images/hitachi/LumadaStudio-AssetLevel@2x.webp 2x'
-                            src='/images/hitachi/LumadaStudio-AssetLevel.webp'
-                            alt='Low fidelity wireframe of navigation'
-                            loading="lazy"
-                        />
-                        <p className='text-center mb-16'>Asset Level View</p>
-                    </div>
-                    <div className='w-full mb-16'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Data Visualization Designs</h2>
-                        <p className="md:text-base lg:text-xl mb-10">One of the really cool things about the Hitachi Lumada suite of products is that it allows developers to create their own solutions for data visualization. But we couldn't go to market without providing a few default graphs and charts.</p>
-                        <img
-                            className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                            srcSet='/images/hitachi/HeatMap-Chart.webp, /images/hitachi/HeatMap-Chart@2x.webp 2x'
-                            src='/images/hitachi/HeatMap-Chart.webp'
-                            alt='Heat map chart'
-                            loading="lazy"
-                        />
-                        <p className='text-center mb-16'>Heat Map Chart</p>
-                        <img
-                            className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                            srcSet='/images/hitachi/Pareto-Chart.webp, /images/hitachi/Pareto-Chart@2x.webp 2x'
-                            src='/images/hitachi/Pareto-Chart.webp'
-                            alt='Heat map chart'
-                            loading="lazy"
-                        />
-                        <p className='text-center mb-16'>Pareto Chart</p>
-                        <img
-                            className='mb-4 rounded-lg w-full object-contain aspect-auto'
-                            srcSet='/images/hitachi/Timestrip-Chart.webp, /images/hitachi/Timestrip-Chart@2x.webp 2x'
-                            src='/images/hitachi/Timestrip-Chart.webp'
-                            alt='Heat map chart'
-                            loading="lazy"
-                        />
-                        <p className='text-center mb-16'>Timestrip Chart</p>
-                    </div> */}
 
+                    </div>
+
+                    <div className='w-full mb-16'>
+                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Objective 2: Navigation</h2>
+                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
+                            <div className='mr-8 w-full md:max-w-[30%] text-center'>
+                                <img
+                                    className='w-full rounded-lg object-contain aspect-auto'
+                                    srcSet='/images/hitachi/solutions-manager-original-templates-card.webp, /images/hitachi/solutions-manager-original-templates-card@2x.webp 2x'
+                                    src='/images/hitachi/solutions-manager-original-templates-card.webp'
+                                    alt='Mobile UI of the new instance card'
+                                    loading="lazy"
+                                />
+                            </div>
+                            <article className='mr-8 w-full md:max-w-[70%]'>
+                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Existing problem</h3>
+                                <p className="md:text-base lg:text-xl">There was no way for the user to easily navigate to associated components.
+                                </p>
+                            </article>
+                        </div>
+                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
+                            <div className='mr-8 w-full md:max-w-[30%] text-center'>
+                                <img
+                                    className='w-full rounded-lg object-contain aspect-auto'
+                                    srcSet='/images/hitachi/solutions-manager-new-instance-card.webp, /images/hitachi/solutions-manager-new-instance-card@2x.webp 2x'
+                                    src='/images/hitachi/solutions-manager-new-instance-card.webp'
+                                    alt='Mobile UI of the new instance card'
+                                    loading="lazy"
+                                />
+                            </div>
+                            <article className='mr-8 w-full md:max-w-[70%]'>
+                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Proposed Solutions</h3>
+                                <p className="md:text-base lg:text-xl">For linking between the Instances and the Dashboards, the GA release only supported a 1-1
+                                    relationship for Instances, but a 1-Many relationship for the Dashboards. The fix for the Instances
+                                    was easy: list the associated Dashboard in the card/list item as a link. The link would take the
+                                    user to the Dashboards page, with the specific Dashboard applied as a search parameter.
+                                </p>
+                            </article>
+                        </div>
+                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
+                            <div className="w-full md:max-w-[61%] flex flex-row mr-8 gap-4">
+                                <img
+                                    className='w-1/2 rounded-lg object-contain aspect-auto'
+                                    srcSet='/images/hitachi/solutions-manager-dashboard-instances-overlay-off.webp, /images/hitachi/solutions-manager-dashboard-instances-overlay-off@2x.webp 2x'
+                                    src='/images/hitachi/solutions-manager-dashboard-instances-overlay-off.webp'
+                                    alt='Mobile UI of the new instance card'
+                                    loading="lazy"
+                                />
+                                <img
+                                    className='w-1/2 rounded-lg object-contain aspect-auto'
+                                    srcSet='/images/hitachi/solutions-manager-dashboard-instances-overlay-on.webp, /images/hitachi/solutions-manager-dashboard-instances-overlay-on@2x.webp 2x'
+                                    src='/images/hitachi/solutions-manager-dashboard-instances-overlay-on.webp'
+                                    alt='Mobile UI of the new instance card'
+                                    loading="lazy"
+                                />
+                            </div>
+
+                            <article className='mr-8 w-full md:max-w-[30%]'>
+                                <p className='md:text-base lg:text-xl'>For the Dashboards linking, there was the potential for the list of Instances to be up to 13 items
+                                    (the max recommended number of Instances per Dashboard based on performance benchmarking by the
+                                    devs), which posed problems for the UI in both list and card views. My proposed solution for this
+                                    was to display a badge with the number of associated Instances and an icon next to the number to
+                                    indicate more info is available. In card view, the button would toggle an overlay on that card with
+                                    a list of the Instances as links. In list view, the same badge would toggle a tooltip or popover
+                                    with the same list of links.</p>
+                            </article>
+                        </div>
+                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
+                            <article className='mr-8 w-full md:max-w-[60%]'>
+                                <p className='md:text-base lg:text-xl'>For this objective, participants were given a task which involved the assumption that their
+                                    inventories were already populated with Templates, Instances and Dashboards.</p>
+                                <p className='md:text-base lg:text-xl'>Participants were first instructed to navigate to the Instances page and then asked to navigate to
+                                    the associated Dashboard for an Instance. All participants completed the task with no errors or
+                                    confusion. The participants were then asked to identify all the associated Instances for that same
+                                    Dashboard, then navigate to view those Instances. All participants were able to identify the badge
+                                    as an interactive element within 3-5 seconds, click on it to view the Instances, then navigate to
+                                    the Instances page from there.</p>
+                                <p className='md:text-base lg:text-xl'>Since the previous design didn't have any linking between components, there was no baseline to test
+                                    against. This navigation test can now be used as a baseline for measuring navigation improvements.
+                                </p>
+                            </article>
+                            <article className='mr-8 w-full md:max-w-[40%]'>
+                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Findings and Recommendations</h3>
+                                <ul className='list-disc ms-6 md:text-base lg:text-xl'>
+                                    <li className='mb-4'>Objective 1 was partially accomplished, but
+                                        may need more iteration on the design and further testing.</li>
+                                    <li>Objective 2 was accomplished by task
+                                        completion with no errors, and the proposed design changes should be implemented.</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
                 </section>
             </div>
         </main>
