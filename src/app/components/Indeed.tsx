@@ -1,5 +1,4 @@
 'use client'
-import styles from '../../modal.module.scss'
 import { robotoCondensed } from '@/app/fonts'
 export default function Indeed() {
 

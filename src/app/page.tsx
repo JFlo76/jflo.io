@@ -10,11 +10,12 @@ import SvgBackground from './components/svg-background/svgBg'
 import styles from './page.module.scss'
 
 import Unicorn from './components/Unicorn';
-import Indeed from './components/Indeed/Indeed'
+import Indeed from './components/Indeed'
 import HitachiStudio from './components/HitachiStudio'
 import Modal from './components/modal';
 import ScrollingBanner from './components/ScrollingBanner';
 import HitachiSolutionsManager from './components/HitachiSolutionsManager';
+import ProjectArchives from './components/ProjectArchives';
 
 export default function Home() {
   const mainRef = useRef(null);
@@ -22,17 +23,6 @@ export default function Home() {
   const aboutRef = useRef(null);
   const workRef = useRef(null);
   const contactRef = useRef(null);
-
-  // Scrolling logic for hero section
-  // const { scrollYProgress: heroScroll } = useScroll({
-  //   container: mainRef,
-  //   target: heroRef,
-  //   offset: ['end end', 'end start'],
-  // });
-  // const scale = useTransform(heroScroll, [0, 0.75], [1, 0]);
-  // const opacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
-  // const z = useTransform(heroScroll, [0, 0.75], [0, -1000]);
-  // const rotateX = useTransform(heroScroll, [0, 0.75], [0, 40]);
 
   // Scrolling logic for header visibility
   const { scrollYProgress: headerScroll } = useScroll({
@@ -59,12 +49,12 @@ export default function Home() {
   const projectsRowLeftRotate = useTransform(
     workScroll,
     [0.5, 0.9],
-    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(0px)', 'perspective(50px) rotate3d(0, 1, 0, 1.5deg) translateX(50px)']
+    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(-50px)', 'perspective(50px) rotate3d(0, 1, 0, 1.5deg) translateX(50px)']
   );
   const projectsRowRightRotate = useTransform(
     workScroll,
     [0.5, 0.9],
-    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(0px)', 'perspective(50px) rotate3d(0, 1, 0, -1.5deg) translateX(-50px)']
+    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(50px)', 'perspective(50px) rotate3d(0, 1, 0, -1.5deg) translateX(-50px)']
   );
 
   const [isModalOpen, setModalOpen] = useState<string | null>(null);
@@ -90,28 +80,12 @@ export default function Home() {
       </motion.header>
       {/* Start Main Section */}
       <motion.main className={`${styles.content} ${isModalOpen ? 'overflow-y-hidden' : 'overflow-y-scroll'} overflow-x-hidden bg-stone-900`}
-        // initial={{ y: -40, opacity: 0 }}
-        // animate={{ y: 0, opacity: 1 }}
-        // transition={{
-        //   delay: 0.5,
-        //   duration: 0.3,
-        // }}
         ref={mainRef}
       >
         {/* Start Hero Section */}
         <motion.section
           ref={heroRef}
           className={`flex flex-wrap justify-center content-center flex-col h-full w-full ${styles.hero}`}
-        // style={
-        //   {
-        //     scale,
-        //     opacity,
-        //     translateZ: z,
-        //     rotateX: rotateX,
-        //     transformOrigin: "center bottom",
-        //     transformStyle: "preserve-3d",
-        //   }
-        // }
         >
           <motion.p
             className={`font-bold mb-2 ${styles.hero_greeting}`}
@@ -182,7 +156,7 @@ export default function Home() {
           <div className={`${styles.about_content} flex flex-row items-center w-full justify-between`}>
             <motion.article
               style={{
-                y: useTransform(aboutScroll, [0.25, 0.75], [500, 0]),
+                y: useTransform(aboutScroll, [0.25, 0.8], [500, 0]),
                 opacity: useTransform(aboutScroll, [0.5, 1], [0, 1]),
               }}
               className={`w-full md:w-2/3`}
@@ -190,7 +164,7 @@ export default function Home() {
               <motion.h2
                 className={`${robotoCondensed.className} uppercase`}
                 style={{
-                  x: useTransform(aboutScroll, [0.6, 0.75], [-500, 0])
+                  x: useTransform(aboutScroll, [0.6, 0.8], [-500, 0])
                 }}
               >
                 A little about me...
@@ -206,135 +180,85 @@ export default function Home() {
             </motion.article>
             <Unicorn scrollRef={aboutScroll} />
           </div>
-
-
-
         </motion.section>
+
         {/* Start Work Section */}
-        <motion.section id='work' className={`${styles.work} flex justify-center flex-col w-full h-full px-4`} ref={workRef}>
-          <motion.h2
-            className={`${robotoCondensed.className} text-center uppercase text-5xl mb-2`}
-            style={{
-              y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
-              opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
-            }}
-          >Featured projects</motion.h2>
-          <motion.div
-            className={`${styles.projectsRow} flex flex-row justify-center`}
-            style={{
-              y: useTransform(workScroll, [0.5, 0.75], [40, 0]),
-              opacity: useTransform(workScroll, [0.5, 0.75], [0, 1]),
-            }}
-          >
-            {/* Row 1 */}
-            <motion.div className={`flex flex-col items-center origin-center`}
+        <motion.section id='work' className={`${styles.work} flex justify-center flex-col w-full h-full px-4 py-4`} ref={workRef}>
+          {/* Start Featured Projects */}
+          <div className='mb-20'>
+            <motion.h2
+              className={`${robotoCondensed.className} text-center uppercase text-5xl mb-8`}
               style={{
-                transform: projectsRowLeftRotate
+                y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
+                opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
+              }}
+            >Featured projects</motion.h2>
+            <motion.div
+              className={`${styles.projectsRow} flex flex-row justify-center`}
+              style={{
+                y: useTransform(workScroll, [0.5, 0.75], [40, 0]),
+                opacity: useTransform(workScroll, [0.5, 0.75], [0, 1]),
               }}
             >
-              <a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
-                className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
-                <img
-                  srcSet="/images/hitachi/lumada-studio-thumb.webp, /images/hitachi/lumada-studio-thumb@2x.webp 2x"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Hitachi Lumada Studio dashboard"
-                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200] [text-shadow:_0_1px_3px_rgba(0,0,0,0.8)]`}>View case study</h3>
-                </div>
-              </a>
-              <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
+              <motion.div className={`flex flex-col items-center origin-center`}
+                style={{
+                  transform: projectsRowLeftRotate
+                }}
+              >
+                <a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
+                  className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
+                  <img
+                    srcSet="/images/hitachi/lumada-studio-thumb.webp, /images/hitachi/lumada-studio-thumb@2x.webp 2x"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Hitachi Lumada Studio dashboard"
+                    className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200] [text-shadow:_0_1px_3px_rgba(0,0,0,0.8)]`}>View case study</h3>
+                  </div>
+                </a>
+                <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
+              </motion.div>
+
+              <div className={`${styles.projectsRowCenter} flex flex-col items-center z-10`}>
+                <a href="" onClick={(event) => handleModalOpen('Indeed', event)}
+                  className={` border border-gray-400 rounded-lg overflow-hidden block relative group mb-4`}>
+                  <img
+                    srcSet="/images/indeed/interview-scheduling-modal-thumb.webp, /images/indeed/interview-scheduling-modal-thumb@2x.webp 2x"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                    alt="Indeed.com interface with the interview scheduling modal open"
+                    className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
+                  </div>
+                </a>
+                <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Indeed - UX Developer</p>
+              </div>
+
+              <motion.div className={`flex flex-col items-center origin-center`}
+                style={{
+                  transform: projectsRowRightRotate
+                }}
+              >
+                <a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
+                  className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
+                  <img
+                    srcSet="/images/hitachi/lumada-solutions-manager-thumb.webp, /images/hitachi/lumada-solutions-manager-thumb@2x.webp 2x"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Hitachi Solutions Manager dashboard"
+                    className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200] [text-shadow:_0_1px_3px_rgba(0,0,0,0.8)]`}>View case study</h3>
+                  </div>
+                </a>
+                <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
+              </motion.div>
             </motion.div>
-
-            <div className={`${styles.projectsRowCenter} flex flex-col items-center z-10`}>
-              <a href="" onClick={(event) => handleModalOpen('Indeed', event)}
-                className={` border border-gray-400 rounded-lg overflow-hidden block relative group mb-4`}>
-                <img
-                  srcSet="/images/indeed/interview-scheduling-modal-thumb.webp, /images/indeed/interview-scheduling-modal-thumb@2x.webp 2x"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
-                  alt="Indeed.com interface with the interview scheduling modal open"
-                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
-                </div>
-              </a>
-              <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Indeed - UX Developer</p>
-            </div>
-
-            <motion.div className={`flex flex-col items-center origin-center`}
-              style={{
-                transform: projectsRowRightRotate
-              }}
-            >
-              <a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
-                className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
-                <img
-                  srcSet="/images/hitachi/lumada-solutions-manager-thumb.webp, /images/hitachi/lumada-solutions-manager-thumb@2x.webp 2x"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Hitachi Solutions Manager dashboard"
-                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className={`${styles.caseStudy} ${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200] [text-shadow:_0_1px_3px_rgba(0,0,0,0.8)]`}>View case study</h3>
-                </div>
-              </a>
-              <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
-            </motion.div>
-          </motion.div>
-
-          {/* <motion.h2
-            className={`${robotoCondensed.className} text-center uppercase`}
-            style={{
-              y: useTransform(workScroll, [0.25, 0.75], [40, 0]),
-              opacity: useTransform(workScroll, [0.4, 0.75], [0, 1]),
-            }}
-          >Past projects</motion.h2>
-          <motion.div
-            className="grid grid-cols-3 gap-4"
-            style={{
-              y: useTransform(workScroll, [0.5, 0.75], [40, 0]),
-              opacity: useTransform(workScroll, [0.5, 0.75], [0, 1]),
-            }}
-          >
-            <div className={`rounded-lg overflow-hidden relative group border border-gray-400`}>
-              <a href="" onClick={(event) => handleModalOpen('Product of the North', event)}>
-                <img
-                  srcSet="/images/potn/potn-thumb.webp, /images/potn/potn-thumb@2x.webp 2x"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Indeed.com interface with the interview scheduling modal open"
-                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase`}>Product of the North</h3>
-                  <p className={`${robotoCondensed.className} text-white text-lg`}>Shopify Developer</p>
-                </div>
-              </a>
-            </div><div className={`rounded-lg overflow-hidden relative group border border-gray-400`}>
-              <a href="" onClick={(event) => handleModalOpen('Skull Shoppe', event)}>
-                <img
-                  srcSet="/images/skullshoppe/skullshoppe-thumb.webp, /images/skullshoppe/skullshoppe-thumb@2x.webp 2x"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="SkullShoppe.com logo with a skull and ornate frame"
-                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase`}>The Skull Shoppe</h3>
-                  <p className={`${robotoCondensed.className} text-white text-lg`}>Shopify Developer</p>
-                </div>
-              </a>
-            </div><div className={`rounded-lg overflow-hidden relative group border border-gray-400`}>
-              <a href="" onClick={(event) => handleModalOpen('Imprnt', event)}>
-                <img
-                  srcSet="/images/imprnt/imprnt-home-thumb.webp, /images/imprnt/imprnt-home-thumb@2x.webp 2x"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px" alt="Imprnt.com homepage with images of printed shirts"
-                  className="transition-transform duration-300 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase`}>Imprnt</h3>
-                  <p className={`${robotoCondensed.className} text-white text-lg`}>UI Designer</p>
-                </div>
-              </a>
-            </div>
-          </motion.div> */}
+          </div>
+          {/* Start Archive Section */}
+          <ProjectArchives workScroll={workScroll} handleModalOpen={handleModalOpen} />
         </motion.section>
+
         {/* Start Contact Section */}
         <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 mb-1 relative`} ref={contactRef}>
           <ScrollingBanner items={bannerItems} />
