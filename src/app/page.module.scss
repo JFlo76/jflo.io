@@ -33,21 +33,19 @@
 
 .header {
   top: 60px;
-  left: 55px;
+  left: 80px;
   mix-blend-mode: difference;
 
   .name {
     @include display-text;
     display: flex;
     flex-direction: row;
-    color: #a7a7a7;
-    // opacity: 0.75;
+    color: #fff;
 
     &_first,
     &_last {
       span {
         color: var(--primary-blue-200);
-        // opacity: 1;
       }
     }
 
@@ -154,7 +152,7 @@
 .svgUnicorn {
   transform-origin: center;
   overflow: visible;
-  width: 30vw;
+  width: 35vw;
 
   &_paths {
     transform-origin: center;
@@ -176,30 +174,18 @@
 
   .projectsRow {
 
-    &Left {
-      transform: perspective(50px) rotate3d(0, 1, 0, 1.5deg) translateX(50px);
-      transform-origin: center;
-    }
-
     &Center {
-      z-index: 1;
 
       a {
         box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1);
       }
 
     }
-
-    &Right {
-      transform: perspective(50px) rotate3d(0, 1, 0, -1.5deg) translateX(-50px);
-      transform-origin: center;
-    }
   }
 }
 
 
 .contact {
-  // background-image: radial-gradient(circle at 100% 100%, var(--complementary-orange-400) 0%, var(--complementary-orange-200) 100%);
   background-image: radial-gradient(circle at 50% 50%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
   padding-inline: 20%;
 

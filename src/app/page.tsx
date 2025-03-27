@@ -24,20 +24,20 @@ export default function Home() {
   const contactRef = useRef(null);
 
   // Scrolling logic for hero section
-  const { scrollYProgress: heroScroll } = useScroll({
-    container: mainRef,
-    target: heroRef,
-    offset: ['end end', 'end start'],
-  });
-  const scale = useTransform(heroScroll, [0, 0.75], [1, 0]);
-  const opacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
-  const z = useTransform(heroScroll, [0, 0.75], [0, -1000]);
-  const rotateX = useTransform(heroScroll, [0, 0.75], [0, 40]);
+  // const { scrollYProgress: heroScroll } = useScroll({
+  //   container: mainRef,
+  //   target: heroRef,
+  //   offset: ['end end', 'end start'],
+  // });
+  // const scale = useTransform(heroScroll, [0, 0.75], [1, 0]);
+  // const opacity = useTransform(heroScroll, [0, 0.5], [1, 0]);
+  // const z = useTransform(heroScroll, [0, 0.75], [0, -1000]);
+  // const rotateX = useTransform(heroScroll, [0, 0.75], [0, 40]);
 
   // Scrolling logic for header visibility
   const { scrollYProgress: headerScroll } = useScroll({
     container: mainRef,
-    offset: ['5% start', '15% start'],
+    offset: ['20% start', '50% end'],
   });
 
   // Header opacity based on scroll position
@@ -55,6 +55,17 @@ export default function Home() {
     target: workRef,
     offset: ['start end', 'end end'],
   });
+
+  const projectsRowLeftRotate = useTransform(
+    workScroll,
+    [0.5, 0.9],
+    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(0px)', 'perspective(50px) rotate3d(0, 1, 0, 1.5deg) translateX(50px)']
+  );
+  const projectsRowRightRotate = useTransform(
+    workScroll,
+    [0.5, 0.9],
+    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(0px)', 'perspective(50px) rotate3d(0, 1, 0, -1.5deg) translateX(-50px)']
+  );
 
   const [isModalOpen, setModalOpen] = useState<string | null>(null);
   const handleModalOpen = (item: string, event: React.MouseEvent<HTMLElement>) => {
@@ -185,14 +196,11 @@ export default function Home() {
                 A little about me...
               </motion.h2>
               <p className={`${styles.about_text}`}>
-                With multiple years of experience in the tech industry, I can provide a wide range
+                With over a decade of experience in the tech industry, I can provide a wide range
                 of services to bridge the gap between design and development. My expertise allows me to seamlessly translate design concepts into functional and user-friendly interfaces. Some have called
                 me a "unicorn" because the combination of these skills is somewhat unique and
                 highly sought after. Even though this may be true, please don't call me that.
               </p>
-              {/* <p className={`${styles.about_text}`}>
-                In my spare time, I enjoy exploring new places, playing music (drums), snowboarding, a bit of rallycross racing, spending time with my family and friends, and wearing hats!
-              </p> */}
               <a href='#work' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>See my work</a>
 
             </motion.article>
@@ -219,7 +227,11 @@ export default function Home() {
             }}
           >
             {/* Row 1 */}
-            <div className={`${styles.projectsRowLeft} flex flex-col items-center`}>
+            <motion.div className={`flex flex-col items-center origin-center`}
+              style={{
+                transform: projectsRowLeftRotate
+              }}
+            >
               <a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
                 className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
                 <img
@@ -232,7 +244,7 @@ export default function Home() {
                 </div>
               </a>
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
-            </div>
+            </motion.div>
 
             <div className={`${styles.projectsRowCenter} flex flex-col items-center z-10`}>
               <a href="" onClick={(event) => handleModalOpen('Indeed', event)}
@@ -250,7 +262,11 @@ export default function Home() {
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Indeed - UX Developer</p>
             </div>
 
-            <div className={`${styles.projectsRowRight} flex flex-col items-center`}>
+            <motion.div className={`flex flex-col items-center origin-center`}
+              style={{
+                transform: projectsRowRightRotate
+              }}
+            >
               <a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
                 className={`block rounded-lg overflow-hidden relative group border border-gray-400 mb-4`}>
                 <img
@@ -263,7 +279,7 @@ export default function Home() {
                 </div>
               </a>
               <p className={`${robotoCondensed.className} text-white text-2xl uppercase`}>Hitachi - UI/UX Designer</p>
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* <motion.h2
