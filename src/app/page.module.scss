@@ -54,18 +54,11 @@
 
 .hero {
   display: flex;
+  color: #fff;
 
   &_greeting {
-    font-size: 1.5rem;
+    font-size: 1.4vw;
     margin-inline-start: .4vw;
-
-    &_name {
-      display: inline-block;
-
-      &:hover {
-        color: var(--primary-blue-200);
-      }
-    }
   }
 
   &_skills {

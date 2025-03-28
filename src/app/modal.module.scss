@@ -1,22 +1,6 @@
 .modal {
 
-    // Custom scrollbar styles
-    // &::-webkit-scrollbar {
-    //     width: 8px;
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //     background: transparent;
-    // }
-
-    // &::-webkit-scrollbar-thumb {
-    //     background: var(--primary-blue-200);
-    //     border-radius: 4px;
-    // }
-
-    // scrollbar-color: var(--primary-blue-200) transparent;
-
-
+    color: #fff;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {

@@ -10,7 +10,7 @@ export default function MorganColton() {
                     <p>
                         <span className="me-4"><b>Role</b>: Web Developer</span><b>Toolkit</b>: HTML, CSS, JavaScript
                     </p>
-                    <p>A single page portfolio website developed for a UI/UX designer colleague. I collaborated with him to take his design concepts to code, incorporating some interactive elements such as window scrolling, a modal for project details, image carousels, contact form, and micro animations for bar graphs to convey his level of experience with certain tools and technologies.</p>
+                    <p>A single page portfolio website developed for a UI/UX designer colleague. I collaborated with him to take his design concepts to code, incorporating some interactive elements such as window & paralax scrolling, a modal for project details, image carousels, contact form, and micro animations for bar graphs to convey his level of experience with certain tools and technologies.</p>
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Homepage</h3>
