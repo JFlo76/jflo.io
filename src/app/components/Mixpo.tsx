@@ -27,7 +27,7 @@ export default function Mixpo() {
                         alt='Mixpo website placements animated gif'
                         loading="lazy"
                     />
-                    <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Placements modal</h3>
+                    <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Placements tooltip</h3>
                     <img
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
                         srcSet='/images/mixpo/mixpo-placements-modal.webp, /images/mixpo/mixpo-placements-modal@2x.webp 2x'

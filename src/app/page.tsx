@@ -346,8 +346,8 @@ export default function Home() {
         {isModalOpen && (
           <Modal isVisible={!!isModalOpen} onClose={() => setModalOpen(null)}>
             {isModalOpen === 'Indeed' && <Indeed />}
-            {isModalOpen === 'Hitachi Studio' && <HitachiStudio />}
-            {isModalOpen === 'Hitachi Solutions Manager' && <HitachiSolutionsManager />}
+            {isModalOpen === 'HitachiStudio' && <HitachiStudio />}
+            {isModalOpen === 'HitachiSolutionsManager' && <HitachiSolutionsManager />}
             {isModalOpen === 'Product Of The North' && <ProductOfTheNorth />}
             {isModalOpen === 'The Skull Shoppe' && <TheSkullShoppe />}
             {isModalOpen === 'Imprnt' && <Imprnt />}
