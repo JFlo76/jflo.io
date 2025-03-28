@@ -18,8 +18,15 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
     // Define project data array
     const projects: ProjectItem[] = [
         {
+            id: 'mixpo',
+            title: 'Mixpo',
+            thumbSrc: '/images/mixpo/mixpo-home-thumb.webp',
+            thumbSrc2x: '/images/mixpo/mixpo-home-thumb@2x.webp',
+            altText: 'Homepage for Mixpo.com'
+        },
+        {
             id: 'potn',
-            title: 'Product of the North',
+            title: 'Product Of The North',
             thumbSrc: '/images/potn/potn-thumb.webp',
             thumbSrc2x: '/images/potn/potn-thumb@2x.webp',
             altText: 'Indeed.com interface with the interview scheduling modal open'
@@ -45,13 +52,6 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
             thumbSrc: '/images/morgan/morgan-portfolio-thumb.webp',
             thumbSrc2x: '/images/morgan/morgan-portfolio-thumb@2x.webp',
             altText: 'Morgan Colton website homepage'
-        },
-        {
-            id: 'mixpo',
-            title: 'Mixpo',
-            thumbSrc: '/images/mixpo/mixpo-home-thumb.webp',
-            thumbSrc2x: '/images/mixpo/mixpo-home-thumb@2x.webp',
-            altText: 'Homepage for Mixpo.com'
         },
         {
             id: 'rich-family',

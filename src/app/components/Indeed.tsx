@@ -14,6 +14,7 @@ export default function Indeed() {
                 <section className={`flex flex-row items-start w-full mb-16`}>
                     <img
                         className='mr-8 rounded-lg max-w-[50%] object-contain aspect-auto'
+                        src='/images/indeed/interview-scheduling-modal.webp'
                         srcSet='/images/indeed/interview-scheduling-modal.webp, /images/indeed/interview-scheduling-modal@2x.webp 2x'
                         alt='Indeed.com interface with the interview scheduling modal open' />
                     <article>
@@ -34,6 +35,7 @@ export default function Indeed() {
                 <section className={`flex flex-row items-start w-full mb-16`}>
                     <img
                         className='mr-8 rounded-lg max-w-[50%] object-contain aspect-auto'
+                        src="/images/indeed/scheduling-storybook.webp"
                         srcSet="/images/indeed/scheduling-storybook.webp, /images/indeed/scheduling-storybook@2x.webp 2x"
                         alt="Storybook interface with scheduling modal" />
                     <article>
@@ -57,6 +59,7 @@ export default function Indeed() {
                 <section className={`flex flex-row items-start w-full mb-16`}>
                     <img
                         className='mr-8 rounded-lg max-w-[50%] object-contain aspect-auto'
+                        src="/images/indeed/scheduling-chromatic-diff.webp"
                         srcSet="/images/indeed/scheduling-chromatic-diff.webp, /images/indeed/scheduling-chromatic-diff@2x.webp 2x"
                         alt="Chromatic interface showing diffs in the scheduling modal" />
                     <article>

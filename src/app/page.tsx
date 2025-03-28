@@ -16,6 +16,14 @@ import Modal from './components/modal';
 import ScrollingBanner from './components/ScrollingBanner';
 import HitachiSolutionsManager from './components/HitachiSolutionsManager';
 import ProjectArchives from './components/ProjectArchives';
+import ProductOfTheNorth from './components/ProductOfTheNorth';
+import TheSkullShoppe from './components/TheSkullShoppe';
+import Imprnt from './components/Imprnt';
+import MorganColton from './components/MorganColton';
+import Mixpo from './components/Mixpo';
+import RichFamilyOrtho from './components/RichFamilyOrtho';
+import RitucciFriedmanOrtho from './components/RitucciFriedmanOrtho';
+import HillmanDentistry from './components/HillmanDentistry';
 
 export default function Home() {
   const mainRef = useRef(null);
@@ -338,8 +346,16 @@ export default function Home() {
         {isModalOpen && (
           <Modal isVisible={!!isModalOpen} onClose={() => setModalOpen(null)}>
             {isModalOpen === 'Indeed' && <Indeed />}
-            {isModalOpen === 'HitachiStudio' && <HitachiStudio />}
-            {isModalOpen === 'HitachiSolutionsManager' && <HitachiSolutionsManager />}
+            {isModalOpen === 'Hitachi Studio' && <HitachiStudio />}
+            {isModalOpen === 'Hitachi Solutions Manager' && <HitachiSolutionsManager />}
+            {isModalOpen === 'Product Of The North' && <ProductOfTheNorth />}
+            {isModalOpen === 'The Skull Shoppe' && <TheSkullShoppe />}
+            {isModalOpen === 'Imprnt' && <Imprnt />}
+            {isModalOpen === 'Morgan Colton' && <MorganColton />}
+            {isModalOpen === 'Mixpo' && <Mixpo />}
+            {isModalOpen === 'Rich Family Ortho' && <RichFamilyOrtho />}
+            {isModalOpen === 'Ritucci Friedman Ortho' && <RitucciFriedmanOrtho />}
+            {isModalOpen === 'Hillman Dentistry' && <HillmanDentistry />}
             {/* Add more project components as needed */}
           </Modal>
         )}
