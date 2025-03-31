@@ -21,3 +21,5 @@ coverage
 .vercel
 # Local resource files
 resources
+# SEO files
+robots.txt
