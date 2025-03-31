@@ -144,7 +144,7 @@ export default function Home() {
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 100, opacity: 1 }}
             transition={{
-              delay: 3.5,
+              delay: 2.5,
               duration: 1,
               ease: 'easeInOut',
             }}

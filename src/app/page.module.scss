@@ -83,7 +83,7 @@
   &_work {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--complementary-orange-200);
+    background-color: var(--complementary-orange-600);
     border-radius: 8px;
     color: white;
     font-size: 1.3rem;
@@ -91,7 +91,7 @@
 
     &:hover {
       transform: translate(8px, -8px);
-      box-shadow: -2px 2px 0 var(--complementary-orange-400), -4px 4px 0 var(--complementary-orange-400), -6px 6px 0 var(--complementary-orange-400);
+      box-shadow: -2px 2px 0 var(--background-med), -4px 4px 0 var(--background-med), -6px 6px 0 var(--background-med);
     }
   }
 }

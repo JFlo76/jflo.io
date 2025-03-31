@@ -37,14 +37,20 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                         A little about me...
                     </motion.h2>
                     <p className={`${styles.about_text}`}>
-                        With over a decade of experience in the tech industry, I can provide a wide range
-                        of services to bridge the gap between design and development. My expertise allows me to seamlessly translate design concepts into functional and user-friendly interfaces. Some have called
-                        me a "unicorn" because the combination of these skills is somewhat unique and
-                        highly sought after. Even though this may be true, please don't call me that.
+                        With over a decade of experience in the tech industry, I specialize in bridging the gap between design and development, transforming concepts into functional, user-friendly interfaces. My unique blend of expertise in both disciplines enables me to create seamless digital experiences that are both visually compelling and technically sound. While some have referred to me as a 'unicorn' due to this rare combination of skills, I prefer to think of it simply as a deep passion for crafting intuitive and high-performing products.
                     </p>
                     <a href='#work' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>See my work</a>
                 </motion.article>
-                <Unicorn scrollRef={aboutScroll} />
+                {/* <Unicorn scrollRef={aboutScroll} /> */}
+                <motion.img
+                    src='/images/JFloMug.webp'
+                    alt='JFlo with a mug of coffee'
+                    className='absolute bottom-0 right-0 w-1/2 md:w-1/3'
+                    style={{
+                        y: useTransform(aboutScroll, [0.4, 0.9], [200, 0]),
+                        opacity: useTransform(aboutScroll, [0.5, 0.8], [0, 1]),
+                    }}
+                />
             </div>
         </motion.section>
     );
