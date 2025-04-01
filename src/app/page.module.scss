@@ -102,10 +102,6 @@
   background-image: radial-gradient(circle at 100% 100%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
   color: #000;
 
-  .about_content {
-    max-width: 1600px;
-  }
-
   article {
     font-size: 1.2rem;
     margin-inline-end: 2rem;
@@ -145,7 +141,7 @@
 .svgUnicorn {
   transform-origin: center;
   overflow: visible;
-  width: 35vw;
+  // width: 35vw;
 
   &_paths {
     transform-origin: center;
@@ -154,7 +150,7 @@
 }
 
 .work {
-  max-width: 1600px;
+  // max-width: 1600px;
   margin: 0 auto;
 
   .caseStudy {
@@ -182,7 +178,7 @@
   background-image: radial-gradient(circle at 50% 50%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
   padding-inline: 20%;
 
-  h2 {
-    letter-spacing: -0.1rem;
-  }
+  // h2 {
+  //   letter-spacing: -0.1rem;
+  // }
 }

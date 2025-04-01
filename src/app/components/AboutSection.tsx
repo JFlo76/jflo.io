@@ -20,7 +20,7 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                 <motion.article
                     style={{
                         y: useTransform(aboutScroll, [0.25, 0.8], [500, 0]),
-                        opacity: useTransform(aboutScroll, [0.5, 1], [0, 1]),
+                        // opacity: useTransform(aboutScroll, [0.5, 1], [0, 1]),
                     }}
                     className={`w-full md:w-2/3`}
                 >
@@ -43,7 +43,7 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                     alt='JFlo with a mug of coffee'
                     className='absolute bottom-0 right-0 w-1/2 md:w-1/3'
                     style={{
-                        y: useTransform(aboutScroll, [0.5, 0.85], [900, 0]),
+                        y: useTransform(aboutScroll, [0.5, 1], [900, 0]),
                     }}
                 />
             </div>
