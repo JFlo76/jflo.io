@@ -165,7 +165,7 @@ export default function Home() {
           <FeaturedProjects2 workScroll={workScroll} handleModalOpen={handleModalOpen} />
 
           {/* Start Archive Section */}
-          {/* <ProjectArchives workScroll={workScroll} handleModalOpen={handleModalOpen} /> */}
+          <ProjectArchives workScroll={workScroll} handleModalOpen={handleModalOpen} />
         </motion.section>
 
         {/* Start Contact Section */}

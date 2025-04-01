@@ -27,7 +27,7 @@ const FeaturedProjects2 = ({ workScroll, handleModalOpen }: FeaturedProjectsProp
                 <motion.a href="" onClick={(event) => handleModalOpen('Indeed', event)}
                     className={`rounded-lg overflow-hidden block relative group mb-4`}
                     style={{
-                        x: useTransform(workScroll, [0, 0.25], [900, 60]),
+                        x: useTransform(workScroll, [0, 0.35], [900, 60]),
                     }}>
                     <img
                         src='/images/indeed/interview-scheduling-modal.webp'
@@ -68,13 +68,13 @@ const FeaturedProjects2 = ({ workScroll, handleModalOpen }: FeaturedProjectsProp
             {/* Hitachi Solutions Manager */}
             <div className='flex flex-row items-center justify-end mb-20'>
                 <div className='flex flex-col items-end me-8'>
-                    <h3 className={`${robotoCondensed.className} uppercase text-right leading-[3vw] text-[2vw] md:text-[3vw]`}>Hitachi Solutions Manager</h3>
+                    <h3 className={`${robotoCondensed.className} uppercase text-right leading-[3vw] text-[2vw] md:text-[3vw]`}>Hitachi<br />Solutions Manager</h3>
                     <p>UI/UX Designer</p>
                 </div>
                 <motion.a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
                     className={`rounded-lg overflow-hidden block relative group mb-4`}
                     style={{
-                        x: useTransform(workScroll, [0.5, 0.95], [900, 60]),
+                        x: useTransform(workScroll, [0.5, 0.85], [900, 60]),
                     }}>
                     <img
                         src='/images/hitachi/solutions-manager-new-templates-card.webp'

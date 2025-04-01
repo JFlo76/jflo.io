@@ -78,9 +78,10 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
 
     return (
         <motion.div
+            className="mx-16 mb-20"
             style={{
-                y: useTransform(workScroll, [0.75, 1], [40, 0]),
-                opacity: useTransform(workScroll, [0.75, 1], [0, 1]),
+                y: useTransform(workScroll, [0.9, 1], [40, 0]),
+                opacity: useTransform(workScroll, [0.9, 1], [0, 1]),
             }}
         >
             <motion.h2
@@ -96,7 +97,7 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
                                 srcSet={`${project.thumbSrc}, ${project.thumbSrc2x} 2x`}
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                                 alt={project.altText}
-                                className="rounded-lg border border-gray-400 transition-transform duration-300 group-hover:grayscale aspect-video object-cover w-full h-full"
+                                className="rounded-sm transition-transform duration-300 group-hover:grayscale aspect-video object-cover w-full h-full"
                             />
                             <div className="absolute inset-0 top-0 bottom-0 left-0 right-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p className={`${robotoCondensed.className} text-white text-base m-0 uppercase`}>View Details</p>
