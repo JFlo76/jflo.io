@@ -38,7 +38,8 @@ export default function Home() {
   // Scrolling logic for header visibility
   const { scrollYProgress: headerScroll } = useScroll({
     container: mainRef,
-    offset: ['10% start', '30% end'],
+    target: heroRef,
+    offset: ['50% start', '90% start'],
   });
 
   // Header opacity based on scroll position
