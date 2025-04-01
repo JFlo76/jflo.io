@@ -12,7 +12,7 @@ export default function Unicorn({ scrollRef }: UnicornProps) {
 
     return (
         <motion.svg
-            className={`${styles.svgUnicorn}`}
+            className={`${styles.svgUnicorn} md:w-[35vw] lg:w-[30vw]`}
             style={{
                 x: useTransform(scrollRef, [0.5, 1], ['250%', '0%'])
             }}

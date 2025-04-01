@@ -40,7 +40,7 @@
     @include display-text;
     display: flex;
     flex-direction: row;
-    color: #fff;
+    color: var(--foreground);
 
     &_first,
     &_last {
@@ -54,7 +54,7 @@
 
 .hero {
   display: flex;
-  color: #fff;
+  color: var(--foreground);
 
   &_greeting {
     font-size: 1.4vw;
@@ -63,7 +63,7 @@
 
   &_skills {
     font-size: 11vw;
-    color: #fff;
+    color: var(--foreground);
     letter-spacing: -0.3rem;
     line-height: 0.9;
   }
@@ -83,15 +83,15 @@
   &_work {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--complementary-orange-600);
+    background-color: var(--complementary-orange-400);
     border-radius: 8px;
-    color: white;
+    color: var(--foreground);
     font-size: 1.3rem;
     transition: all 0.3s ease;
 
     &:hover {
       transform: translate(8px, -8px);
-      box-shadow: -2px 2px 0 var(--background-med), -4px 4px 0 var(--background-med), -6px 6px 0 var(--background-med);
+      box-shadow: -2px 2px 0 var(--complementary-orange-600), -4px 4px 0 var(--complementary-orange-600), -6px 6px 0 var(--complementary-orange-600);
     }
   }
 }
@@ -100,11 +100,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-image: radial-gradient(circle at 100% 100%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
-  color: #000;
-
-  .about_content {
-    max-width: 1600px;
-  }
+  color: var(--background-dark);
 
   article {
     font-size: 1.2rem;
@@ -145,7 +141,6 @@
 .svgUnicorn {
   transform-origin: center;
   overflow: visible;
-  width: 35vw;
 
   &_paths {
     transform-origin: center;
@@ -154,35 +149,22 @@
 }
 
 .work {
-  max-width: 1600px;
   margin: 0 auto;
-
-  .caseStudy {
-    text-shadow: 0px 4px 0px var(--background-dark);
-  }
+  color: var(--foreground);
 
   h2 {
     letter-spacing: -0.1rem;
+    color: var(--foreground);
   }
 
-  .projectsRow {
-
-    &Center {
-
-      a {
-        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1);
-      }
-
-    }
+  h3 {
+    color: var(--foreground);
   }
+
 }
 
 
 .contact {
   background-image: radial-gradient(circle at 50% 50%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
   padding-inline: 20%;
-
-  h2 {
-    letter-spacing: -0.1rem;
-  }
 }
