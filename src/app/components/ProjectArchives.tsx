@@ -39,19 +39,18 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
             altText: 'SkullShoppe.com logo with a skull and ornate frame'
         },
         {
-            id: 'imprnt',
-            title: 'Imprnt',
-            thumbSrc: '/images/imprnt/imprnt-home-thumb.webp',
-            thumbSrc2x: '/images/imprnt/imprnt-home-thumb@2x.webp',
-            altText: 'Imprnt.com homepage with images of printed shirts'
-        },
-        // Duplicate the first three projects to maintain the original grid layout
-        {
             id: 'morgan',
             title: 'Morgan Colton',
             thumbSrc: '/images/morgan/morgan-portfolio-thumb.webp',
             thumbSrc2x: '/images/morgan/morgan-portfolio-thumb@2x.webp',
             altText: 'Morgan Colton website homepage'
+        },
+        {
+            id: 'imprnt',
+            title: 'Imprnt',
+            thumbSrc: '/images/imprnt/imprnt-home-thumb.webp',
+            thumbSrc2x: '/images/imprnt/imprnt-home-thumb@2x.webp',
+            altText: 'Imprnt.com homepage with images of printed shirts'
         },
         {
             id: 'rich-family',

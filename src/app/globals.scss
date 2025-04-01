@@ -15,7 +15,6 @@
   --complementary-orange-200: #EB3C20;
   --complementary-orange-400: #BE230B;
   --complementary-orange-600: #84210D;
-
   --header-font-size: 2vw;
 }
 
@@ -34,6 +33,7 @@ body {
 
 body {
   background-color: var(--background-med);
+  color: var(--foreground);
   font-family: 'Noto Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -53,19 +53,4 @@ a {
 
 p {
   margin-block-end: 1rem;
-}
-
-.text-primary-blue {
-  color: var(--primary-blue-200);
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-@supports ((animation-timeline: scroll()) and (animation-range: 0% 100%)) {
-  /* Scroll-Driven Animations related styles go here */
-
 }
