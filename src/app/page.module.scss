@@ -83,7 +83,7 @@
   &_work {
     display: inline-block;
     padding: 1rem 2rem;
-    background-color: var(--complementary-orange-600);
+    background-color: var(--complementary-orange-400);
     border-radius: 8px;
     color: white;
     font-size: 1.3rem;
@@ -91,7 +91,7 @@
 
     &:hover {
       transform: translate(8px, -8px);
-      box-shadow: -2px 2px 0 var(--background-med), -4px 4px 0 var(--background-med), -6px 6px 0 var(--background-med);
+      box-shadow: -2px 2px 0 var(--complementary-orange-600), -4px 4px 0 var(--complementary-orange-600), -6px 6px 0 var(--complementary-orange-600);
     }
   }
 }
@@ -141,7 +141,6 @@
 .svgUnicorn {
   transform-origin: center;
   overflow: visible;
-  // width: 35vw;
 
   &_paths {
     transform-origin: center;
@@ -150,7 +149,6 @@
 }
 
 .work {
-  // max-width: 1600px;
   margin: 0 auto;
 
   .caseStudy {
@@ -177,8 +175,4 @@
 .contact {
   background-image: radial-gradient(circle at 50% 50%, rgb(174, 231, 238) 0%, rgb(81, 213, 234) 100%);
   padding-inline: 20%;
-
-  // h2 {
-  //   letter-spacing: -0.1rem;
-  // }
 }
