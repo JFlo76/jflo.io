@@ -91,7 +91,7 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
             <div className="grid grid-cols-8 gap-4">
                 {projects.map((project) => (
                     <div key={project.id} className={`text-center aspect-video`}>
-                        <a href="" className='group relative block mb-2' onClick={(event) => handleModalOpen(project.title, event)}>
+                        <a href="" title={project.title} className='group relative block mb-2' onClick={(event) => handleModalOpen(project.title, event)}>
                             <img
                                 srcSet={`${project.thumbSrc}, ${project.thumbSrc2x} 2x`}
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
