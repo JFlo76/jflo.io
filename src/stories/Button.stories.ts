@@ -60,3 +60,12 @@ export const TestStory: Story = {
     backgroundColor: "#c7e7f1"
   }
 };
+
+export const ModifiedButton: Story = {
+  args: {
+    primary: true,
+    label: "Button",
+    size: "medium",
+    backgroundColor: "#8a2020"
+  }
+};

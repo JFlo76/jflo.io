@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ProjectArchives from './ProjectArchives';
+import ProjectArchives from '../app/components/ProjectArchives';
 import { useMotionValue } from 'framer-motion';
 import React from 'react';
 import { expect, within, userEvent } from '@storybook/test';

@@ -84,7 +84,7 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
             }}
         >
             <motion.h2
-                className={`${robotoCondensed.className} text-center text-3xl uppercase mb-4`}
+                className={`${robotoCondensed.className} text-center text-2xl uppercase mb-4`}
             >
                 Archived Projects
             </motion.h2>
