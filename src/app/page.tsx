@@ -101,12 +101,12 @@ export default function Home() {
         >
           <motion.p
             className={`font-bold mb-2 ${styles.hero_greeting}`}
-          // initial={{ y: -30, opacity: 0 }}
-          // animate={{ y: 0, opacity: 1 }}
-          // transition={{
-          //   delay: 0.5,
-          //   ease: 'easeInOut',
-          // }}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 0.5,
+              ease: 'easeInOut',
+            }}
           >Hello! My name is Jason Florence (aka JFlo), and I specialize in</motion.p>
           <motion.h2
             className={`
@@ -114,12 +114,12 @@ export default function Home() {
               ${styles.hero_skills} 
               
             `}
-          // initial={{ y: -30, opacity: 0 }}
-          // animate={{ y: 0, opacity: 1 }}
-          // transition={{
-          //   delay: 1,
-          //   ease: 'easeInOut',
-          // }}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 1,
+              ease: 'easeInOut',
+            }}
           >
 
             UX <span className={`${styles.hero_design}`}>DESIGN</span> <span className={`${styles.hero_orange}`}>&</span>
@@ -130,12 +130,12 @@ export default function Home() {
               ${styles.hero_skills}
               
             `}
-          // initial={{ y: -30, opacity: 0 }}
-          // animate={{ y: 0, opacity: 1 }}
-          // transition={{
-          //   delay: 1.5,
-          //   ease: 'easeInOut',
-          // }}
+            initial={{ y: -30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              delay: 1.5,
+              ease: 'easeInOut',
+            }}
           >
             UX <span className={`${styles.hero_development}`}>DEVELOPMENT</span>
           </motion.h2>
@@ -144,13 +144,13 @@ export default function Home() {
               display: 'flex',
               justifyContent: 'center',
             }}
-          // initial={{ y: 200, opacity: 0 }}
-          // animate={{ y: 100, opacity: 1 }}
-          // transition={{
-          //   delay: 2.5,
-          //   duration: 1,
-          //   ease: 'easeInOut',
-          // }}
+            initial={{ y: 200, opacity: 0 }}
+            animate={{ y: 100, opacity: 1 }}
+            transition={{
+              delay: 2.5,
+              duration: 1,
+              ease: 'easeInOut',
+            }}
           >
             <Lottie animationData={MouseScrollAnimation} loop={true} autoPlay={true} />
           </motion.div>
