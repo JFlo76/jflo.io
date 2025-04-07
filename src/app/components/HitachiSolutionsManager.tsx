@@ -1,25 +1,13 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
-import { useState } from 'react'
-
+import Image from 'next/image'
 export default function HitachiSolutionsManager() {
-    // Function to generate a random number between 1 and 100
-    const getRandomNumber = (): number => {
-        return Math.floor(Math.random() * 100) + 1
-    }
-
-    // State to store random numbers for each persona
-    const [randomNumbers, setRandomNumbers] = useState({
-        admin: getRandomNumber(),
-        manager: getRandomNumber(),
-        operator: getRandomNumber()
-    })
 
     return (
         <main className="w-full flex flex-col items-center">
             <div className="flex flex-col px-4 md:px-20 text-lg container">
                 <header className="flex flex-col w-full mt-16 mb-16">
-                    <h1 className={`${robotoCondensed.className} text-4xl md:text-6xl font-bold mb-2 uppercase`}>Hitachi Vantara's Solutions Manager</h1>
+                    <h1 className={`${robotoCondensed.className} text-4xl md:text-6xl font-bold mb-2 uppercase`}>Hitachi Vantara&#39;s Solutions Manager</h1>
                     <p>
                         <span className="me-4"><b>Role</b>: UX/UI Designer & Usability Studies</span><b>Toolkit</b>: Sketch, CanvasFlip
                     </p>
@@ -27,16 +15,20 @@ export default function HitachiSolutionsManager() {
 
                 <section className={`flex flex-row items-start w-full mb-16`}>
                     <div className='mr-8 w-full md:max-w-[50%] text-center'>
-                        <img
+                        <Image
                             className='w-full rounded-lg object-contain aspect-auto'
-                            srcSet='/images/hitachi/solutions-manager-before-after.webp, /images/hitachi/solutions-manager-before-after@2x.webp 2x'
-                            alt='Solutions Manager dashboard before and after' />
+                            src='/images/hitachi/solutions-manager-before-after@2x.webp'
+                            alt='Solutions Manager dashboard before and after'
+                            width={800}
+                            height={600}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
                         <p>Before / After</p>
                     </div>
                     <article className='w-full md:max-w-[50%]'>
                         <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Overview</h2>
                         <p className="md:text-base lg:text-xl mb-4">
-                            Hitachi's Solutions Manager application was conceived and designed by some of my teammates, with the purpose of allowing a power-user with admin privileges to manage customized dashboards, or "Solutions" and the elements that go into building them.
+                            Hitachi&#39;s Solutions Manager application was conceived and designed by some of my teammates, with the purpose of allowing a power-user with admin privileges to manage customized dashboards, or &quot;Solutions&quot; and the elements that go into building them.
                         </p>
                         <p className="md:text-base lg:text-xl">
                             After the GA version was released, I wanted to perform an evaluation of the application, propose theories for improvements, and conduct usability sessions in order to test those theories.
@@ -68,15 +60,15 @@ export default function HitachiSolutionsManager() {
                             <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Test Summary</h2>
                             <p className="font-bold md:text-base lg:text-xl mb-4">The test objectives were as follows:</p>
                             <ol className="list-decimal mb-6 ms-6">
-                                <li>Improve user's mental mappings between the components</li>
+                                <li>Improve user&#39;s mental mappings between the components</li>
                                 <li>Improve ease of use for navigating between the associated components</li>
                             </ol>
                             <p className="md:text-base lg:text-xl mb-4">Myself and 2 other team members ran a series of 5 remote individual in-depth interviews, each of us
                                 taking turns conducting with a written script and taking notes.</p>
                             <p className="md:text-base lg:text-xl mb-4">The participants were all Hitachi consultants, solutions architects and engineers with OT skill sets,
-                                which aligns with the persona "Admin Adam" for this application.</p>
+                                which aligns with the persona &quot;Admin Adam&quot; for this application.</p>
                             <p className="md:text-base lg:text-xl mb-4">Each participant joined via video conference where we had them share their computer screen. I used
-                                the online tool CanvasFlip in order to record the user's clicks and workflow through the prototype
+                                the online tool CanvasFlip in order to record the user&#39;s clicks and workflow through the prototype
                                 that I designed using Sketch, while my teammate would take notes and record the audio.</p>
                         </div>
                     </div>
@@ -85,12 +77,13 @@ export default function HitachiSolutionsManager() {
                         <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Objective 1: Mental Mappings</h2>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className='mr-8 w-full md:max-w-[60%] text-center'>
-                                <img
+                                <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/solutions-manager-original-templates.webp, /images/hitachi/solutions-manager-original-templates@2x.webp 2x'
-                                    src='/images/hitachi/solutions-manager-original-templates.webp'
+                                    src='/images/hitachi/solutions-manager-original-templates@2x.webp'
                                     alt='UI of the original templates page'
-                                    loading="lazy"
+                                    width={800}
+                                    height={600}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </div>
                             <article className='w-full md:max-w-[40%]'>
@@ -101,12 +94,13 @@ export default function HitachiSolutionsManager() {
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className='mr-8 w-full md:max-w-[60%] text-center'>
-                                <img
+                                <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/solutions-manager-new-templates-card.webp, /images/hitachi/solutions-manager-new-templates-card@2x.webp 2x'
                                     src='/images/hitachi/solutions-manager-new-templates-card.webp'
                                     alt='UI of the new templates page'
-                                    loading="lazy"
+                                    width={800}
+                                    height={600}
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </div>
                             <article className='w-full md:max-w-[40%]'>
@@ -132,11 +126,13 @@ export default function HitachiSolutionsManager() {
                         <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Objective 2: Navigation</h2>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className='mr-8 w-full md:max-w-[30%] text-center'>
-                                <img
+                                <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/solutions-manager-original-templates-card.webp, /images/hitachi/solutions-manager-original-templates-card@2x.webp 2x'
-                                    src='/images/hitachi/solutions-manager-original-templates-card.webp'
+                                    src='/images/hitachi/solutions-manager-original-templates-card@2x.webp'
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     alt='Mobile UI of the new instance card'
+                                    width={800}
+                                    height={600}
                                     loading="lazy"
                                 />
                             </div>
@@ -148,11 +144,12 @@ export default function HitachiSolutionsManager() {
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className='mr-8 w-full md:max-w-[30%] text-center'>
-                                <img
+                                <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/solutions-manager-new-instance-card.webp, /images/hitachi/solutions-manager-new-instance-card@2x.webp 2x'
-                                    src='/images/hitachi/solutions-manager-new-instance-card.webp'
+                                    src='/images/hitachi/solutions-manager-new-instance-card@2x.webp'
                                     alt='Mobile UI of the new instance card'
+                                    width={800}
+                                    height={600}
                                     loading="lazy"
                                 />
                             </div>
@@ -167,18 +164,20 @@ export default function HitachiSolutionsManager() {
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className="w-full md:max-w-[61%] flex flex-row mr-8 gap-4">
-                                <img
+                                <Image
                                     className='w-1/2 rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/solutions-manager-dashboard-instances-overlay-off.webp, /images/hitachi/solutions-manager-dashboard-instances-overlay-off@2x.webp 2x'
-                                    src='/images/hitachi/solutions-manager-dashboard-instances-overlay-off.webp'
+                                    src='/images/hitachi/solutions-manager-dashboard-instances-overlay-off@2x.webp'
                                     alt='Mobile UI of the new instance card'
+                                    width={400}
+                                    height={300}
                                     loading="lazy"
                                 />
-                                <img
+                                <Image
                                     className='w-1/2 rounded-lg object-contain aspect-auto'
-                                    srcSet='/images/hitachi/solutions-manager-dashboard-instances-overlay-on.webp, /images/hitachi/solutions-manager-dashboard-instances-overlay-on@2x.webp 2x'
-                                    src='/images/hitachi/solutions-manager-dashboard-instances-overlay-on.webp'
+                                    src='/images/hitachi/solutions-manager-dashboard-instances-overlay-on@2x.webp'
                                     alt='Mobile UI of the new instance card'
+                                    width={400}
+                                    height={300}
                                     loading="lazy"
                                 />
                             </div>
@@ -203,7 +202,7 @@ export default function HitachiSolutionsManager() {
                                     Dashboard, then navigate to view those Instances. All participants were able to identify the badge
                                     as an interactive element within 3-5 seconds, click on it to view the Instances, then navigate to
                                     the Instances page from there.</p>
-                                <p className='md:text-base lg:text-xl'>Since the previous design didn't have any linking between components, there was no baseline to test
+                                <p className='md:text-base lg:text-xl'>Since the previous design didn&#39;t have any linking between components, there was no baseline to test
                                     against. This navigation test can now be used as a baseline for measuring navigation improvements.
                                 </p>
                             </article>

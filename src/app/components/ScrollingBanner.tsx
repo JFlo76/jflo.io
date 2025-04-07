@@ -2,7 +2,7 @@
 // @refresh reset
 import { animate, motion, useMotionValue } from 'motion/react'
 import styles from './ScrollingBanner.module.scss'
-import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import { robotoCondensed } from '../fonts'
 
 interface ScrollingBannerProps {
@@ -24,7 +24,7 @@ export default function ScrollingBanner(props: ScrollingBannerProps) {
         background: 'linear-gradient(var(--primary-blue-600), var(--primary-blue-800))',
     };
 
-    const startAnimation = () => {
+    const startAnimation = useCallback(() => {
         // Stop any existing animation
         if (animationRef.current) {
             animationRef.current.stop();
@@ -32,7 +32,7 @@ export default function ScrollingBanner(props: ScrollingBannerProps) {
 
         const bannerElement = document.getElementById(`banner`);
         const bannerWidth = bannerElement?.clientWidth || 0;
-        let finalPosition = -bannerWidth / 2;
+        const finalPosition = -bannerWidth / 2;
 
         // Reset position before starting new animation
         xTranslation.set(0);
@@ -48,7 +48,7 @@ export default function ScrollingBanner(props: ScrollingBannerProps) {
 
         // Store the animation controls for cleanup
         animationRef.current = controls;
-    };
+    }, [xTranslation, speed]);
 
     useLayoutEffect(() => {
         startAnimation();
@@ -58,7 +58,7 @@ export default function ScrollingBanner(props: ScrollingBannerProps) {
                 animationRef.current.stop();
             }
         };
-    }, [xTranslation, speed]);
+    }, [xTranslation, speed, startAnimation]);
 
     // Add window resize event listener
     useEffect(() => {
@@ -71,7 +71,7 @@ export default function ScrollingBanner(props: ScrollingBannerProps) {
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [speed]);
+    }, [startAnimation]);
 
     return (
         <div className={`${styles.bannerContainer}`} style={bannerStyles}>

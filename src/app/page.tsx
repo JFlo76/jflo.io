@@ -9,7 +9,6 @@ import { robotoCondensed } from './fonts'
 import SvgBackground from './components/svg-background/svgBg'
 import styles from './page.module.scss'
 
-import Unicorn from './components/Unicorn';
 import Indeed from './components/Indeed'
 import HitachiStudio from './components/HitachiStudio'
 import Modal from './components/modal';
@@ -26,7 +25,6 @@ import RitucciFriedmanOrtho from './components/RitucciFriedmanOrtho';
 import HillmanDentistry from './components/HillmanDentistry';
 import AboutSection from './components/AboutSection';
 import FeaturedProjects from './components/FeaturedProjects';
-import FeaturedProjects2 from './components/FeaturedProjects2';
 
 export default function Home() {
   const mainRef = useRef(null);
@@ -57,17 +55,6 @@ export default function Home() {
     target: workRef,
     offset: ['start end', 'end end'],
   });
-
-  const projectsRowLeftRotate = useTransform(
-    workScroll,
-    [0.5, 0.9],
-    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(-50px)', 'perspective(50px) rotate3d(0, 1, 0, 1.5deg) translateX(50px)']
-  );
-  const projectsRowRightRotate = useTransform(
-    workScroll,
-    [0.5, 0.9],
-    ['perspective(50px) rotate3d(0, 1, 0, 0deg) translateX(50px)', 'perspective(50px) rotate3d(0, 1, 0, -1.5deg) translateX(-50px)']
-  );
 
   const [isModalOpen, setModalOpen] = useState<string | null>(null);
   const handleModalOpen = (item: string, event: React.MouseEvent<HTMLElement>) => {
@@ -163,7 +150,7 @@ export default function Home() {
         <motion.section id='work' className={`${styles.work} flex flex-col w-full min-h-full`} ref={workRef}>
 
           {/* Start Featured Projects */}
-          <FeaturedProjects2 workScroll={workScroll} handleModalOpen={handleModalOpen} />
+          <FeaturedProjects workScroll={workScroll} handleModalOpen={handleModalOpen} />
 
           {/* Start Archive Section */}
           <ProjectArchives workScroll={workScroll} handleModalOpen={handleModalOpen} />
@@ -173,7 +160,7 @@ export default function Home() {
         <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 relative`} ref={contactRef}>
           <ScrollingBanner items={bannerItems} />
           <h2 className={`${robotoCondensed.className} text-center uppercase text-[4vw] tracking-[-0.2rem] leading-[4rem] text-stone-900`}>Get In Touch</h2>
-          <p className='text-stone-900 text-[1.3vw] text-center'>Got a project in mind? Let's connect!</p>
+          <p className='text-stone-900 text-[1.3vw] text-center'>Got a project in mind? Let&apos;s connect!</p>
 
           <div className="max-w-2xl mx-auto w-full">
             <form

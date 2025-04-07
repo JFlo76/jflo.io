@@ -3,7 +3,6 @@
 import { motion, MotionValue, useTransform } from 'motion/react';
 import { robotoCondensed } from '../fonts';
 import styles from '../page.module.scss';
-import Unicorn from './Unicorn';
 
 interface AboutSectionProps {
     aboutScroll: MotionValue<number>;
@@ -20,7 +19,6 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                 <motion.article
                     style={{
                         y: useTransform(aboutScroll, [0.25, 0.8], [500, 0]),
-                        // opacity: useTransform(aboutScroll, [0.5, 1], [0, 1]),
                     }}
                     className={`w-full md:w-2/3`}
                 >
@@ -33,11 +31,10 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                         A little about me...
                     </motion.h2>
                     <p className={`${styles.about_text}`}>
-                        With over a decade of experience in the tech industry, I specialize in bridging the gap between design and development, transforming concepts into functional, user-friendly interfaces. My unique blend of expertise in both disciplines enables me to create seamless digital experiences that are both visually compelling and technically sound. While some have referred to me as a 'unicorn' due to this rare combination of skills, I prefer to think of it simply as a deep passion for crafting intuitive and high-performing products. Huzzah!
+                        With over a decade of experience in the tech industry, I specialize in bridging the gap between design and development, transforming concepts into functional, user-friendly interfaces. My unique blend of expertise in both disciplines enables me to create seamless digital experiences that are both visually compelling and technically sound. While some have referred to me as a &lsquo;unicorn&rsquo; due to this rare combination of skills, I prefer to think of it simply as a deep passion for crafting intuitive and high-performing products. Huzzah!
                     </p>
                     <a href='#work' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>See my work</a>
                 </motion.article>
-                {/* <Unicorn scrollRef={aboutScroll} /> */}
                 <motion.img
                     src='/images/JFloMug.webp'
                     alt='JFlo with a mug of coffee'

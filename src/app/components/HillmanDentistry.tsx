@@ -1,5 +1,6 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
+import Image from 'next/image'
 export default function HillmanDentistry() {
 
     return (
@@ -13,21 +14,23 @@ export default function HillmanDentistry() {
                     <p>Worked with client to determine general guidelines for design based on existing logo & branding. Provided a handful of design comps for review and revisions. Built image slideshows using Flash. Final design was developed using a proprietary content management system owned by Sesame Communications.</p>
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
-                    <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Homepage</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/hillman-dentistry/hillman-homepage.webp, /images/hillman-dentistry/hillman-homepage@2x.webp 2x'
-                        src='/images/hillman-dentistry/hillman-homepage.webp'
+                        src='/images/hillman-dentistry/hillman-homepage@2x.webp'
+                        sizes="100vw"
                         alt='Hillman Dentistry website homepage'
-                        loading="lazy"
+                        width={1200}
+                        height={800}
+                        priority={false}
                     />
-                    <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Meet Dr. Page</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/hillman-dentistry/hillman-about.webp, /images/hillman-dentistry/hillman-about@2x.webp 2x'
-                        src='/images/hillman-dentistry/hillman-about.webp'
+                        src='/images/hillman-dentistry/hillman-about@2x.webp'
+                        sizes="100vw"
                         alt='Hillman Dentistry website about page'
-                        loading="lazy"
+                        width={1200}
+                        height={800}
+                        priority={false}
                     />
                 </section>
             </div>
