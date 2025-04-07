@@ -5,6 +5,7 @@ const config: StorybookConfig = {
     "../src/**/*.mdx",
     "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
+
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -20,13 +21,24 @@ const config: StorybookConfig = {
         },
       },
     },
+    "@storybook/addon-mdx-gfm"
   ],
+
   "framework": {
     "name": "@storybook/experimental-nextjs-vite",
     "options": {}
   },
+
   "staticDirs": [
     "../public"
-  ]
+  ],
+
+  docs: {
+    autodocs: true
+  },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 export default config;
