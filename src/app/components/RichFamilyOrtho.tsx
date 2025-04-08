@@ -1,5 +1,7 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
+import Image from 'next/image';
+
 export default function RichFamilyOrtho() {
 
     return (
@@ -14,20 +16,22 @@ export default function RichFamilyOrtho() {
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Homepage</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/rich-family-ortho/rich-family-homepage.webp, /images/rich-family-ortho/rich-family-homepage@2x.webp 2x'
-                        src='/images/rich-family-ortho/rich-family-homepage.webp'
+                        src='/images/rich-family-ortho/rich-family-homepage@2x.webp'
                         alt='Rich Family Ortho website homepage'
-                        loading="lazy"
+                        width={1920}
+                        height={1080}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Contact page</h3>
-                    <img
+                    <Image
                         className='rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/rich-family-ortho/rich-family-contact.webp, /images/rich-family-ortho/rich-family-contact@2x.webp 2x'
-                        src='/images/rich-family-ortho/rich-family-contact.webp'
+                        src='/images/rich-family-ortho/rich-family-contact@2x.webp'
                         alt='Rich Family Ortho website contact page'
-                        loading="lazy"
+                        width={1920}
+                        height={1080}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 </section>
             </div>

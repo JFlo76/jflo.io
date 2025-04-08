@@ -1,5 +1,7 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
+import Image from 'next/image';
+
 export default function ProductOfTheNorth() {
 
     return (
@@ -15,28 +17,31 @@ export default function ProductOfTheNorth() {
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Homepage Hero</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/potn/potn-hero.webp, /images/potn/potn-hero@2x.webp 2x'
-                        src='/images/potn/potn-hero.webp'
+                        src='/images/potn/potn-hero@2x.webp'
                         alt='Product of the North website homepage hero banner'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={1200}
+                        height={800}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Products Page</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/potn/potn-bags.webp, /images/potn/potn-bags@2x.webp 2x'
-                        src='/images/potn/potn-bags.webp'
+                        src='/images/potn/potn-bags@2x.webp'
                         alt='Product of the North bags product page'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={1200}
+                        height={800}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Product Details Page</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/potn/potn-bag-details.webp, /images/potn/potn-bag-details@2x.webp 2x'
-                        src='/images/potn/potn-bag-details.webp'
+                        src='/images/potn/potn-bag-details@2x.webp'
                         alt='Product of the North bag product details page'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={1200}
+                        height={800}
                     />
                 </section>
             </div>

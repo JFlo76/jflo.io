@@ -1,5 +1,7 @@
 'use client'
+import Image from 'next/image';
 import { robotoCondensed } from '@/app/fonts'
+
 export default function Mixpo() {
 
     return (
@@ -14,66 +16,76 @@ export default function Mixpo() {
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>New Creative Modal</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
                         src='/images/mixpo/mixpo-creatives-animated.gif'
                         alt='Mixpo website creatives animated gif'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Placements page</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
                         src='/images/mixpo/mixpo-placements-animated.gif'
                         alt='Mixpo website placements animated gif'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Placements tooltip</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/mixpo/mixpo-placements-modal.webp, /images/mixpo/mixpo-placements-modal@2x.webp 2x'
-                        src='/images/mixpo/mixpo-placements-modal.webp'
+                        src='/images/mixpo/mixpo-placements-modal@2x.webp'
                         alt='Mixpo website placements modal'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Analytics modal</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/mixpo/mixpo-analytics-modal.webp, /images/mixpo/mixpo-analytics-modal@2x.webp 2x'
-                        src='/images/mixpo/mixpo-analytics-modal.webp'
+                        src='/images/mixpo/mixpo-analytics-modal@2x.webp'
                         alt='Mixpo website analytics modal'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Analytics page</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/mixpo/mixpo-analytics-page.webp, /images/mixpo/mixpo-analytics-page@2x.webp 2x'
-                        src='/images/mixpo/mixpo-analytics-page.webp'
+                        src='/images/mixpo/mixpo-analytics-page@2x.webp'
                         alt='Mixpo website analytics page'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Publisher modal</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/mixpo/mixpo-publisher-modal.webp, /images/mixpo/mixpo-publisher-modal@2x.webp 2x'
-                        src='/images/mixpo/mixpo-publisher-modal.webp'
+                        src='/images/mixpo/mixpo-publisher-modal@2x.webp'
                         alt='Mixpo website publiisher modal'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Styleguide icons</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/mixpo/mixpo-styleguide-icons.webp, /images/mixpo/mixpo-styleguide-icons@2x.webp 2x'
-                        src='/images/mixpo/mixpo-styleguide-icons.webp'
+                        src='/images/mixpo/mixpo-styleguide-icons@2x.webp'
                         alt='Mixpo styleguide icons'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Styleguide controls</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/mixpo/mixpo-styleguide-controls.webp, /images/mixpo/mixpo-styleguide-controls@2x.webp 2x'
-                        src='/images/mixpo/mixpo-styleguide-controls.webp'
+                        src='/images/mixpo/mixpo-styleguide-controls@2x.webp'
                         alt='Mixpo styleguide controls'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                 </section>
             </div>

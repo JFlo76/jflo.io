@@ -1,5 +1,7 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
+import Image from 'next/image';
+
 export default function RitucciFriedmanOrtho() {
 
     return (
@@ -14,28 +16,31 @@ export default function RitucciFriedmanOrtho() {
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Homepage</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/ritucci-friedman-ortho/ritucci-friedman-home.webp, /images/ritucci-friedman-ortho/ritucci-friedman-home@2x.webp 2x'
-                        src='/images/ritucci-friedman-ortho/ritucci-friedman-home.webp'
+                        src='/images/ritucci-friedman-ortho/ritucci-friedman-home@2x.webp'
                         alt='Ritucci-Friedman Ortho website homepage'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={1200}
+                        height={800}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Sub Nav</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/ritucci-friedman-ortho/ritucci-friedman-sub-nav.webp, /images/ritucci-friedman-ortho/ritucci-friedman-sub-nav@2x.webp 2x'
-                        src='/images/ritucci-friedman-ortho/ritucci-friedman-sub-nav.webp'
+                        src='/images/ritucci-friedman-ortho/ritucci-friedman-sub-nav@2x.webp'
                         alt='Ritucci-Friedman Ortho website homepage sub nav'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={1200}
+                        height={800}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Sub Page with text styles</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/ritucci-friedman-ortho/ritucci-friedman-sub-page.webp, /images/ritucci-friedman-ortho/ritucci-friedman-sub-page@2x.webp 2x'
-                        src='/images/ritucci-friedman-ortho/ritucci-friedman-sub-page.webp'
+                        src='/images/ritucci-friedman-ortho/ritucci-friedman-sub-page@2x.webp'
                         alt='Ritucci-Friedman Ortho website sub page'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={1200}
+                        height={800}
                     />
                 </section>
             </div>

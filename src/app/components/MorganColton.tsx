@@ -1,5 +1,7 @@
 'use client'
+import Image from 'next/image';
 import { robotoCondensed } from '@/app/fonts'
+
 export default function MorganColton() {
 
     return (
@@ -14,35 +16,40 @@ export default function MorganColton() {
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Homepage</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
                         src='/images/morgan/morgan-animated.gif'
                         alt='Morgan Colton website homepage animated gif'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>projects section</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/morgan/morgan-work.webp, /images/morgan/morgan-work@2x.webp 2x'
-                        src='/images/morgan/morgan-work.webp'
+                        src='/images/morgan/morgan-work@2x.webp'
                         alt='Morgan Colton website projects'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Project details modal</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/morgan/morgan-work-details.webp, /images/morgan/morgan-work-details@2x.webp 2x'
-                        src='/images/morgan/morgan-work-details.webp'
+                        src='/images/morgan/morgan-work-details@2x.webp'
                         alt='Morgan Colton website projects details'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Full homepage UI</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/morgan/morgan-fullpage.webp, /images/morgan/morgan-fullpage@2x.webp 2x'
-                        src='/images/morgan/morgan-fullpage.webp'
+                        src='/images/morgan/morgan-fullpage@2x.webp'
                         alt='Morgan Colton website full homepage'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        width={800}
+                        height={600}
                     />
                 </section>
             </div>

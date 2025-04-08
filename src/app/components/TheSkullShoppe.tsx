@@ -1,5 +1,7 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
+import Image from 'next/image';
+
 export default function TheSkullShoppe() {
 
     return (
@@ -15,28 +17,25 @@ export default function TheSkullShoppe() {
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Homepage</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/skullshoppe/skullshoppe-homepage.webp, /images/skullshoppe/skullshoppe-homepage@2x.webp 2x'
-                        src='/images/skullshoppe/skullshoppe-homepage.webp'
+                        src='/images/skullshoppe/skullshoppe-homepage@2x.webp'
                         alt='The Skull Shoppe website homepage'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Products Page</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/skullshoppe/skullshoppe-products-page.webp, /images/skullshoppe/skullshoppe-products-page@2x.webp 2x'
-                        src='/images/skullshoppe/skullshoppe-products-page.webp'
+                        src='/images/skullshoppe/skullshoppe-products-page@2x.webp'
                         alt='The Skull Shoppe products page'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Product Details Page</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/skullshoppe/skullshoppe-product-details-page.webp, /images/skullshoppe/skullshoppe-product-details-page@2x.webp 2x'
-                        src='/images/skullshoppe/skullshoppe-product-details-page.webp'
+                        src='/images/skullshoppe/skullshoppe-product-details-page@2x.webp'
                         alt='The Skull Shoppe product details page'
-                        loading="lazy"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 </section>
             </div>

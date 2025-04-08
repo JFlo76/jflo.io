@@ -32,12 +32,11 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     }}>
                     <Image
                         src='/images/indeed/interview-scheduling-modal@2x.webp'
-                        sizes="100vw"
                         alt='Indeed.com interface with the interview scheduling modal open'
-                        loading="lazy"
                         className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                        width={800}
-                        height={450}
+                        sizes="(max-width: 768px) 50vw, 100vw"
+                        width={1200}
+                        height={800}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
@@ -54,12 +53,12 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
 
                     <Image
                         src='/images/hitachi/LumadaStudio-RegionMapActive@2x.webp'
-                        sizes="100vw"
-                        alt='Indeed.com interface with the interview scheduling modal open'
+                        alt='Hitachi Studio interface with the region map active'
                         loading="lazy"
                         className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                        width={800}
-                        height={450}
+                        sizes="(max-width: 768px) 50vw, 100vw"
+                        width={1200}
+                        height={800}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
@@ -84,11 +83,11 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
 
                     <Image
                         src='/images/hitachi/solutions-manager-new-templates-card@2x.webp'
-                        sizes="100vw"
-                        alt='Indeed.com interface with the interview scheduling modal open'
+                        alt='Hitachi Solutions Manager interface with the new templates card'
                         className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
-                        width={800}
-                        height={450}
+                        sizes="(max-width: 768px) 50vw, 100vw"
+                        width={1200}
+                        height={800}
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>

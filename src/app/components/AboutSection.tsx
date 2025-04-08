@@ -37,7 +37,7 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                 </motion.article>
                 <motion.img
                     src='/images/JFloMug.webp'
-                    alt='JFlo with a mug of coffee'
+                    alt='Photo of Jason Florence looking up to the left'
                     className='absolute bottom-0 right-0 w-1/2 md:w-1/3'
                     style={{
                         y: useTransform(aboutScroll, [0.5, 1], [900, 0]),

@@ -64,7 +64,7 @@ const SvgBackground = () => {
         return () => {
             animation.stop();
         };
-    }, []);
+    }, [scope, animate]);
 
     return (
         <svg

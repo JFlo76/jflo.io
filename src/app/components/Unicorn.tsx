@@ -1,10 +1,10 @@
 'use client'
 // @refresh reset
-import { motion, useTransform } from 'motion/react';
+import { motion, MotionValue, useTransform } from 'motion/react';
 import styles from '../page.module.scss'
 
 interface UnicornProps {
-    scrollRef: any;
+    scrollRef: MotionValue<number>;
 }
 
 export default function Unicorn({ scrollRef }: UnicornProps) {

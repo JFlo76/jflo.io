@@ -1,4 +1,5 @@
 import { motion, MotionValue, useTransform } from 'motion/react';
+import Image from 'next/image';
 import { robotoCondensed } from '../fonts';
 
 interface ProjectArchivesProps {
@@ -92,10 +93,12 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
                 {projects.map((project) => (
                     <div key={project.id} className={`text-center aspect-video`}>
                         <a href="" title={project.title} className='group relative block mb-2' onClick={(event) => handleModalOpen(project.title, event)}>
-                            <img
-                                srcSet={`${project.thumbSrc}, ${project.thumbSrc2x} 2x`}
+                            <Image
+                                src={`${project.thumbSrc2x}`}
                                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                                 alt={project.altText}
+                                width={400}
+                                height={225}
                                 className="rounded-sm transition-transform duration-300 group-hover:grayscale aspect-video object-cover w-full h-full"
                             />
                             <div className="absolute inset-0 top-0 bottom-0 left-0 right-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">

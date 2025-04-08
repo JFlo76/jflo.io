@@ -1,5 +1,7 @@
 'use client'
+import Image from 'next/image';
 import { robotoCondensed } from '@/app/fonts'
+
 export default function Imprnt() {
 
     return (
@@ -14,35 +16,40 @@ export default function Imprnt() {
                 </header>
                 <section className={`flex flex-col items-start w-full mb-16`}>
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Mobile homepage UI</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/imprnt/imprnt-mobile.webp, /images/imprnt/imprnt-mobile@2x.webp 2x'
-                        src='/images/imprnt/imprnt-mobile.webp'
+                        src='/images/imprnt/imprnt-mobile@2x.webp'
                         alt='Imprnt website mobile homepage'
-                        loading="lazy"
+                        width={600}
+                        height={800}
+                        sizes="(max-width: 768px) 100vw, 600px"
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Desktop Homepage UI</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/imprnt/imprnt-home.webp, /images/imprnt/imprnt-home@2x.webp 2x'
-                        src='/images/imprnt/imprnt-home.webp'
+                        src='/images/imprnt/imprnt-home@2x.webp'
                         alt='Imprnt website homepage'
-                        loading="lazy"
+                        width={1200}
+                        height={800}
+                        sizes="(max-width: 1200px) 100vw, 1200px"
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>HomePage sketch</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
-                        srcSet='/images/imprnt/imprnt-sketch-home.webp, /images/imprnt/imprnt-sketch-home@2x.webp 2x'
-                        src='/images/imprnt/imprnt-sketch-home.webp'
+                        src='/images/imprnt/imprnt-sketch-home@2x.webp'
                         alt='Imprnt homepage sketch'
-                        loading="lazy"
+                        width={800}
+                        height={600}
+                        sizes="(max-width: 800px) 100vw, 800px"
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Original homepage layout</h3>
-                    <img
+                    <Image
                         className='mb-8 rounded-lg w-full object-contain aspect-auto'
                         src='/images/imprnt/imprnt-current-site.gif'
                         alt='Imprnt original website'
-                        loading="lazy"
+                        width={800}
+                        height={600}
+                        sizes="(max-width: 800px) 100vw, 800px"
                     />
                 </section>
             </div>
