@@ -22,6 +22,9 @@ export default function TheSkullShoppe() {
                         src='/images/skullshoppe/skullshoppe-homepage@2x.webp'
                         alt='The Skull Shoppe website homepage'
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        width={1200}
+                        height={800}
+
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Products Page</h3>
                     <Image
@@ -29,6 +32,9 @@ export default function TheSkullShoppe() {
                         src='/images/skullshoppe/skullshoppe-products-page@2x.webp'
                         alt='The Skull Shoppe products page'
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        width={1200}
+                        height={800}
+
                     />
                     <h3 className={`${robotoCondensed.className} text-4xl font-bold mb-2 uppercase`}>Product Details Page</h3>
                     <Image
@@ -36,6 +42,9 @@ export default function TheSkullShoppe() {
                         src='/images/skullshoppe/skullshoppe-product-details-page@2x.webp'
                         alt='The Skull Shoppe product details page'
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        width={1200}
+                        height={800}
+
                     />
                 </section>
             </div>

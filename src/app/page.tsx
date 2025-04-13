@@ -220,8 +220,12 @@ export default function Home() {
 
               <button
                 type="submit"
-                className={`${robotoCondensed.className} ${styles.linkTo_work} uppercase self-start`}
+                className={`${robotoCondensed.className} inline-block py-4 px-8 uppercase text-white bg-[var(--complementary-orange-400)] rounded-lg text-foreground text-lg transition-all duration-300 ease-in-out hover:translate-x-2 hover:-translate-y-[6px] hover:shadow-[calc(-2px)_2px_0_var(--complementary-orange-600),calc(-4px)_4px_0_var(--complementary-orange-600),calc(-6px)_6px_0_var(--complementary-orange-600)] self-start`}
               >
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 inline-block me-4">
+                  <circle cx="16" cy="16" r="16" fill="white" />
+                  <path d="M9.3923 25.701C9.3923 26.2783 10.0173 26.6392 10.5173 26.3505L26.2673 17.2572C26.7673 16.9685 26.7673 16.2469 26.2673 15.9582L10.5173 6.86491C10.0173 6.57623 9.39231 6.93708 9.39231 7.51443L9.3923 25.701Z" fill="#BE230B" />
+                </svg>
                 Send Message
               </button>
             </form>

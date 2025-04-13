@@ -31,9 +31,9 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                         x: useTransform(workScroll, [0, 0.35], [900, 60]),
                     }}>
                     <Image
-                        src='/images/indeed/interview-scheduling-modal@2x.webp'
+                        src='/images/indeed/interview-scheduling-modal.webp'
                         alt='Indeed.com interface with the interview scheduling modal open'
-                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-[60vw] h-full"
                         sizes="(max-width: 768px) 50vw, 100vw"
                         width={1200}
                         height={800}
@@ -52,10 +52,9 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     }}>
 
                     <Image
-                        src='/images/hitachi/LumadaStudio-RegionMapActive@2x.webp'
+                        src='/images/hitachi/LumadaStudio-RegionMapActive.webp'
                         alt='Hitachi Studio interface with the region map active'
-                        loading="lazy"
-                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-[60vw] h-full"
                         sizes="(max-width: 768px) 50vw, 100vw"
                         width={1200}
                         height={800}
@@ -82,9 +81,9 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     }}>
 
                     <Image
-                        src='/images/hitachi/solutions-manager-new-templates-card@2x.webp'
+                        src='/images/hitachi/solutions-manager-new-templates-card.webp'
                         alt='Hitachi Solutions Manager interface with the new templates card'
-                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-full h-full"
+                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-[60vw] h-full"
                         sizes="(max-width: 768px) 50vw, 100vw"
                         width={1200}
                         height={800}
