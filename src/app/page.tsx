@@ -167,6 +167,41 @@ export default function Home() {
               className="flex flex-col gap-4"
               action="https://formsubmit.co/909a540dac9f9c0b75b3cd265f33ea1f"
               method="POST"
+              onSubmit={(e) => {
+                const nameInput = (e.target as HTMLFormElement).elements.namedItem("Name") as HTMLInputElement;
+                const emailInput = (e.target as HTMLFormElement).elements.namedItem("Email") as HTMLInputElement;
+                const messageInput = (e.target as HTMLFormElement).elements.namedItem("Message") as HTMLTextAreaElement;
+
+                const englishOnlyRegex = /^[a-zA-Z\s]*$/;
+
+                // Check if Name ends with "Sok"
+                if (nameInput.value.trim().endsWith("Sok")) {
+                  e.preventDefault();
+                  alert("Names ending with 'Sok' are not allowed.");
+                  return;
+                }
+
+                // Validate Name input for English characters only
+                if (!englishOnlyRegex.test(nameInput.value)) {
+                  e.preventDefault();
+                  alert("The Name field can only contain English characters.");
+                  return;
+                }
+
+                // Validate Email input for English characters only
+                if (!englishOnlyRegex.test(emailInput.value.split('@')[0])) {
+                  e.preventDefault();
+                  alert("The Email field can only contain English characters before the '@' symbol.");
+                  return;
+                }
+
+                // Validate Message input for English characters only
+                if (!englishOnlyRegex.test(messageInput.value)) {
+                  e.preventDefault();
+                  alert("The Message field can only contain English characters.");
+                  return;
+                }
+              }}
             >
               {/* Honeypot to prevent spam */}
               <input type="text" name="_honey" style={{ display: 'none' }} />
