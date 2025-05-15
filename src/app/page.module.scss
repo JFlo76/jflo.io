@@ -52,33 +52,6 @@
   }
 }
 
-.hero {
-  display: flex;
-  color: var(--foreground);
-
-  &_greeting {
-    font-size: 1.4vw;
-    margin-inline-start: .4vw;
-  }
-
-  &_skills {
-    font-size: 11vw;
-    color: var(--foreground);
-    letter-spacing: -0.3rem;
-    line-height: 0.9;
-  }
-
-
-  &_design {
-    color: var(--complementary-orange-200);
-  }
-
-  &_development {
-    color: var(--primary-blue-200);
-  }
-
-}
-
 .linkTo {
   &_work {
     display: inline-block;

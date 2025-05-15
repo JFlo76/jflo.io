@@ -84,10 +84,10 @@ export default function Home() {
         {/* Start Hero Section */}
         <motion.section
           ref={heroRef}
-          className={`flex flex-wrap justify-center content-center flex-col h-full w-full ${styles.hero}`}
+          className={`flex flex-wrap justify-center content-center flex-col h-full w-full text-[var(--foreground)] px-6 lg:px-0`}
         >
           <motion.p
-            className={`font-bold mb-2 ${styles.hero_greeting}`}
+            className={`font-bold mb-2 text-[5vw] lg:text-[1.4vw] lg:ms-[0.4vw]`}
             initial={{ y: -30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{
@@ -98,7 +98,7 @@ export default function Home() {
           <motion.h2
             className={`
               ${robotoCondensed.className} 
-              ${styles.hero_skills} 
+              text-[var(--foreground)] text-[16vw] lg:text-[11vw] letter-spacing-[-0.3rem] leading-[0.9]
               
             `}
             initial={{ y: -30, opacity: 0 }}
@@ -109,12 +109,12 @@ export default function Home() {
             }}
           >
 
-            UX <span className={`${styles.hero_design}`}>DESIGN</span> <span className={`${styles.hero_orange}`}>&</span>
+            UX <span className={`text-[var(--complementary-orange-200)]`}>DESIGN</span> <span className={`${styles.hero_orange}`}>&</span>
           </motion.h2>
           <motion.h2
             className={`
               ${robotoCondensed.className}
-              ${styles.hero_skills}
+              text-[var(--foreground)] text-[16vw] lg:text-[11vw] letter-spacing-[-0.3rem] leading-[0.9] break-all
               
             `}
             initial={{ y: -30, opacity: 0 }}
@@ -124,7 +124,7 @@ export default function Home() {
               ease: 'easeInOut',
             }}
           >
-            UX <span className={`${styles.hero_development}`}>DEVELOPMENT</span>
+            UX <span className={`text-[var(--primary-blue-200)]`}>DEVELOPMENT</span>
           </motion.h2>
           <motion.div
             style={{
