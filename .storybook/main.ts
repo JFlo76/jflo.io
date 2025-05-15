@@ -21,7 +21,8 @@ const config: StorybookConfig = {
         },
       },
     },
-    "@storybook/addon-mdx-gfm"
+    "@storybook/addon-mdx-gfm",
+    "@storybook/addon-a11y" // Added addon-a11y
   ],
 
   "framework": {
