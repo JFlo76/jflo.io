@@ -34,10 +34,10 @@
 .header {
   top: 60px;
   left: 80px;
-  mix-blend-mode: difference;
+  // mix-blend-mode: difference;
 
   .name {
-    @include display-text;
+    // @include display-text;
     display: flex;
     flex-direction: row;
     color: var(--foreground);
@@ -76,12 +76,12 @@
   color: var(--background-dark);
 
   article {
-    font-size: 1.2rem;
-    margin-inline-end: 2rem;
+    // font-size: 1.2rem;
+    // margin-inline-end: 2rem;
 
     h2 {
-      font-size: 5vw;
-      letter-spacing: -0.2rem;
+      // font-size: 5vw;
+      // letter-spacing: -0.2rem;
       color: var(--background-med);
     }
 

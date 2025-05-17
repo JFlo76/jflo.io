@@ -13,7 +13,7 @@ interface AboutSectionProps {
 export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProps) {
     return (
         <motion.section
-            className={`${styles.about} flex flex-col w-full h-full justify-center items-center p-20 relative overflow-hidden`}
+            className={`${styles.about} flex flex-col w-full h-full justify-center items-center p-6 lg:p-20 relative overflow-hidden`}
             ref={aboutRef}
         >
             <div className={`flex flex-row items-center w-full md:w-[80vw] justify-between`}>
@@ -21,20 +21,20 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                     style={{
                         y: useTransform(aboutScroll, [0.25, 0.8], [500, 0]),
                     }}
-                    className={`w-full md:w-2/3`}
+                    className={`w-full md:w-2/3 lg:me-[2rem]`}
                 >
                     <motion.h2
-                        className={`${robotoCondensed.className} uppercase text-[4vw] md:text-[5vw]`}
+                        className={`${robotoCondensed.className} uppercase text-[10vw] md:text-[5vw] tracking-[-0.2rem] text=[var(--background-med)]`}
                         style={{
                             x: useTransform(aboutScroll, [0.6, 0.8], [-500, 0])
                         }}
                     >
                         A little about me...
                     </motion.h2>
-                    <p className={`${styles.about_text}`}>
+                    <p className={`text=[1rem] lg:text=[1.2rem]`}>
                         With over a decade of experience in the tech industry, I specialize in bridging the gap between design and development, transforming concepts into functional, user-friendly interfaces. My unique blend of expertise in both disciplines enables me to create seamless digital experiences that are both visually compelling and technically sound. While some have referred to me as a &ldquo;unicorn&rdquo; due to this rare combination of skills, I prefer to think of it simply as a deep passion for crafting intuitive and high-performing products. Huzzah!
                     </p>
-                    <LinkButton href="#work" label="View projects" className='me-4' icon={
+                    <LinkButton href="#work" label="View projects" className='mb-4 lg:me-4' icon={
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 inline-block">
                             <circle cx="16" cy="16" r="16" fill="white" />
                             <path d="M15.3505 25.875C15.6392 26.375 16.3608 26.375 16.6495 25.875L25.7428 10.125C26.0315 9.625 25.6706 9 25.0933 9H6.90673C6.32938 9 5.96854 9.625 6.25721 10.125L15.3505 25.875Z" fill="#BE230B" />

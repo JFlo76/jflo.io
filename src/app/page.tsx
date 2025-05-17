@@ -67,11 +67,11 @@ export default function Home() {
   return (
     <div className={`fixed flex justify-center`}>
       <motion.header
-        className={`fixed z-10 ${styles.header}`}
+        className={`fixed z-10 mix-blend-difference ${styles.header}`}
         style={{ opacity: headerOpacity }}
       >
         <h1
-          className={`${styles.name} ${robotoCondensed.className} `}
+          className={`text-[6vw] lg:text-[2vw] leading-[0.8] tracking-[-0.2rem] flex flex-row text-[var(--foreground)] ${robotoCondensed.className} `}
         >
           <span className={`${styles.name_first}`}><span>J</span>ASON</span>
           <span className={`${styles.name_last}`}><span>FLO</span>RENCE</span>
@@ -98,7 +98,7 @@ export default function Home() {
           <motion.h2
             className={`
               ${robotoCondensed.className} 
-              text-[var(--foreground)] text-[16vw] lg:text-[11vw] letter-spacing-[-0.3rem] leading-[0.9]
+              text-[var(--foreground)] text-[16vw] lg:text-[11vw] tracking-[-0.3rem] leading-[0.9]
               
             `}
             initial={{ y: -30, opacity: 0 }}
@@ -114,7 +114,7 @@ export default function Home() {
           <motion.h2
             className={`
               ${robotoCondensed.className}
-              text-[var(--foreground)] text-[16vw] lg:text-[11vw] letter-spacing-[-0.3rem] leading-[0.9] break-all
+              text-[var(--foreground)] text-[16vw] lg:text-[11vw] tracking-[-0.3rem] leading-[0.9] break-all
               
             `}
             initial={{ y: -30, opacity: 0 }}
