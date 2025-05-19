@@ -31,27 +31,6 @@
   scrollbar-color: var(--background-light) transparent;
 }
 
-.header {
-  top: 60px;
-  left: 80px;
-  // mix-blend-mode: difference;
-
-  .name {
-    // @include display-text;
-    display: flex;
-    flex-direction: row;
-    color: var(--foreground);
-
-    &_first,
-    &_last {
-      span {
-        color: var(--primary-blue-200);
-      }
-    }
-
-  }
-}
-
 .linkTo {
   &_work {
     display: inline-block;

@@ -1,7 +1,7 @@
-
 import Image from 'next/image';
 import { motion, MotionValue, useTransform } from 'motion/react';
 import { robotoCondensed } from '../fonts';
+import { useEffect, useState } from 'react';
 
 interface FeaturedProjectsProps {
     workScroll: MotionValue<number>;
@@ -9,19 +9,29 @@ interface FeaturedProjectsProps {
 }
 
 const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps) => {
+    const [xEnd, setXEnd] = useState(-60);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setXEnd(window.innerWidth <= 768 ? 0 : -60);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <div className='pt-10'>
             <motion.h2
-                className={`${robotoCondensed.className} uppercase text-right text-[4vw] md:text-[5vw] mb-10`}
+                className={`${robotoCondensed.className} uppercase text-center lg:text-right text-[10vw] lg:text-[4vw] md:text-[5vw] mb-10`}
                 style={{
-                    x: useTransform(workScroll, [0, 0.25], [100, -60]),
+                    x: useTransform(workScroll, [0, 0.25], [100, xEnd]),
                 }}
             >Featured projects</motion.h2>
             {/* Indeed */}
-            <div className='flex flex-row items-center justify-end mb-20'>
-                <div className='flex flex-col items-end me-8'>
-                    <h3 className={`${robotoCondensed.className} uppercase leading-[3vw] text-[2vw] md:text-[3vw]`}>Indeed</h3>
+            <div className='flex flex-col lg:flex-row items-end lg:items-center justify-end mb-20'>
+                <div className='flex flex-col items-end me-4 lg:me-8'>
+                    <h3 className={`${robotoCondensed.className} uppercase leading-[6vw] lg:leading-[3vw] text-[8vw] lg:text-[3vw]`}>Indeed</h3>
                     <p>UX Developer</p>
                 </div>
 
@@ -33,8 +43,8 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     <Image
                         src='/images/indeed/interview-scheduling-modal.webp'
                         alt='Indeed.com interface with the interview scheduling modal open'
-                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-[60vw] h-full"
-                        sizes="(max-width: 768px) 50vw, 100vw"
+                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover lg:w-[60vw] h-full"
+                        sizes="(max-width: 768px) 100vw, 60vw"
                         width={1200}
                         height={800}
                     />
@@ -44,7 +54,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                 </motion.a>
             </div>
             {/* Hitachi Studio */}
-            <div className='flex flex-row items-center justify-start mb-20'>
+            <div className='flex flex-col-reverse lg:flex-row items-start lg:items-center justify-start mb-20'>
                 <motion.a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
                     className={`rounded-lg overflow-hidden block relative group mb-4`}
                     style={{
@@ -54,8 +64,8 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     <Image
                         src='/images/hitachi/LumadaStudio-RegionMapActive.webp'
                         alt='Hitachi Studio interface with the region map active'
-                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-[60vw] h-full"
-                        sizes="(max-width: 768px) 50vw, 100vw"
+                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover lg:w-[60vw] h-full"
+                        sizes="(max-width: 768px) 100vw, 60vw"
                         width={1200}
                         height={800}
                     />
@@ -63,15 +73,15 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
                     </div>
                 </motion.a>
-                <div className='flex flex-col items-start ms-8'>
-                    <h3 className={`${robotoCondensed.className} uppercase leading-[3vw] text-[2vw] md:text-[3vw]`}>Hitachi Studio</h3>
+                <div className='flex flex-col items-start ms-4 lg:ms-8'>
+                    <h3 className={`${robotoCondensed.className} uppercase leading-[6vw] lg:leading-[3vw] text-[8vw] lg:text-[3vw]`}>Hitachi Studio</h3>
                     <p>UI/UX Designer</p>
                 </div>
             </div>
             {/* Hitachi Solutions Manager */}
-            <div className='flex flex-row items-center justify-end mb-20'>
-                <div className='flex flex-col items-end me-8'>
-                    <h3 className={`${robotoCondensed.className} uppercase text-right leading-[3vw] text-[2vw] md:text-[3vw]`}>Hitachi<br />Solutions Manager</h3>
+            <div className='flex flex-col lg:flex-row items-end lg:items-center justify-end mb-20'>
+                <div className='flex flex-col items-end me-4 lg:me-8'>
+                    <h3 className={`${robotoCondensed.className} uppercase leading-[8vw] lg:leading-[3vw] text-[8vw] lg:text-[3vw] text-end lg:text-start`}>Hitachi<br />Solutions Manager</h3>
                     <p>UI/UX Designer</p>
                 </div>
                 <motion.a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
@@ -83,8 +93,8 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     <Image
                         src='/images/hitachi/solutions-manager-new-templates-card.webp'
                         alt='Hitachi Solutions Manager interface with the new templates card'
-                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover w-[60vw] h-full"
-                        sizes="(max-width: 768px) 50vw, 100vw"
+                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover lg:w-[60vw] h-full"
+                        sizes="(max-width: 768px) 100vw, 60vw"
                         width={1200}
                         height={800}
                     />
