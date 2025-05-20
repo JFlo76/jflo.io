@@ -3,13 +3,23 @@ import { robotoCondensed } from '@/app/fonts'
 import Image from 'next/image'
 import styles from '../page.module.scss'
 
+// Tailwind class objects
+const container = 'w-full flex flex-col items-center';
+const innerContainer = 'flex flex-col px-4 lg:px-20 text-lg container';
+const header = 'flex flex-col w-full mt-4 mb-4 lg:mt-16 lg:mb-16';
+const mainTitle = `text-6xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
+// const section = 'flex flex-col lg:flex-row lg:items-start w-full mb-16';
+// const image = 'mb-4 lg:mr-8 rounded-lg w-[100%] lg:max-w-[50%] object-contain aspect-auto';
+const sectionTitle = `text-4xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
+const paragraph = 'md:text-base lg:text-xl';
+
 export default function HitachiStudio() {
 
     return (
-        <main className="w-full flex flex-col items-center">
-            <div className="flex flex-col px-4 md:px-20 text-lg container">
-                <header className="flex flex-col w-full mt-16 mb-16">
-                    <h1 className={`${robotoCondensed.className} text-4xl md:text-6xl font-bold mb-2 uppercase`}>Hitachi Vantara&#39;s Lumada Studio</h1>
+        <main className={container}>
+            <div className={innerContainer}>
+                <header className={header}>
+                    <h1 className={mainTitle}>Hitachi Vantara&#39;s Lumada Studio</h1>
                     <p>
                         <span className="me-4"><b>Role</b>: UX/UI Designer</span><b>Toolkit</b>: Sketch, InVision
                     </p>
@@ -17,13 +27,13 @@ export default function HitachiStudio() {
 
                 <section className="flex flex-col items-start w-full mb-4">
                     <div className='w-full mb-16'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Overview</h2>
-                        <p className="md:text-base lg:text-xl mb-4">
+                        <h2 className={sectionTitle}>Overview</h2>
+                        <p className={`${paragraph} mb-4`}>
                             Hitachi&#39;s Lumada Studio is the user interface for the data collected and analyzed on the Lumada Core
                             platform, and is primarily used by people in the manufacturing industry to monitor production machinery for
                             predictive maintenance.
                         </p>
-                        <p className="md:text-base lg:text-xl">
+                        <p className={paragraph}>
                             The goals for this application included an intuitive interface, data visualization through
                             customizable dashboards, a library of widgets for the charts/graphs, and the ability to generate
                             reports.
@@ -31,42 +41,46 @@ export default function HitachiStudio() {
                     </div>
 
                     <div className='w-full mb-4'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>UX Personas</h2>
-                        <p className="md:text-base lg:text-xl mb-6">Before starting any designs, I needed to fully understand the user profiles for a manufacturing plant. I sought out a few Hitachi OT specialists to gain insight on who would be using this application and what they typically do in their day. After a couple of meetings and sleuthing through Confluence documentation, I discovered there were essentially 3 types of user roles:</p>
+                        <h2 className={sectionTitle}>UX Personas</h2>
+                        <p className={`${paragraph} mb-6`}>Before starting any designs, I needed to fully understand the user profiles for a manufacturing plant. I sought out a few Hitachi OT specialists to gain insight on who would be using this application and what they typically do in their day. After a couple of meetings and sleuthing through Confluence documentation, I discovered there were essentially 3 types of user roles:</p>
                     </div>
 
                     <div className='w-full mb-16'>
-                        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 text-stone-900'>
+                        {/* Mobile swipeable cards */}
+                        <div
+                            className='flex overflow-x-auto gap-0 md:grid md:grid-cols-3 md:gap-6 text-stone-900 snap-x snap-mandatory px-2 md:px-0'
+                            style={{ WebkitOverflowScrolling: 'touch' }}
+                        >
                             {/* Card 1 - Admin Adam */}
-                            <article className='bg-white shadow-lg rounded-lg p-6 border border-gray-200'>
+                            <article className='bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-shrink-0 w-[80vw] md:w-auto snap-center mx-2 md:mx-0'>
                                 <div className="flex items-center mb-4">
                                     <Image
                                         src={`https://randomuser.me/api/portraits/men/91.jpg`}
                                         alt="Admin Adam"
-                                        width={64} // Adjust width and height as needed
+                                        width={64}
                                         height={64}
                                         className="w-16 h-16 rounded-full mr-4 object-cover"
                                     />
                                     <h3 className={`${robotoCondensed.className} text-2xl font-bold`}>Admin Adam</h3>
                                 </div>
-                                <p className='text-base mb-4'>A technically-inclined power-user who most likely is a lead architect at Hitachi Consulting. He works closely with customers to deploy and configure Studio according to their requirements. He needs to have full access to all aspects of Studio to fulfill his job.</p>
-                                <p className='text-base mb-4'>Adam has the technical acumen to understand the intricacies of the technologies behind Studio and how to customize it. He also has a strong understanding of all the different Lumada products.</p>
+                                <p className='text-sm mb-4'>A technically-inclined power-user who most likely is a lead architect at Hitachi Consulting. He works closely with customers to deploy and configure Studio according to their requirements. He needs to have full access to all aspects of Studio to fulfill his job.</p>
+                                <p className='text-sm mb-4'>Adam has the technical acumen to understand the intricacies of the technologies behind Studio and how to customize it. He also has a strong understanding of all the different Lumada products.</p>
                             </article>
 
                             {/* Card 2 - OT Manager Mary */}
-                            <article className='bg-white shadow-lg rounded-lg p-6 border border-gray-200'>
+                            <article className='bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-shrink-0 w-[80vw] md:w-auto snap-center mx-2 md:mx-0'>
                                 <div className="flex items-center mb-4">
                                     <Image
                                         src={`https://randomuser.me/api/portraits/women/49.jpg`}
                                         alt="OT Manager Mary"
-                                        width={64} // Adjust width and height as needed
+                                        width={64}
                                         height={64}
                                         className="w-16 h-16 rounded-full mr-4 object-cover"
                                     />
                                     <h3 className={`${robotoCondensed.className} text-2xl font-bold`}>OT Manager Mary</h3>
                                 </div>
-                                <p className='text-base mb-4'>Mary is an operations manager at Big Shipping Co. Mary manages a large number of people and multiple production lines. She needs to have full visibility of all the operators and needs to be able to manage what her employees have access to on Studio. Mary is not knowledgeable on the technical aspects of Studio but is trained in how to use Studio for her purposes.</p>
-                                <ul className='list-disc pl-5 text-base'>
+                                <p className='text-sm mb-4'>Mary is an operations manager at Big Shipping Co. Mary manages a large number of people and multiple production lines. She needs to have full visibility of all the operators and needs to be able to manage what her employees have access to on Studio. Mary is not knowledgeable on the technical aspects of Studio but is trained in how to use Studio for her purposes.</p>
+                                <ul className='list-disc pl-5 text-sm'>
                                     <li>Checks work orders per asset</li>
                                     <li>Checks news/alert feed</li>
                                     <li>Concerned with efficiency &amp; degradation</li>
@@ -76,19 +90,19 @@ export default function HitachiStudio() {
                             </article>
 
                             {/* Card 3 - OT Operator Eric */}
-                            <article className='bg-white shadow-lg rounded-lg p-6 border border-gray-200'>
+                            <article className='bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex-shrink-0 w-[80vw] md:w-auto snap-center mx-2 md:mx-0'>
                                 <div className="flex items-center mb-4">
                                     <Image
                                         src={`https://randomuser.me/api/portraits/men/26.jpg`}
                                         alt="OT Operator Eric"
-                                        width={64} // Adjust width and height as needed
+                                        width={64}
                                         height={64}
                                         className="w-16 h-16 rounded-full mr-4 object-cover"
                                     />
                                     <h3 className={`${robotoCondensed.className} text-2xl font-bold`}>OT Operator Eric</h3>
                                 </div>
-                                <p className='text-base mb-4'>Eric is an operator for Huge Automotive Ltd. He works in the car assembly process, where he is responsible for assembling the seats on the car. As he does his job, he uses Studio to keep an eye on the KPI&#39;s for his process. He has very basic training in using Studio and limited knowledge regarding its more advanced features.</p>
-                                <ul className='list-disc pl-5 text-base'>
+                                <p className='text-sm mb-4'>Eric is an operator for Huge Automotive Ltd. He works in the car assembly process, where he is responsible for assembling the seats on the car. As he does his job, he uses Studio to keep an eye on the KPI&#39;s for his process. He has very basic training in using Studio and limited knowledge regarding its more advanced features.</p>
+                                <ul className='list-disc pl-5 text-sm'>
                                     <li>Mostly concerned with checking for alerts, then following a process for a course of
                                         action regarding repair/maintenance</li>
                                     <li>Would possibly be alerted by some type of mobile device</li>
@@ -225,8 +239,7 @@ export default function HitachiStudio() {
                                 <p className="text-center">{image.caption}</p>
                             </div>
                         ))}
-                        <p className='text-center mb-16'>Asset Level View</p>
-                        <a href='/lumada-studio-prototype/index.html#/screens' target='blank' className={`${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>View Prototype</a>
+                        <a href='/lumada-studio-prototype/index.html#/screens' target='blank' className={`block lg:inline-block text-center lg:text-left ${styles.linkTo_work} ${robotoCondensed.className} uppercase`}>View Prototype</a>
                     </div>
                     <div className='w-full mb-16'>
                         <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Data Visualization Designs</h2>

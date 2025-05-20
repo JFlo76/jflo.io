@@ -1,22 +1,30 @@
 'use client'
 import { robotoCondensed } from '@/app/fonts'
 import Image from 'next/image'
+
+// Tailwind class objects
+const container = 'w-full flex flex-col items-center';
+const innerContainer = 'flex flex-col px-4 lg:px-20 text-lg container';
+const header = 'flex flex-col w-full mt-4 mb-4 lg:mt-16 lg:mb-16';
+const mainTitle = `text-6xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
+const sectionTitle = `text-4xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
+
 export default function HitachiSolutionsManager() {
 
     return (
-        <main className="w-full flex flex-col items-center">
-            <div className="flex flex-col px-4 md:px-20 text-lg container">
-                <header className="flex flex-col w-full mt-16 mb-16">
-                    <h1 className={`${robotoCondensed.className} text-4xl md:text-6xl font-bold mb-2 uppercase`}>Hitachi Vantara&#39;s Solutions Manager</h1>
+        <main className={container}>
+            <div className={innerContainer}>
+                <header className={header}>
+                    <h1 className={mainTitle}>Hitachi Vantara&#39;s Solutions Manager</h1>
                     <p>
                         <span className="me-4"><b>Role</b>: UX/UI Designer & Usability Studies</span><b>Toolkit</b>: Sketch, CanvasFlip
                     </p>
                 </header>
 
-                <section className={`flex flex-row items-start w-full mb-16`}>
-                    <div className='mr-8 w-full md:max-w-[50%] text-center'>
+                <section className={`flex flex-col lg:flex-row items-start w-full mb-16`}>
+                    <div className='mr-8 w-full lg:max-w-[50%] text-center'>
                         <Image
-                            className='w-full rounded-lg object-contain aspect-auto'
+                            className='w-full mb-4 rounded-lg object-contain aspect-auto'
                             src='/images/hitachi/solutions-manager-before-after@2x.webp'
                             alt='Solutions Manager dashboard before and after'
                             width={800}
@@ -25,8 +33,8 @@ export default function HitachiSolutionsManager() {
                         />
                         <p>Before / After</p>
                     </div>
-                    <article className='w-full md:max-w-[50%]'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Overview</h2>
+                    <article className='w-full lg:max-w-[50%]'>
+                        <h2 className={sectionTitle}>Overview</h2>
                         <p className="md:text-base lg:text-xl mb-4">
                             Hitachi&#39;s Solutions Manager application was conceived and designed by some of my teammates, with the purpose of allowing a power-user with admin privileges to manage customized dashboards, or &quot;Solutions&quot; and the elements that go into building them.
                         </p>
@@ -39,8 +47,8 @@ export default function HitachiSolutionsManager() {
                 <section className="flex flex-col items-start w-full mb-4">
 
                     <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                        <div className='mb-4 md:mb-0 md:mr-8 w-full md:max-w-[50%] background-orange'>
-                            <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Some Background</h2>
+                        <div className='mb-16 md:mb-0 md:mr-8 w-full md:max-w-[50%] background-orange'>
+                            <h2 className={sectionTitle}>Some Background</h2>
                             <p className="font-bold md:text-base lg:text-xl mb-4">There are 3 types of components in the application:</p>
                             <ol className="list-decimal mb-6 ms-6">
                                 <li>Template, which can be thought of as a recipe for a configurable dashboard widget</li>
@@ -57,7 +65,7 @@ export default function HitachiSolutionsManager() {
                             </ol>
                         </div>
                         <div className='w-full mb-16'>
-                            <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Test Summary</h2>
+                            <h2 className={sectionTitle}>Test Summary</h2>
                             <p className="font-bold md:text-base lg:text-xl mb-4">The test objectives were as follows:</p>
                             <ol className="list-decimal mb-6 ms-6">
                                 <li>Improve user&#39;s mental mappings between the components</li>
@@ -74,9 +82,9 @@ export default function HitachiSolutionsManager() {
                     </div>
 
                     <div className='w-full mb-16'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Objective 1: Mental Mappings</h2>
+                        <h2 className={sectionTitle}>Objective 1: Mental Mappings</h2>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 w-full md:max-w-[60%] text-center'>
+                            <div className='mr-8 mb-4 w-full md:max-w-[60%] text-center'>
                                 <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
                                     src='/images/hitachi/solutions-manager-original-templates@2x.webp'
@@ -93,7 +101,7 @@ export default function HitachiSolutionsManager() {
                             </article>
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 w-full md:max-w-[60%] text-center'>
+                            <div className='mr-8 mb-4 w-full md:max-w-[60%] text-center'>
                                 <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
                                     src='/images/hitachi/solutions-manager-new-templates-card.webp'
@@ -123,9 +131,9 @@ export default function HitachiSolutionsManager() {
                     </div>
 
                     <div className='w-full mb-16'>
-                        <h2 className={`${robotoCondensed.className} text-3xl md:text-4xl font-bold mb-2 uppercase`}>Objective 2: Navigation</h2>
+                        <h2 className={sectionTitle}>Objective 2: Navigation</h2>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 w-full md:max-w-[30%] text-center'>
+                            <div className='mr-8 mb-4 w-full md:max-w-[30%] text-center'>
                                 <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
                                     src='/images/hitachi/solutions-manager-original-templates-card@2x.webp'
@@ -143,7 +151,7 @@ export default function HitachiSolutionsManager() {
                             </article>
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 w-full md:max-w-[30%] text-center'>
+                            <div className='mr-8 mb-4 w-full md:max-w-[30%] text-center'>
                                 <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
                                     src='/images/hitachi/solutions-manager-new-instance-card@2x.webp'
@@ -163,9 +171,9 @@ export default function HitachiSolutionsManager() {
                             </article>
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className="w-full md:max-w-[61%] flex flex-row mr-8 gap-4">
+                            <div className="w-full md:max-w-[61%] flex flex-row mr-8 mb-4 lg:gap-4 overflow-x-auto flex-nowrap gap-4 scroll-snap-x scroll-smooth snap-x snap-mandatory md:overflow-visible md:flex-wrap">
                                 <Image
-                                    className='w-1/2 rounded-lg object-contain aspect-auto'
+                                    className='w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
                                     src='/images/hitachi/solutions-manager-dashboard-instances-overlay-off@2x.webp'
                                     alt='Mobile UI of the new instance card'
                                     width={400}
@@ -173,7 +181,7 @@ export default function HitachiSolutionsManager() {
                                     loading="lazy"
                                 />
                                 <Image
-                                    className='w-1/2 rounded-lg object-contain aspect-auto'
+                                    className='w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
                                     src='/images/hitachi/solutions-manager-dashboard-instances-overlay-on@2x.webp'
                                     alt='Mobile UI of the new instance card'
                                     width={400}
