@@ -153,14 +153,20 @@ export default function Home() {
           <FeaturedProjects workScroll={workScroll} handleModalOpen={handleModalOpen} />
 
           {/* Start Archive Section */}
-          <ProjectArchives workScroll={workScroll} handleModalOpen={handleModalOpen} />
+          {/* TEMP for hiding on mobile */}
+          <div className="hidden lg:block">
+            <ProjectArchives workScroll={workScroll} handleModalOpen={handleModalOpen} />
+          </div>
         </motion.section>
 
         {/* Start Contact Section */}
-        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-12 relative`} ref={contactRef}>
-          <ScrollingBanner items={bannerItems} />
-          <h2 className={`${robotoCondensed.className} text-center uppercase text-[4vw] tracking-[-0.2rem] leading-[4rem] text-stone-900`}>Get In Touch</h2>
-          <p className='text-stone-900 text-[1.3vw] text-center'>Got a project in mind? Let&apos;s connect!</p>
+        <motion.section id='contact' className={`${styles.contact} flex justify-center flex-col w-full h-full px-4 lg:px-12 relative`} ref={contactRef}>
+          {/* TEMP for hiding on mobile */}
+          <div className="hidden lg:block">
+            <ScrollingBanner items={bannerItems} />
+          </div>
+          <h2 className={`${robotoCondensed.className} text-center uppercase text-[10vw] lg:text-[4vw] tracking-[-0.2rem] leading-[2rem] lg:leading-[4rem] text-stone-900`}>Get In Touch</h2>
+          <p className='text-stone-900 text-[4vw] lg:text-[1.3vw] text-center'>Got a project in mind? Let&apos;s connect!</p>
 
           <div className="max-w-2xl mx-auto w-full">
             <form
@@ -255,7 +261,7 @@ export default function Home() {
 
               <button
                 type="submit"
-                className={`${robotoCondensed.className} inline-block py-4 px-8 uppercase text-white bg-[var(--complementary-orange-400)] rounded-lg text-foreground text-lg transition-all duration-300 ease-in-out hover:translate-x-2 hover:-translate-y-[6px] hover:shadow-[calc(-2px)_2px_0_var(--complementary-orange-600),calc(-4px)_4px_0_var(--complementary-orange-600),calc(-6px)_6px_0_var(--complementary-orange-600)] self-start`}
+                className={`${robotoCondensed.className} block lg:inline-block py-4 px-8 uppercase text-white bg-[var(--complementary-orange-400)] rounded-lg text-foreground text-lg transition-all duration-300 ease-in-out hover:translate-x-2 hover:-translate-y-[6px] hover:shadow-[calc(-2px)_2px_0_var(--complementary-orange-600),calc(-4px)_4px_0_var(--complementary-orange-600),calc(-6px)_6px_0_var(--complementary-orange-600)] lg:self-start`}
               >
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 inline-block me-4">
                   <circle cx="16" cy="16" r="16" fill="white" />
