@@ -98,7 +98,7 @@ export default function Home() {
           <motion.h2
             className={`
               ${robotoCondensed.className} 
-              text-[var(--foreground)] text-[16vw] lg:text-[11vw] tracking-[-0.3rem] leading-[0.9]
+              text-[var(--foreground)] text-[14vw] lg:text-[11vw] tracking-[-0.3rem] leading-[0.9]
               
             `}
             initial={{ y: -30, opacity: 0 }}
@@ -114,7 +114,7 @@ export default function Home() {
           <motion.h2
             className={`
               ${robotoCondensed.className}
-              text-[var(--foreground)] text-[16vw] lg:text-[11vw] tracking-[-0.3rem] leading-[0.9] break-all
+              text-[var(--foreground)] text-[14vw] lg:text-[11vw] tracking-[-0.3rem] leading-[0.9] break-all
               
             `}
             initial={{ y: -30, opacity: 0 }}
