@@ -12,7 +12,7 @@
     "chromatic": "npx chromatic --project-token=chpt_2b353ff9ade050d"
   },
   "dependencies": {
-    "@react-three/drei": "^9.120.6",
+    "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^8.17.12",
     "@vitejs/plugin-react": "^4.3.4",
     "lottie-react": "^2.4.1",
