@@ -25,6 +25,7 @@ import RitucciFriedmanOrtho from './components/RitucciFriedmanOrtho';
 import HillmanDentistry from './components/HillmanDentistry';
 import AboutSection from './components/AboutSection';
 import FeaturedProjects from './components/FeaturedProjects';
+import VibePrototype from './components/VibePrototype';
 
 export default function Home() {
   const mainRef = useRef(null);
@@ -290,6 +291,7 @@ export default function Home() {
             {isModalOpen === 'Rich Family Ortho' && <RichFamilyOrtho />}
             {isModalOpen === 'Ritucci Friedman Ortho' && <RitucciFriedmanOrtho />}
             {isModalOpen === 'Hillman Dentistry' && <HillmanDentistry />}
+            {isModalOpen === 'Vibe Prototype' && <VibePrototype />}
             {/* Add more project components as needed */}
           </Modal>
         )}

@@ -103,6 +103,32 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     </div>
                 </motion.a>
             </div>
+            {/* Vibe Prototype */}
+            <div className='flex flex-col-reverse lg:flex-row items-start lg:items-center justify-start mb-20'>
+                <motion.a href="" onClick={(event) => handleModalOpen('Vibe Prototype', event)}
+                    className={`rounded-lg overflow-hidden block relative group mb-4`}
+                    style={{
+                        x: useTransform(workScroll, [0.8, 0.95], [-900, -60]),
+                    }}>
+
+                    <Image
+                        src='/images/vibe-prototype/VibePrototypeDashboard.webp'
+                        alt='Dashoard interface of the Vibe Prototype'
+                        className="transition-transform duration-1000 group-hover:scale-105 group-hover:grayscale aspect-video object-cover lg:w-[60vw] h-full"
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        width={1200}
+                        height={800}
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                        <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View project</h3>
+                    </div>
+                </motion.a>
+                <div className='flex flex-col items-start ms-4 lg:ms-8'>
+                    <h3 className={`${robotoCondensed.className} uppercase leading-[6vw] lg:leading-[3vw] text-[8vw] lg:text-[3vw]`}>Vibe Prototype</h3>
+                    <p>Prompt Engineer Personal Project</p>
+                </div>
+            </div>
+
         </div>
     );
 
