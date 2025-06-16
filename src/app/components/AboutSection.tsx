@@ -41,7 +41,7 @@ export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProp
                         </svg>
                     } />
                     <LinkButton
-                        href="https://github.com/JFlo76/jflo.io"
+                        href="https://github.com/JFlo76/"
                         target="_blank"
                         label="View my GitHub"
                         icon={
