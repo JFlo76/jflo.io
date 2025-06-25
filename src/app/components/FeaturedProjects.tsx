@@ -38,7 +38,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                 <motion.a href="" onClick={(event) => handleModalOpen('Indeed', event)}
                     className={`rounded-lg overflow-hidden block relative group mb-4`}
                     style={{
-                        x: useTransform(workScroll, [0, 0.35], [900, 60]),
+                        x: useTransform(workScroll, [0, 0.30], [900, 60]),
                     }}>
                     <Image
                         src='/images/indeed/interview-scheduling-modal.webp'
@@ -58,7 +58,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                 <motion.a href="" onClick={(event) => handleModalOpen('HitachiStudio', event)}
                     className={`rounded-lg overflow-hidden block relative group mb-4`}
                     style={{
-                        x: useTransform(workScroll, [0.35, 0.6], [-900, -60]),
+                        x: useTransform(workScroll, [0.25, 0.45], [-900, -60]),
                     }}>
 
                     <Image
@@ -87,7 +87,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                 <motion.a href="" onClick={(event) => handleModalOpen('HitachiSolutionsManager', event)}
                     className={`rounded-lg overflow-hidden block relative group mb-4`}
                     style={{
-                        x: useTransform(workScroll, [0.5, 0.85], [900, 60]),
+                        x: useTransform(workScroll, [0.45, 0.65], [900, 60]),
                     }}>
 
                     <Image
@@ -108,7 +108,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                 <motion.a href="" onClick={(event) => handleModalOpen('Vibe Prototype', event)}
                     className={`rounded-lg overflow-hidden block relative group mb-4`}
                     style={{
-                        x: useTransform(workScroll, [0.8, 0.95], [-900, -60]),
+                        x: useTransform(workScroll, [0.65, 0.85], [-900, -60]),
                     }}>
 
                     <Image
