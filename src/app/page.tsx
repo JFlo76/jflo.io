@@ -26,6 +26,7 @@ import HillmanDentistry from './components/HillmanDentistry';
 import AboutSection from './components/AboutSection';
 import FeaturedProjects from './components/FeaturedProjects';
 import VibePrototype from './components/VibePrototype';
+import LinkButton from './components/LinkButton';
 
 export default function Home() {
   const mainRef = useRef(null);
@@ -169,108 +170,25 @@ export default function Home() {
           <h2 className={`${robotoCondensed.className} text-center uppercase text-[10vw] lg:text-[4vw] tracking-[-0.2rem] leading-[2rem] lg:leading-[4rem] text-stone-900`}>Get In Touch</h2>
           <p className='text-stone-900 text-[4vw] lg:text-[1.3vw] text-center'>Got a project in mind? Let&apos;s connect!</p>
 
-          <div className="max-w-2xl mx-auto w-full">
-            <form
-              className="flex flex-col gap-4"
-              action="https://formsubmit.co/909a540dac9f9c0b75b3cd265f33ea1f"
-              method="POST"
-              onSubmit={(e) => {
-                const nameInput = (e.target as HTMLFormElement).elements.namedItem("Name") as HTMLInputElement;
-                const emailInput = (e.target as HTMLFormElement).elements.namedItem("Email") as HTMLInputElement;
-                const messageInput = (e.target as HTMLFormElement).elements.namedItem("Message") as HTMLTextAreaElement;
-
-                const englishOnlyRegex = /^[a-zA-Z\s]*$/;
-
-                // Check if Name ends with "Sok"
-                if (nameInput.value.trim().endsWith("Sok")) {
-                  e.preventDefault();
-                  alert("Names ending with 'Sok' are not allowed.");
-                  return;
-                }
-
-                // Validate Name input for English characters only
-                if (!englishOnlyRegex.test(nameInput.value)) {
-                  e.preventDefault();
-                  alert("The Name field can only contain English characters.");
-                  return;
-                }
-
-                // Validate Email input for English characters only
-                if (!englishOnlyRegex.test(emailInput.value.split('@')[0])) {
-                  e.preventDefault();
-                  alert("The Email field can only contain English characters before the '@' symbol.");
-                  return;
-                }
-
-                // Validate Message input for English characters only
-                if (!englishOnlyRegex.test(messageInput.value)) {
-                  e.preventDefault();
-                  alert("The Message field can only contain English characters.");
-                  return;
-                }
-              }}
-            >
-              {/* Honeypot to prevent spam */}
-              <input type="text" name="_honey" style={{ display: 'none' }} />
-
-              {/* Disable captcha */}
-              <input type="hidden" name="_captcha" value="false" />
-
-              {/* Success page - you can customize this later */}
-              <input type="hidden" name="_next" value="https://jflo-portfolio-2025-s9pm5.ondigitalocean.app/" />
-
-              <div className="flex flex-col">
-                <label htmlFor="Name" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>
-                  Name <span>*</span>
-                </label>
-                <input
-                  type="text"
-                  id="Name"
-                  name="Name"
-                  required
-                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--complementary-orange-100]"
-                />
-              </div>
-
-              <div className="flex flex-col">
-                <label htmlFor="Email" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>
-                  Email <span>*</span>
-                </label>
-                <input
-                  type="email"
-                  id="Email"
-                  name="Email"
-                  required
-                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                  title="Please enter a valid email address"
-                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--complementary-orange-100]"
-                />
-              </div>
-
-              <div className="flex flex-col">
-                <label htmlFor="Message" className={`${robotoCondensed.className} uppercase mb-1 text-gray-800`}>
-                  Message <span>*</span>
-                </label>
-                <textarea
-                  id="Message"
-                  name="Message"
-                  rows={5}
-                  required
-                  className="p-3 rounded-md bg-stone-900 focus:outline-none focus:ring-2 focus:ring-[--complementary-orange-100]"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className={`${robotoCondensed.className} block lg:inline-block py-4 px-8 uppercase text-white bg-[var(--complementary-orange-400)] rounded-lg text-foreground text-lg transition-all duration-300 ease-in-out hover:translate-x-2 hover:-translate-y-[6px] hover:shadow-[calc(-2px)_2px_0_var(--complementary-orange-600),calc(-4px)_4px_0_var(--complementary-orange-600),calc(-6px)_6px_0_var(--complementary-orange-600)] lg:self-start`}
-              >
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 inline-block me-4">
-                  <circle cx="16" cy="16" r="16" fill="white" />
-                  <path d="M9.3923 25.701C9.3923 26.2783 10.0173 26.6392 10.5173 26.3505L26.2673 17.2572C26.7673 16.9685 26.7673 16.2469 26.2673 15.9582L10.5173 6.86491C10.0173 6.57623 9.39231 6.93708 9.39231 7.51443L9.3923 25.701Z" fill="#BE230B" />
+          <div className="max-w-2xl mx-auto w-full flex justify-center">
+            <LinkButton
+              href="https://www.linkedin.com/in/jflo-ux-dev/"
+              target="_blank"
+              label="Reach out on LinkedIn"
+              icon={
+                // LinkedIn SVG icon
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="w-8 h-8 inline-block"
+                >
+                  <g transform="scale(1.5)">
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                  </g>
                 </svg>
-                Send Message
-              </button>
-            </form>
+              }
+            />
           </div>
         </motion.section>
 
