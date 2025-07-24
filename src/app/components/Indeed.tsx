@@ -107,6 +107,112 @@ export default function Indeed() {
                         </p>
                     </article>
                 </section>
+                <section className={section}>
+                    <video
+                        className="mb-4 lg:mr-8 rounded-lg w-[100%] lg:max-w-[50%] object-contain aspect-auto"
+                        controls
+                        src="/videos/UpcomingInterviews.mov"
+                    >
+                        Your browser does not support the video tag.
+                    </video>
+                    <article>
+                        <h2 className={sectionTitle}>Feature: Upcoming Interviews</h2>
+                        <p className={paragraph}>
+                            One feature I implemented for the Interview Scheduling team was designed to prevent users from double booking interviews. While the person scheduling the interview is selecting dates and times, if there is an existing interview for a selected date, the UI will update to show a notification informing the user that they have one or more interviews already set up for that day. The user can then expand the notification to view the details about the other interviews, including dates, times, type of interview, name of the candidate, and whether the interview is confirmed by the candidate or not.
+                        </p>
+                        <p className={paragraph}>
+                            In order to implement this feature, the data needed to come from another team who owned a product that handled an employer’s full list of interviews. I reached out to a fellow UX Developer on that team to get information about how I might pull in their data and components into our product, and after some research and collaboration, it was apparent that both product repos would need some implemented logic to make the new feature work.
+                        </p>
+                    </article>
+                </section>
+
+
+
+                <section className={`${section} lg:flex-col lg:max-w-[60%] mx-auto`}>
+                    <article className="w-full">
+                        <p className={paragraph}>
+                            The first step involved me jumping into the other team’s codebase to prepare some of their components as federated remote modules that I could then import into my team’s product. This was done within their webpack.config.js file, similar to the following example…
+                        </p>
+                        <pre
+                            className="mb-4 rounded-lg w-[100%] object-contain aspect-auto bg-gray-300 text-gray-800 p-4 overflow-x-auto"
+                        >
+                            <code>
+                                {/* Don't indent... throws off formatting in browser */}
+                                {`plugins: [
+    ...baseConfig.plugins,
+    new webpack.container.ModuleFederationPlugin({
+        ...pluginConfigs.moduleFederationPlugin,
+        exposes: {
+            './InterviewList': './src/externalModules/InterviewList'
+        }
+    })
+],`}
+                            </code>
+                        </pre>
+                    </article>
+                </section>
+
+                <section className={`${section} lg:flex-col lg:max-w-[60%] mx-auto`}>
+                    <article className='w-full'>
+                        <p className={paragraph}>
+                            Indeed’s core platform team had recently implemented a reusable component for using remote modules, so I took advantage of their <code>RemoteModule</code> component in order to render the other team’s product, passing in the required props that was imported as node packages…
+
+                        </p>
+                        <pre
+                            className="mb-4 rounded-lg w-[100%] object-contain aspect-auto bg-gray-300 text-gray-800 p-4 overflow-x-auto"
+                        >
+                            <code>
+                                {/* Don't indent... throws off formatting in browser */}
+                                {`import Drawer from '@indeed/ipl-drawer';
+import { RemoteModule } from '@indeed/one-host-remote-module';
+
+...additional imports...
+
+const UpcomingInterviews = (props: UpcomingInterviewsProps): JSX.Element => {
+
+    ...additional code...
+
+    const RenderRemoteModule = (): JSX.Element => {{
+        return (
+            <RemoteModule
+                scope="interviews-tab"
+                module="./InterviewList"
+                moduleProps={{
+                    interviewCards: upcomingCardInterviews
+                }}
+            />
+        );
+    }};
+
+    return (
+        <Drawer
+            label={npgettext(
+                'interviews count message', // message context
+                'You have {{1}} interview on {{0}}', // singular msg
+                'You have {{1}} interviews on {{0}}', // plural msg
+                upcomingCardInterviewsLength, // value to determine singular vs plural
+                [\`\${headingMonth} \${headingDay}\`, String(upcomingCardInterviewsLength)] // arguments for the translation
+            )}
+            isOpen={{isDrawerOpen}}
+            onClick={{handleDrawerToggle}}
+            sx={{ marginBlockStart: [2, null, 4], '& button': {{ fontWeight: 'normal' }} }}
+            data-testid="UpcomingInterviewDrawer"
+        >
+            <RenderRemoteModule />
+        </Drawer>
+    );
+};
+
+export const UpcomingInterviewsList = React.memo(UpcomingInterviews);`}
+                            </code>
+                        </pre>
+                        <p className={paragraph}>
+                            The new feature was rolled out to a percentage of US customers, and when the feature showed a decrease of double bookings, it was promoted to all locales.
+                        </p>
+                    </article>
+
+                </section>
+
             </div>
         </div>
     )
