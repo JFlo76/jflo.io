@@ -171,9 +171,9 @@ export default function HitachiSolutionsManager() {
                             </article>
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className="w-full md:max-w-[61%] flex flex-row mr-8 mb-4 lg:gap-4 overflow-x-auto flex-nowrap gap-4 scroll-snap-x scroll-smooth snap-x snap-mandatory md:overflow-visible md:flex-wrap">
+                            <div className="w-full md:max-w-[61%] flex flex-row mr-8 mb-4 lg:gap-4 overflow-x-auto lg:flex-nowrap flex-wrap gap-4 scroll-snap-x scroll-smooth snap-x snap-mandatory md:overflow-visible md:flex-wrap">
                                 <Image
-                                    className='w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
+                                    className='w-full lg:w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
                                     src='/images/hitachi/solutions-manager-dashboard-instances-overlay-off@2x.webp'
                                     alt='Mobile UI of the new instance card'
                                     width={400}
@@ -181,7 +181,7 @@ export default function HitachiSolutionsManager() {
                                     loading="lazy"
                                 />
                                 <Image
-                                    className='w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
+                                    className='w-full lg:w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
                                     src='/images/hitachi/solutions-manager-dashboard-instances-overlay-on@2x.webp'
                                     alt='Mobile UI of the new instance card'
                                     width={400}
