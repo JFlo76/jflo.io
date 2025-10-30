@@ -124,8 +124,8 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                     </div>
                 </motion.a>
                 <div className='flex flex-col items-start ms-4 lg:ms-8'>
-                    <h3 className={`${robotoCondensed.className} uppercase leading-[6vw] lg:leading-[3vw] text-[8vw] lg:text-[3vw]`}>Vibe Prototype</h3>
-                    <p>Prompt Engineer Personal Project</p>
+                    <h3 className={`${robotoCondensed.className} uppercase leading-[6vw] lg:leading-[3vw] text-[8vw] lg:text-[3vw]`}>Prompt Prototype</h3>
+                    <p>Personal Exploration Project</p>
                 </div>
             </div>
 
