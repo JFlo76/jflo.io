@@ -18,17 +18,17 @@ export default function VibePrototype() {
         <div className={container}>
             <div className={innerContainer}>
                 <header className={header}>
-                    <h2 className={mainTitle}>Vibe Prototype</h2>
+                    <h2 className={mainTitle}>Prompted Prototype</h2>
                     <p>
                         <span className="me-4"><b>Role</b>: Prompt Engineer</span>
-                        <b>Toolkit</b>: NPM, Next JS, Cody AI, Copilot, Cline
+                        <b>Toolkit</b>: NPM, Next JS, Cody AI, Copilot, Cline, GPT-3.5-turbo
                     </p>
                 </header>
                 <section className={section}>
                     <Image
                         className={image}
                         src='/images/vibe-prototype/VibePrototypeLogin@2x.webp'
-                        alt='Login interface of the Vibe Prototype'
+                        alt='Login interface of the Prompt Prototype'
                         width={800}
                         height={600}
                     />
