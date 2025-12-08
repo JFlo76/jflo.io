@@ -109,7 +109,7 @@ export default function Indeed() {
                 </section>
                 <section className={section}>
                     <video
-                        className="mb-4 lg:mr-8 rounded-lg w-[100%] lg:max-w-[50%] object-contain aspect-auto"
+                        className="mb-4 lg:mr-8 rounded-lg lg:max-w-[50%] object-contain aspect-auto"
                         controls
                         src="/videos/UpcomingInterviews.mov"
                     >
