@@ -118,7 +118,7 @@ export default function HitachiStudio() {
                         </p>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <Image
-                                className="mb-4 md:mb-0 md:mr-8 rounded-lg w-full md:max-w-[50%] object-contain aspect-auto"
+                                className="mb-4 md:mb-0 md:mr-8 rounded-lg md:max-w-[50%] object-contain aspect-auto"
                                 src="/images/hitachi/studio-sketch-region-2x.png"
                                 alt="Sketch art of UI for region view"
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -134,7 +134,7 @@ export default function HitachiStudio() {
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <Image
-                                className="mb-4 md:mb-0 md:mr-8 rounded-lg w-full md:max-w-[50%] object-contain aspect-auto"
+                                className="mb-4 md:mb-0 md:mr-8 rounded-lg md:max-w-[50%] object-contain aspect-auto"
                                 src="/images/hitachi/studio-sketch-plant-2x.png"
                                 alt="Sketch art of UI for plant view"
                                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -150,7 +150,7 @@ export default function HitachiStudio() {
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full">
                             <Image
-                                className="mb-4 md:mb-0 md:mr-8 rounded-lg w-full md:max-w-[50%] object-contain aspect-auto"
+                                className="mb-4 md:mb-0 md:mr-8 rounded-lg md:max-w-[50%] object-contain aspect-auto"
                                 src="/images/hitachi/studio-sketch-asset-2x.png"
                                 alt="Sketch art of UI for asset view"
                                 sizes="(max-width: 768px) 100vw, 50vw"

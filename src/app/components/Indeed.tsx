@@ -8,7 +8,7 @@ const innerContainer = 'flex flex-col px-4 lg:px-20 text-lg container';
 const header = 'flex flex-col w-full mt-4 mb-4 lg:mt-16 lg:mb-16';
 const mainTitle = `text-6xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
 const section = 'flex flex-col lg:flex-row lg:items-start w-full mb-8 lg:mb-16';
-const image = 'mb-4 lg:mr-8 rounded-lg w-[100%] lg:max-w-[50%] object-contain aspect-auto';
+const image = 'mb-4 lg:mr-8 rounded-lg lg:max-w-[50%] object-contain aspect-auto';
 const sectionTitle = `text-4xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
 const paragraph = 'md:text-base lg:text-xl';
 
