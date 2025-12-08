@@ -7,7 +7,7 @@ import LinkButton from './LinkButton';
 
 interface AboutSectionProps {
     aboutScroll: MotionValue<number>;
-    aboutRef: React.RefObject<HTMLElement>;
+    aboutRef: React.RefObject<HTMLElement | null>;
 }
 
 export default function AboutSection({ aboutScroll, aboutRef }: AboutSectionProps) {

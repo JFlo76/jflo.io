@@ -29,11 +29,11 @@ import VibePrototype from './components/VibePrototype';
 import LinkButton from './components/LinkButton';
 
 export default function Home() {
-  const mainRef = useRef(null);
-  const heroRef = useRef(null);
-  const aboutRef = useRef(null);
-  const workRef = useRef(null);
-  const contactRef = useRef(null);
+  const mainRef = useRef<HTMLElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const workRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
 
   // Scrolling logic for header visibility
   const { scrollYProgress: headerScroll } = useScroll({
