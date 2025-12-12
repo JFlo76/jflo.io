@@ -101,7 +101,7 @@ export default function HitachiSolutionsManager() {
                             </article>
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full">
-                            <div className='mr-8 mb-4 w-full md:max-w-[60%]'>
+                            <div className='mr-8 mb-8 w-full md:max-w-[60%]'>
                                 <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
                                     src='/images/hitachi/solutions-manager-new-templates-card.webp'
@@ -160,7 +160,7 @@ export default function HitachiSolutionsManager() {
                             </article>
                         </div>
                         <div className="flex flex-col md:flex-row items-start w-full">
-                            <div className="w-full md:max-w-[61%] flex flex-row mr-8 mb-4 lg:gap-4 overflow-x-auto lg:flex-nowrap flex-wrap gap-4 scroll-snap-x scroll-smooth snap-x snap-mandatory md:overflow-visible md:flex-wrap">
+                            <div className="w-full md:max-w-[61%] flex flex-row mr-8 mb-8 lg:gap-4 overflow-x-auto lg:flex-nowrap flex-wrap gap-4 scroll-snap-x scroll-smooth snap-x snap-mandatory md:overflow-visible md:flex-wrap">
                                 <Image
                                     className='w-full lg:w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
                                     src='/images/hitachi/solutions-manager-dashboard-instances-overlay-off@2x.webp'
