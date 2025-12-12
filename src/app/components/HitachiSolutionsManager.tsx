@@ -7,7 +7,7 @@ const container = 'w-full flex flex-col items-center';
 const innerContainer = 'flex flex-col px-4 lg:px-20 text-lg container';
 const header = 'flex flex-col w-full mt-4 mb-4 lg:mt-16 lg:mb-16';
 const mainTitle = `text-6xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
-const sectionTitle = `text-4xl font-bold mb-2 uppercase ${robotoCondensed.className}`;
+const sectionTitle = `text-4xl font-bold mb-6 uppercase ${robotoCondensed.className}`;
 
 export default function HitachiSolutionsManager() {
 
@@ -22,7 +22,7 @@ export default function HitachiSolutionsManager() {
                 </header>
 
                 <section className={`flex flex-col lg:flex-row items-start w-full mb-16`}>
-                    <div className='mr-8 w-full lg:max-w-[50%] text-center'>
+                    <div className='mr-8 w-full lg:max-w-[60%] text-center'>
                         <Image
                             className='w-full mb-4 rounded-lg object-contain aspect-auto'
                             src='/images/hitachi/solutions-manager-before-after@2x.webp'
@@ -33,7 +33,7 @@ export default function HitachiSolutionsManager() {
                         />
                         <p>Before / After</p>
                     </div>
-                    <article className='w-full lg:max-w-[50%]'>
+                    <article className='w-full lg:max-w-[40%]'>
                         <h2 className={sectionTitle}>Overview</h2>
                         <p className="md:text-base lg:text-xl mb-4">
                             Hitachi&#39;s Solutions Manager application was conceived and designed by some of my teammates, with the purpose of allowing a power-user with admin privileges to manage customized dashboards, or &quot;Solutions&quot; and the elements that go into building them.
@@ -47,7 +47,7 @@ export default function HitachiSolutionsManager() {
                 <section className="flex flex-col items-start w-full mb-4">
 
                     <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                        <div className='mb-16 md:mb-0 md:mr-8 w-full md:max-w-[50%] background-orange'>
+                        <div className='mb-16 md:mb-0 md:mr-8 w-full md:max-w-[60%] background-orange'>
                             <h2 className={sectionTitle}>Some Background</h2>
                             <p className="font-bold md:text-base lg:text-xl mb-4">There are 3 types of components in the application:</p>
                             <ol className="list-decimal mb-6 ms-6">
@@ -64,7 +64,7 @@ export default function HitachiSolutionsManager() {
                                     Dashboard within their inventory</li>
                             </ol>
                         </div>
-                        <div className='w-full mb-16'>
+                        <div className='w-full md:max-w-[40%] mb-16'>
                             <h2 className={sectionTitle}>Test Summary</h2>
                             <p className="font-bold md:text-base lg:text-xl mb-4">The test objectives were as follows:</p>
                             <ol className="list-decimal mb-6 ms-6">
@@ -82,7 +82,7 @@ export default function HitachiSolutionsManager() {
                     </div>
 
                     <div className='w-full mb-16'>
-                        <h2 className={sectionTitle}>Objective 1: Mental Mappings</h2>
+                        <h2 className={sectionTitle}>Objective 1: Improve Mental Mappings</h2>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className='mr-8 mb-4 w-full md:max-w-[60%] text-center'>
                                 <Image
@@ -100,8 +100,8 @@ export default function HitachiSolutionsManager() {
                                 </p>
                             </article>
                         </div>
-                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <div className='mr-8 mb-4 w-full md:max-w-[60%] text-center'>
+                        <div className="flex flex-col md:flex-row items-start w-full">
+                            <div className='mr-8 mb-4 w-full md:max-w-[60%]'>
                                 <Image
                                     className='w-full rounded-lg object-contain aspect-auto'
                                     src='/images/hitachi/solutions-manager-new-templates-card.webp'
@@ -111,27 +111,20 @@ export default function HitachiSolutionsManager() {
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                 />
                             </div>
-                            <article className='w-full md:max-w-[40%]'>
+                            <article className='w-full md:max-w-[40%] mb-8'>
                                 <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Proposed Solutions</h3>
-                                <p className="md:text-base lg:text-xl">For visualizing the associations between Template and Instance(s), I decided to alter the card view
-                                    so that each card showed a nested list of Instances that were spawned from that particular Template.
-                                    I also added some search inputs for Templates and Instances scoped to a Template, as well as more
-                                    text for the sorting so users would immediately know the sorting status.
-                                </p>
-                                <p className="md:text-base lg:text-xl">Participants were asked to look at the Templates page and describe what they saw. Qualitative results
-                                    were a little mixed about this new layout, as 2/5 participants were still a little unsure what the
-                                    nested list within each card was for at first. After a bit of exploration, they were able to
-                                    understand the relationships better, but some more exploration around the visual layout or possibly
-                                    adding a title to the nested list is needed.</p>
-                                <p className="md:text-base lg:text-xl">For showing the associations between Dashboards and Instances, the solution was addressed in the next
-                                    objective.</p>
+                                <p className="md:text-base lg:text-xl">Users needed to understand relationships at a glance, not by navigating between components. For visualizing the associations between Template and Instances, and after exploring a few other concepts, I decided to alter the card view so that each card showed a nested list of Instances that were spawned from that particular Template. The nested Instance list reduced cognitive load by making the hierarchy immediately visible. </p>
+                                <p className="md:text-base lg:text-xl">I also added some search inputs for Templates and Instances scoped to a Template, as well as more text for the sorting so users would immediately know the sorting status.</p>
                             </article>
                         </div>
-
+                        <div className="w-full md:max-w-[60%]">
+                            <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Process and findings</h3>
+                            <p className="md:text-base lg:text-xl">Participants were asked to look at the Templates page and describe what they saw. Qualitative results were a little mixed about this new layout, as 2/5 participants were still a little unsure what the nested list within each card was for at first. After a bit of exploration, they were able to understand the relationships better, but some more exploration around the visual layout or possibly adding a title to the nested list is needed.</p>
+                        </div>
                     </div>
 
                     <div className='w-full mb-16'>
-                        <h2 className={sectionTitle}>Objective 2: Navigation</h2>
+                        <h2 className={sectionTitle}>Objective 2: Improve Navigation</h2>
                         <div className="flex flex-col md:flex-row items-start w-full mb-8">
                             <div className='mr-8 mb-4 w-full md:max-w-[30%] text-center'>
                                 <Image
@@ -163,14 +156,10 @@ export default function HitachiSolutionsManager() {
                             </div>
                             <article className='mr-8 w-full md:max-w-[70%]'>
                                 <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Proposed Solutions</h3>
-                                <p className="md:text-base lg:text-xl">For linking between the Instances and the Dashboards, the GA release only supported a 1-1
-                                    relationship for Instances, but a 1-Many relationship for the Dashboards. The fix for the Instances
-                                    was easy: list the associated Dashboard in the card/list item as a link. The link would take the
-                                    user to the Dashboards page, with the specific Dashboard applied as a search parameter.
-                                </p>
+                                <p className="md:text-base lg:text-xl">For linking between the Instances and the Dashboards, the GA release only supported a 1-1 relationship for Instances, but a 1-Many relationship for the Dashboards. The fix for the Instances was easy: list the associated Dashboard in the card/list item as a link. The link would take the user to the Dashboards page, with the specific Dashboard applied as a search parameter.</p>
                             </article>
                         </div>
-                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
+                        <div className="flex flex-col md:flex-row items-start w-full">
                             <div className="w-full md:max-w-[61%] flex flex-row mr-8 mb-4 lg:gap-4 overflow-x-auto lg:flex-nowrap flex-wrap gap-4 scroll-snap-x scroll-smooth snap-x snap-mandatory md:overflow-visible md:flex-wrap">
                                 <Image
                                     className='w-full lg:w-4/5 min-w-[80vw] md:w-1/2 md:min-w-0 rounded-lg object-contain aspect-auto snap-center'
@@ -191,36 +180,21 @@ export default function HitachiSolutionsManager() {
                             </div>
 
                             <article className='mr-8 w-full md:max-w-[30%]'>
-                                <p className='md:text-base lg:text-xl'>For the Dashboards linking, there was the potential for the list of Instances to be up to 13 items
-                                    (the max recommended number of Instances per Dashboard based on performance benchmarking by the
-                                    devs), which posed problems for the UI in both list and card views. My proposed solution for this
-                                    was to display a badge with the number of associated Instances and an icon next to the number to
-                                    indicate more info is available. In card view, the button would toggle an overlay on that card with
-                                    a list of the Instances as links. In list view, the same badge would toggle a tooltip or popover
-                                    with the same list of links.</p>
+                                <p className='md:text-base lg:text-xl'>For the Dashboards linking, there was the potential for the list of Instances to be up to 13 items (the max recommended number of Instances per Dashboard based on performance benchmarking by the devs), which posed problems for the UI in both list and card views. My proposed solution for this was to display a badge with the number of associated Instances and an icon next to the number to indicate more info is available. In card view, the button would toggle an overlay on that card with a list of the Instances as links. In list view, the same badge would toggle a tooltip or popover with the same list of links.</p>
                             </article>
                         </div>
-                        <div className="flex flex-col md:flex-row items-start w-full mb-8">
-                            <article className='mr-8 w-full md:max-w-[60%]'>
-                                <p className='md:text-base lg:text-xl'>For this objective, participants were given a task which involved the assumption that their
-                                    inventories were already populated with Templates, Instances and Dashboards.</p>
-                                <p className='md:text-base lg:text-xl'>Participants were first instructed to navigate to the Instances page and then asked to navigate to
-                                    the associated Dashboard for an Instance. All participants completed the task with no errors or
-                                    confusion. The participants were then asked to identify all the associated Instances for that same
-                                    Dashboard, then navigate to view those Instances. All participants were able to identify the badge
-                                    as an interactive element within 3-5 seconds, click on it to view the Instances, then navigate to
-                                    the Instances page from there.</p>
-                                <p className='md:text-base lg:text-xl'>Since the previous design didn&#39;t have any linking between components, there was no baseline to test
-                                    against. This navigation test can now be used as a baseline for measuring navigation improvements.
-                                </p>
+                        <div className="flex flex-col items-start w-full mb-8">
+                            <article className='mb-8 w-full md:max-w-[60%]'>
+                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Process and findings</h3>
+                                <p className='md:text-base lg:text-xl'>For this objective, participants were given a task which involved the assumption that their inventories were already populated with Templates, Instances and Dashboards.</p>
+                                <p className='md:text-base lg:text-xl'>Participants were first instructed to navigate to the Instances page and then asked to navigate to the associated Dashboard for an Instance. All participants completed the task with no errors or confusion. The participants were then asked to identify all the associated Instances for that same Dashboard, then navigate to view those Instances. All participants were able to identify the badge as an interactive element within 2-3 seconds, click on it to view the Instances, then navigate to the Instances page from there.</p>
+                                <p className='md:text-base lg:text-xl'>Since the previous design didn&#39;t have any linking between components, there was no baseline to test against. This navigation test can now be used as a baseline for measuring navigation improvements.</p>
                             </article>
-                            <article className='mr-8 w-full md:max-w-[40%]'>
-                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Findings and Recommendations</h3>
+                            <article className='w-full md:max-w-[60%]'>
+                                <h3 className={`${robotoCondensed.className} text-2xl md:text-4xl font-bold mb-2 uppercase`}>Key Insights and Recommendations</h3>
                                 <ul className='list-disc ms-6 md:text-base lg:text-xl'>
-                                    <li className='mb-4'>Objective 1 was partially accomplished, but
-                                        may need more iteration on the design and further testing.</li>
-                                    <li>Objective 2 was accomplished by task
-                                        completion with no errors, and the proposed design changes should be implemented.</li>
+                                    <li className='mb-4'><span className='font-bold'>Objective 1</span> was partially accomplished. I recommend adding a visual label to the nested instance list and exploring alternative hierarchy visualizations with further testing.</li>
+                                    <li><span className='font-bold'>Objective 2</span> was accomplished by task completion with no difficulty. I recommend to validate the new pattern with more users before implementation.</li>
                                 </ul>
                             </article>
                         </div>
