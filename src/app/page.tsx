@@ -2,8 +2,7 @@
 // @refresh reset
 import { useRef, useState } from 'react';
 import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react';
-import dynamic from 'next/dynamic'
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+import { Lottie } from 'lottie-react';
 import MouseScrollAnimation from './assets/MouseScrollAnimation.json';
 import { robotoCondensed } from './fonts'
 import SvgBackground from './components/svg-background/svgBg'
@@ -141,7 +140,7 @@ export default function Home() {
               ease: 'easeInOut',
             }}
           >
-            <Lottie animationData={MouseScrollAnimation} loop={true} autoPlay={true} />
+            <Lottie src={MouseScrollAnimation} loop={true} autoplay={true} />
           </motion.div>
 
         </motion.section>
