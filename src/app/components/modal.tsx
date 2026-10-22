@@ -102,8 +102,8 @@ export default function Modal({ children, isVisible, onClose }: ModalProps) {
     }, [isVisible]);
 
     const variants = {
-        hidden: { y: '100vh', transition: { duration: 0.75, ease: 'easeInOut' } },
-        visible: { y: 0, transition: { duration: 0.75, ease: 'easeInOut' } },
+        hidden: { y: '100vh', transition: { duration: 0.75, ease: [0.42, 0, 0.58, 1] as const } },
+        visible: { y: 0, transition: { duration: 0.75, ease: [0.42, 0, 0.58, 1] as const } },
     }
 
     // Add event listener for escape key
