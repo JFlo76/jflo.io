@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.8",
-    "@next/eslint-plugin-next": "^15.5.28",
+    "@next/eslint-plugin-next": "^16.4.2",
     "@storybook/addon-essentials": "^8.6.19",
     "@storybook/addon-mdx-gfm": "^8.6.19",
     "@storybook/addon-onboarding": "^8.6.19",
