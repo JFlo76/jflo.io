@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SandyFlo</title>
+    <meta name="description" content="SandyFlo is a private desktop app for tracking household and rental property expenses and maintenance.">
+    <style>
+        :root {
+            --text: #111111;
+            --muted: #555555;
+            --background: #ffffff;
+            --border: #e5e5e5;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text: #f2f2f2;
+                --muted: #a3a3a3;
+                --background: #111111;
+                --border: #333333;
+            }
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 48px 16px;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+        }
+
+        h2 {
+            margin-top: 32px;
+            font-size: 20px;
+        }
+
+        .lead {
+            color: var(--muted);
+            font-size: 18px;
+            margin-top: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        footer {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>SandyFlo</h1>
+        <p class="lead">A private desktop app for tracking household and rental property expenses, budgets, and
+            maintenance.</p>
+
+        <p>SandyFlo runs entirely on one computer. It is a personal tool, not a public service: there are no accounts
+            to create, no servers, and no downloads offered here.</p>
+
+        <h2>What it does</h2>
+        <ul>
+            <li>Imports bank statements and categorizes transactions for budgeting and tax preparation.</li>
+            <li>Tracks rental property expenses, budgets, receipts, and contractors.</li>
+            <li>Schedules recurring preventative maintenance, such as gutter cleaning or smoke detector tests.</li>
+        </ul>
+
+        <h2>How it uses Google Calendar</h2>
+        <p>If the user chooses to connect Google Calendar, SandyFlo creates one separate calendar named
+            "SandyFlo Maintenance" and adds maintenance reminders to it, so Google can send reminders to the user's
+            phone and email. SandyFlo can only see and change the calendar it creates. It cannot read or change any
+            other calendar, and it does not access email, contacts, or other Google data.</p>
+        <p>Each calendar event contains only a task name, a property nickname, a date, a repeat rule, and reminder
+            times. The connection can be removed at any time from within SandyFlo or from the
+            <a href="https://myaccount.google.com/permissions">Google Account permissions page</a>.</p>
+
+        <p>Read the <a href="privacy.html">privacy policy</a> for details.</p>
+
+        <footer>
+            SandyFlo · <a href="privacy.html">Privacy policy</a>
+        </footer>
+    </main>
+</body>
+
+</html>
