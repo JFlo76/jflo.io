@@ -26,3 +26,5 @@ resources
 robots.txt
 # Storybook
 *storybook.log
+# TypeScript build cache
+*.tsbuildinfo
