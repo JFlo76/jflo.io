@@ -3,7 +3,7 @@
 Portfolio site for Jason Florence. Next.js 15 (App Router), React 19, TypeScript, Tailwind 4, SCSS modules, motion, Storybook/Chromatic.
 
 ## Workflow
-- Do all work on the `staging` branch first, then merge to `main`. Never commit directly to `main`.
+- **Rule: all work is done on the `staging` branch first.** Make and verify every change (code, dependencies, config, docs) on `staging`, then merge `staging` into `main`. Never commit directly to `main`, and don't create feature branches off `main`.
 - Deployed on DigitalOcean App Platform; a failed build there is the main signal something broke.
 
 ## Commands
