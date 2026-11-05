@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import ProjectArchives from '../app/components/ProjectArchives';
 import { useMotionValue } from 'framer-motion';
 import React from 'react';
-import { expect, within, userEvent } from '@storybook/test';
+import { expect, within, userEvent } from 'storybook/test';
 
 // Wrapper component to handle hooks
 const ProjectArchivesWrapper = () => {
