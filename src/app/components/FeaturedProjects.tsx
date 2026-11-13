@@ -48,7 +48,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                         width={1200}
                         height={800}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
                     </div>
                 </motion.a>
@@ -69,7 +69,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                         width={1200}
                         height={800}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
                     </div>
                 </motion.a>
@@ -98,7 +98,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                         width={1200}
                         height={800}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View case study</h3>
                     </div>
                 </motion.a>
@@ -119,7 +119,7 @@ const FeaturedProjects = ({ workScroll, handleModalOpen }: FeaturedProjectsProps
                         width={1200}
                         height={800}
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <div className="absolute inset-0 bg-black/75 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
                         <h3 className={`${robotoCondensed.className} text-white text-4xl uppercase text-[--primary-blue-200]`}>View project</h3>
                     </div>
                 </motion.a>

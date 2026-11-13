@@ -101,7 +101,7 @@ export default function ProjectArchives({ workScroll, handleModalOpen }: Project
                                 height={225}
                                 className="rounded-sm transition-transform duration-300 group-hover:grayscale aspect-video object-cover w-full h-full"
                             />
-                            <div className="absolute inset-0 top-0 bottom-0 left-0 right-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute inset-0 top-0 bottom-0 left-0 right-0 bg-black/75 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p className={`${robotoCondensed.className} text-white text-base m-0 uppercase`}>View Details</p>
                             </div>
                         </a>
